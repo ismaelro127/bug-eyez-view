@@ -1,0 +1,422 @@
+[
+  {
+    "start": "2025-04-01T00:00:00Z",
+    "end": "2025-04-01T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep1"
+  },
+  {
+    "start": "2025-04-01T01:00:00Z",
+    "end": "2025-04-01T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep2"
+  },
+  {
+    "start": "2025-04-01T02:00:00Z",
+    "end": "2025-04-01T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep3"
+  },
+  {
+    "start": "2025-04-01T03:00:00Z",
+    "end": "2025-04-01T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep4"
+  },
+  {
+    "start": "2025-04-01T04:00:00Z",
+    "end": "2025-04-01T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep5"
+  },
+  {
+    "start": "2025-04-01T05:00:00Z",
+    "end": "2025-04-01T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep6"
+  },
+  {
+    "start": "2025-04-01T06:00:00Z",
+    "end": "2025-04-01T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep7"
+  },
+  {
+    "start": "2025-04-01T07:00:00Z",
+    "end": "2025-04-01T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep8"
+  },
+  {
+    "start": "2025-04-01T08:00:00Z",
+    "end": "2025-04-01T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep9"
+  },
+  {
+    "start": "2025-04-01T09:00:00Z",
+    "end": "2025-04-01T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep10"
+  },
+  {
+    "start": "2025-04-01T10:00:00Z",
+    "end": "2025-04-01T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep11"
+  },
+  {
+    "start": "2025-04-01T11:00:00Z",
+    "end": "2025-04-01T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep12"
+  },
+  {
+    "start": "2025-04-02T00:00:00Z",
+    "end": "2025-04-02T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep13"
+  },
+  {
+    "start": "2025-04-02T01:00:00Z",
+    "end": "2025-04-02T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep14"
+  },
+  {
+    "start": "2025-04-02T02:00:00Z",
+    "end": "2025-04-02T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep15"
+  },
+  {
+    "start": "2025-04-02T03:00:00Z",
+    "end": "2025-04-02T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep16"
+  },
+  {
+    "start": "2025-04-02T04:00:00Z",
+    "end": "2025-04-02T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep17"
+  },
+  {
+    "start": "2025-04-02T05:00:00Z",
+    "end": "2025-04-02T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep18"
+  },
+  {
+    "start": "2025-04-02T06:00:00Z",
+    "end": "2025-04-02T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep19"
+  },
+  {
+    "start": "2025-04-02T07:00:00Z",
+    "end": "2025-04-02T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep20"
+  },
+  {
+    "start": "2025-04-02T08:00:00Z",
+    "end": "2025-04-02T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep21"
+  },
+  {
+    "start": "2025-04-02T09:00:00Z",
+    "end": "2025-04-02T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep22"
+  },
+  {
+    "start": "2025-04-02T10:00:00Z",
+    "end": "2025-04-02T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep23"
+  },
+  {
+    "start": "2025-04-02T11:00:00Z",
+    "end": "2025-04-02T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep24"
+  },
+  {
+    "start": "2025-04-03T00:00:00Z",
+    "end": "2025-04-03T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep25"
+  },
+  {
+    "start": "2025-04-03T01:00:00Z",
+    "end": "2025-04-03T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep26"
+  },
+  {
+    "start": "2025-04-03T02:00:00Z",
+    "end": "2025-04-03T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep27"
+  },
+  {
+    "start": "2025-04-03T03:00:00Z",
+    "end": "2025-04-03T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep28"
+  },
+  {
+    "start": "2025-04-03T04:00:00Z",
+    "end": "2025-04-03T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep29"
+  },
+  {
+    "start": "2025-04-03T05:00:00Z",
+    "end": "2025-04-03T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep30"
+  },
+  {
+    "start": "2025-04-03T06:00:00Z",
+    "end": "2025-04-03T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep31"
+  },
+  {
+    "start": "2025-04-03T07:00:00Z",
+    "end": "2025-04-03T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep32"
+  },
+  {
+    "start": "2025-04-03T08:00:00Z",
+    "end": "2025-04-03T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep33"
+  },
+  {
+    "start": "2025-04-03T09:00:00Z",
+    "end": "2025-04-03T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep34"
+  },
+  {
+    "start": "2025-04-03T10:00:00Z",
+    "end": "2025-04-03T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep35"
+  },
+  {
+    "start": "2025-04-03T11:00:00Z",
+    "end": "2025-04-03T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep36"
+  },
+  {
+    "start": "2025-04-04T00:00:00Z",
+    "end": "2025-04-04T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep37"
+  },
+  {
+    "start": "2025-04-04T01:00:00Z",
+    "end": "2025-04-04T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep38"
+  },
+  {
+    "start": "2025-04-04T02:00:00Z",
+    "end": "2025-04-04T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep39"
+  },
+  {
+    "start": "2025-04-04T03:00:00Z",
+    "end": "2025-04-04T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep40"
+  },
+  {
+    "start": "2025-04-04T04:00:00Z",
+    "end": "2025-04-04T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep41"
+  },
+  {
+    "start": "2025-04-04T05:00:00Z",
+    "end": "2025-04-04T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep42"
+  },
+  {
+    "start": "2025-04-04T06:00:00Z",
+    "end": "2025-04-04T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep43"
+  },
+  {
+    "start": "2025-04-04T07:00:00Z",
+    "end": "2025-04-04T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep44"
+  },
+  {
+    "start": "2025-04-04T08:00:00Z",
+    "end": "2025-04-04T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep45"
+  },
+  {
+    "start": "2025-04-04T09:00:00Z",
+    "end": "2025-04-04T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep46"
+  },
+  {
+    "start": "2025-04-04T10:00:00Z",
+    "end": "2025-04-04T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep47"
+  },
+  {
+    "start": "2025-04-04T11:00:00Z",
+    "end": "2025-04-04T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep48"
+  },
+  {
+    "start": "2025-04-05T00:00:00Z",
+    "end": "2025-04-05T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep49"
+  },
+  {
+    "start": "2025-04-05T01:00:00Z",
+    "end": "2025-04-05T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep50"
+  },
+  {
+    "start": "2025-04-05T02:00:00Z",
+    "end": "2025-04-05T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep1"
+  },
+  {
+    "start": "2025-04-05T03:00:00Z",
+    "end": "2025-04-05T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep2"
+  },
+  {
+    "start": "2025-04-05T04:00:00Z",
+    "end": "2025-04-05T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep3"
+  },
+  {
+    "start": "2025-04-05T05:00:00Z",
+    "end": "2025-04-05T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep4"
+  },
+  {
+    "start": "2025-04-05T06:00:00Z",
+    "end": "2025-04-05T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep5"
+  },
+  {
+    "start": "2025-04-05T07:00:00Z",
+    "end": "2025-04-05T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep6"
+  },
+  {
+    "start": "2025-04-05T08:00:00Z",
+    "end": "2025-04-05T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep7"
+  },
+  {
+    "start": "2025-04-05T09:00:00Z",
+    "end": "2025-04-05T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep8"
+  },
+  {
+    "start": "2025-04-05T10:00:00Z",
+    "end": "2025-04-05T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep9"
+  },
+  {
+    "start": "2025-04-05T11:00:00Z",
+    "end": "2025-04-05T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep10"
+  },
+  {
+    "start": "2025-04-06T00:00:00Z",
+    "end": "2025-04-06T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep11"
+  },
+  {
+    "start": "2025-04-06T01:00:00Z",
+    "end": "2025-04-06T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep12"
+  },
+  {
+    "start": "2025-04-06T02:00:00Z",
+    "end": "2025-04-06T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep13"
+  },
+  {
+    "start": "2025-04-06T03:00:00Z",
+    "end": "2025-04-06T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep14"
+  },
+  {
+    "start": "2025-04-06T04:00:00Z",
+    "end": "2025-04-06T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep15"
+  },
+  {
+    "start": "2025-04-06T05:00:00Z",
+    "end": "2025-04-06T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep16"
+  },
+  {
+    "start": "2025-04-06T06:00:00Z",
+    "end": "2025-04-06T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep17"
+  },
+  {
+    "start": "2025-04-06T07:00:00Z",
+    "end": "2025-04-06T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep18"
+  },
+  {
+    "start": "2025-04-06T08:00:00Z",
+    "end": "2025-04-06T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep19"
+  },
+  {
+    "start": "2025-04-06T09:00:00Z",
+    "end": "2025-04-06T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep20"
+  },
+  {
+    "start": "2025-04-06T10:00:00Z",
+    "end": "2025-04-06T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep21"
+  },
+  {
+    "start": "2025-04-06T11:00:00Z",
+    "end": "2025-04-06T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep22"
+  },
+  {
+    "start": "2025-04-07T00:00:00Z",
+    "end": "2025-04-07T01:00:00Z",
+    "program_id": "bugz_world_kitchen_ep23"
+  },
+  {
+    "start": "2025-04-07T01:00:00Z",
+    "end": "2025-04-07T02:00:00Z",
+    "program_id": "bugz_world_kitchen_ep24"
+  },
+  {
+    "start": "2025-04-07T02:00:00Z",
+    "end": "2025-04-07T03:00:00Z",
+    "program_id": "bugz_world_kitchen_ep25"
+  },
+  {
+    "start": "2025-04-07T03:00:00Z",
+    "end": "2025-04-07T04:00:00Z",
+    "program_id": "bugz_world_kitchen_ep26"
+  },
+  {
+    "start": "2025-04-07T04:00:00Z",
+    "end": "2025-04-07T05:00:00Z",
+    "program_id": "bugz_world_kitchen_ep27"
+  },
+  {
+    "start": "2025-04-07T05:00:00Z",
+    "end": "2025-04-07T06:00:00Z",
+    "program_id": "bugz_world_kitchen_ep28"
+  },
+  {
+    "start": "2025-04-07T06:00:00Z",
+    "end": "2025-04-07T07:00:00Z",
+    "program_id": "bugz_world_kitchen_ep29"
+  },
+  {
+    "start": "2025-04-07T07:00:00Z",
+    "end": "2025-04-07T08:00:00Z",
+    "program_id": "bugz_world_kitchen_ep30"
+  },
+  {
+    "start": "2025-04-07T08:00:00Z",
+    "end": "2025-04-07T09:00:00Z",
+    "program_id": "bugz_world_kitchen_ep31"
+  },
+  {
+    "start": "2025-04-07T09:00:00Z",
+    "end": "2025-04-07T10:00:00Z",
+    "program_id": "bugz_world_kitchen_ep32"
+  },
+  {
+    "start": "2025-04-07T10:00:00Z",
+    "end": "2025-04-07T11:00:00Z",
+    "program_id": "bugz_world_kitchen_ep33"
+  },
+  {
+    "start": "2025-04-07T11:00:00Z",
+    "end": "2025-04-07T12:00:00Z",
+    "program_id": "bugz_world_kitchen_ep34"
+  }
+]

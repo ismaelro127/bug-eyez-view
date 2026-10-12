@@ -1,0 +1,67 @@
+{
+  "day": 7,
+  "blocks": {
+    "detective_mornings": [
+      "ct047",
+      "ct002",
+      "ct006",
+      "ct023",
+      "ct010",
+      "ct020",
+      "ct050",
+      "ct035"
+    ],
+    "case_files_afternoon": [
+      "ct029",
+      "ct037",
+      "ct019",
+      "ct024",
+      "ct040",
+      "ct008",
+      "ct042",
+      "ct049"
+    ],
+    "mystery_hour": [
+      "ct044",
+      "ct018",
+      "ct046",
+      "ct012",
+      "ct007",
+      "ct016",
+      "ct013",
+      "ct022"
+    ],
+    "prime_crime": [
+      "ct021",
+      "ct028",
+      "ct017",
+      "ct009",
+      "ct025",
+      "ct026",
+      "ct027",
+      "ct033"
+    ],
+    "deep_suspense_night": [
+      "ct001",
+      "ct048",
+      "ct005",
+      "ct045",
+      "ct039",
+      "ct030",
+      "ct004",
+      "ct032"
+    ],
+    "after_midnight": [
+      "ct043",
+      "ct003",
+      "ct031",
+      "ct038",
+      "ct041",
+      "ct015",
+      "ct011",
+      "ct036",
+      "ct014",
+      "ct034"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "generatedAt": "2026-01-31T22:41:00Z",
+  "channels": {
+    "yt_MINldxbTOSI": {
+      "channelId": "yt_MINldxbTOSI",
+      "source": "youtube",
+      "category": "Live Web",
+      "observations": [
+        {
+          "seenAt": "2026-01-31T21:00:00Z",
+          "durationMinutes": 180,
+          "startMinuteOfDay": 1260,
+          "regionGuess": "US",
+          "contentType": "news",
+          "confidence": 0.82
+        }
+      ],
+      "aggregates": {
+        "avgDurationMinutes": 165,
+        "mostCommonStartMinute": 1200,
+        "liveFrequency": 0.78,
+        "restartPattern": "every_3_4_hours"
+      }
+    }
+  }
+}

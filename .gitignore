@@ -1,0 +1,305 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+**/.xcode.env.local
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
+.kotlin/
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Bundle artifact
+*.jsbundle
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# testing
+/coverage
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# =====================================================
+# Bug Eyez View - Web / Backend / Secrets
+# =====================================================
+
+# Next.js / frontend builds
+.next/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+
+# Backend/frontend env files - never commit secrets
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Logs
+logs/
+*.log
+backend/logs/
+backend/epg/scrapers/logs/
+
+# TypeScript cache
+tsconfig.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+backend/tsconfig.tsbuildinfo
+
+# PWA generated files
+frontend/public/sw.js
+frontend/public/workbox-*.js
+frontend/public/worker-*.js
+
+# Caches
+.cache/
+.turbo/
+
+# Large/generated data that should not usually be committed
+mongodb/
+
+# =====================================================
+# Bug Eyez View - Generated / Data / Large Local Folders
+# =====================================================
+
+# EPG downloaded/master source repo - too large for app repo
+backend/epg-master/
+
+# Admin/generated backups
+backend/admin/backups/
+backend/admin_channel_status.json
+backend/broken_channels.json
+backend/parsed_channels.json
+backend/missing_sources.json
+backend/stream_history.json
+backend/source_reports/
+
+# Local Mongo database files - never commit
+backend/mongo-data/
+mongodb/
+
+# Accidental npm/version file
+frontend/11.17.0
+
+# Generated PWA files
+frontend/public/sw.js
+frontend/public/workbox-*.js
+frontend/public/worker-*.js
+
+# Build/cache
+.next/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+.cache/
+.turbo/
+tsconfig.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+
+# Env/secrets
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Logs
+logs/
+*.log
+backend/logs/
+
+# =====================================================
+# Bug Eyez View - DO NOT COMMIT generated/local data
+# =====================================================
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Zip/archive files
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+
+# Backend generated/cache/backups
+backend/backups/
+backend/cache_epg/
+backend/source_playlists/
+backend/source_reports/
+backend/news_cache/
+backend/data/
+backend/scripts/backend/data/
+backend/admin/backups/
+backend/epg-master/
+backend/mongo-data/
+mongodb/
+
+# Generated EPG scrape outputs/debug dumps
+backend/epg/
+backend/epg_sources/
+backend/epg-xml/
+epg-xml/
+epg_parsed.json
+
+# Generated JSON/CSV reports
+backend/*_backup_*.json
+backend/*_raw.json
+backend/*_full.json
+backend/*_report.json
+backend/*_map.json
+backend/*_map.csv
+backend/debug_*.json
+backend/debug_*.html
+backend/*.xml
+backend/*.m3u
+backend/*.html
+
+# Local DB/data dumps
+backend/*.sqlite
+backend/*.db
+backend/*_db.json
+backend/auth_db.json
+backend/bugzcoin_db.json
+
+# Accidental files/shortcuts
+*.lnk
+frontend/[PWA]
+frontend/frontend@*
+frontend/11.17.0
+
+# Next/PWA generated
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+frontend/public/sw.js
+frontend/public/workbox-*.js
+frontend/public/worker-*.js
+
+# Env/secrets
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Logs/cache
+logs/
+*.log
+.cache/
+.turbo/
+tsconfig.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+backend/tsconfig.tsbuildinfo
+
+# Accidental/local command artifacts
+.bundle/
+frontend/[PWA]
+frontend/git
+frontend/npm
+frontend/next
+git
+
+# Literal accidental files
+frontend/\[PWA\]
+*.bak
+frontend/public/data/*backup*.json
+
+# Bug Eyez temporary backups/reports
+upgrade-backups/
+**/upgrade-backups/
+*.backup-*
+*.genre-backup-*
+*.final-genre-backup-*
+*.logo-recovery-*
+*.youtube-cleanup-backup-*
+
+# Local audit / cleanup reports
+frontend/genre-audit.txt
+frontend/genre-cleanup-result.txt
+frontend/youtube-catalog-audit.txt
+frontend/youtube-catalog-audit-after.txt
+frontend/youtube-catalog-cleanup-report.txt
+
+# Local environment secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env.local
+frontend/web/.env.local

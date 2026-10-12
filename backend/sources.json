@@ -1,0 +1,74 @@
+[
+  {
+    "source_name": "PlutoTV",
+    "scrape_url": "https://i.mjh.nz/PlutoTV/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "plutotv"
+  },
+  {
+    "source_name": "Plex",
+    "scrape_url": "https://i.mjh.nz/Plex/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "plex"
+  },
+  {
+    "source_name": "SamsungTVPlus",
+    "scrape_url": "https://i.mjh.nz/SamsungTVPlus/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "samsungtv"
+  },
+  {
+    "source_name": "Xumo",
+    "scrape_url": "https://i.mjh.nz/Xumo/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "xumo"
+  },
+  {
+    "source_name": "STIRR",
+    "scrape_url": "https://i.mjh.nz/STIRR/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "stirr"
+  },
+  {
+    "source_name": "Redbox",
+    "scrape_url": "https://i.mjh.nz/Redbox/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "redbox"
+  },
+  {
+    "source_name": "Vizio",
+    "scrape_url": "https://i.mjh.nz/Vizio/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "vizio"
+  },
+  {
+    "source_name": "LocalNow",
+    "scrape_url": "https://i.mjh.nz/LocalNow/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "localnow"
+  },
+  {
+    "source_name": "DistroTV",
+    "scrape_url": "https://i.mjh.nz/DistroTV/us.xml",
+    "parser": "parse_xmltv",
+    "epg_id": "distrotv"
+  },
+  {
+    "source_name": "3ABN",
+    "scrape_url": "https://3abn.org/schedule",
+    "parser": "parse_3abn",
+    "epg_id": "3abn"
+  },
+  {
+    "source_name": "CBS Sports",
+    "scrape_url": "https://cbssports.com/tv/schedule/",
+    "parser": "parse_cbs",
+    "epg_id": "cbssports"
+  },
+  {
+    "source_name": "LMN",
+    "scrape_url": "https://www.tvinsider.com/network/lmn/schedule/",
+    "parser": "parse_lmn",
+    "epg_id": "lmn"
+  }
+]

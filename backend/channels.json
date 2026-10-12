@@ -1,0 +1,459 @@
+[
+  {
+    "id": "france24_en",
+    "name": "France 24 English",
+    "category": "News",
+    "language": "English",
+    "description": "France 24 provides international breaking news coverage, global updates, and world analysis.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/65/France_24_logo.svg",
+    "stream_url": "https://static.france24.com/live/F24_EN_HI_HLS/live_web.m3u8",
+    "epg_id": "france24_en",
+    "type": "live"
+  },
+  {
+    "id": "france24_fr",
+    "name": "France 24 Français",
+    "category": "News",
+    "language": "French",
+    "description": "Chaîne d'information internationale en continu couvrant mondialement politique, économie et actualité.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/65/France_24_logo.svg",
+    "stream_url": "https://static.france24.com/live/F24_FR_HI_HLS/live_web.m3u8",
+    "epg_id": "france24_fr",
+    "type": "live"
+  },
+  {
+    "id": "france24_es",
+    "name": "France 24 Español",
+    "category": "News",
+    "language": "Spanish",
+    "description": "Cobertura global de noticias internacionales, política, economía y reportajes.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/65/France_24_logo.svg",
+    "stream_url": "https://static.france24.com/live/F24_ES_HI_HLS/live_web.m3u8",
+    "epg_id": "france24_es",
+    "type": "live"
+  },
+  {
+    "id": "cgtn_en",
+    "name": "CGTN English",
+    "category": "News",
+    "language": "English",
+    "description": "China Global Television Network's international English news channel with global reporting.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/CGTN_logo.svg",
+    "stream_url": "https://news.cgtn.com/resource/live/english/cgtn-news.m3u8",
+    "epg_id": "cgtn_en",
+    "type": "live"
+  },
+  {
+    "id": "cgtn_es",
+    "name": "CGTN Español",
+    "category": "News",
+    "language": "Spanish",
+    "description": "CGTN Latinoamérica - Noticias y análisis de China y del mundo.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/CGTN_logo.svg",
+    "stream_url": "https://livees.cgtn.com/1000e/prog_index.m3u8",
+    "epg_id": "cgtn_es",
+    "type": "live"
+  },
+  {
+    "id": "cgtn_fr",
+    "name": "CGTN Français",
+    "category": "News",
+    "language": "French",
+    "description": "La chaîne d'information francophone de CGTN couvrant l'actualité mondiale.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/CGTN_logo.svg",
+    "stream_url": "https://livefr.cgtn.com/1000f/prog_index.m3u8",
+    "epg_id": "cgtn_fr",
+    "type": "live"
+  },
+  {
+    "id": "arabnews",
+    "name": "Al Arabiya",
+    "category": "News",
+    "language": "Arabic",
+    "description": "Major Arabic-language international news network.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Al_Arabiya_Logo.svg",
+    "stream_url": "https://live.alarabiya.net/alarabiapublish/al-arabiya.smil/playlist.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "dw_en",
+    "name": "DW English",
+    "category": "News",
+    "language": "English",
+    "description": "Deutsche Welle's international English news service with documentaries and global reporting.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Deutsche_Welle_symbol_2012.svg",
+    "stream_url": "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "rtve_24h",
+    "name": "RTVE 24h España",
+    "category": "News",
+    "language": "Spanish",
+    "description": "Canal internacional de noticias de RTVE con cobertura europea e internacional.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/45/RTVE_logo.svg",
+    "stream_url": "https://rtvelivestream.akamaized.net/rtvesec/24h_main.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "bbc_arabic",
+    "name": "BBC Arabic",
+    "category": "News",
+    "language": "Arabic",
+    "description": "BBC’s Arabic international news and current affairs channel.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/65/BBC_Arabic_Logo.svg",
+    "stream_url": "https://vs-hls-ww.live.cf.md.bbci.co.uk/p01p8h6h/hls/index.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "cna",
+    "name": "CNA Singapore",
+    "category": "News",
+    "language": "English",
+    "description": "Channel NewsAsia — Asian-focused global news coverage.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Cna_singapore_logo.svg",
+    "stream_url": "https://d2e1asnsl7br7b.cloudfront.net/7782e34e1bf34fcfa45848fd1e0e54c3/index.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "abc_news_au",
+    "name": "ABC News Australia",
+    "category": "News",
+    "language": "English",
+    "description": "Australian Broadcasting Corporation’s 24/7 news channel.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/ABC_News_Australia_Logo.svg",
+    "stream_url": "https://abcchannel.blob.core.windows.net/live/hls/news.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "abc_news_us",
+    "name": "ABC News Live",
+    "category": "News",
+    "language": "English",
+    "description": "U.S. streaming news channel from ABC, available globally.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/12/ABC_News_Logo.svg",
+    "stream_url": "https://abcnews-streams.akamaized.net/abcnews/live/aus.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "nbc_news_now",
+    "name": "NBC News NOW",
+    "category": "News",
+    "language": "English",
+    "description": "NBC’s global streaming news channel.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/NBC_logo.svg",
+    "stream_url": "https://nbcnews2.akamaized.net/hls/live/2043030/nbcnews2/master.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "sky_news",
+    "name": "Sky News International",
+    "category": "News",
+    "language": "English",
+    "description": "Global news network from the UK available for free streaming worldwide.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/30/Sky_News_2015_Logo.svg",
+    "stream_url": "https://skynewsau-live.akamaized.net/hls/live/2006597/skynewsau/master.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "euronews_en",
+    "name": "Euronews English",
+    "category": "News",
+    "language": "English",
+    "description": "European news network with coverage of politics, business, and culture.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/57/Euronews_Logo.svg",
+    "stream_url": "https://euronews-en-push.vod.wixcdn.net/live/euronews-en.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "euronews_es",
+    "name": "Euronews Español",
+    "category": "News",
+    "language": "Spanish",
+    "description": "Noticias de Europa y el mundo con enfoque continental.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/57/Euronews_Logo.svg",
+    "stream_url": "https://euronews-es-push.vod.wixcdn.net/live/euronews-es.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "trtworld",
+    "name": "TRT World",
+    "category": "News",
+    "language": "English",
+    "description": "International news channel run by Turkey’s public broadcaster.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/TRT_World_logo.svg",
+    "stream_url": "https://tv-trtworld.live.trt.com.tr/master.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "aljazeera_en",
+    "name": "Al Jazeera English",
+    "category": "News",
+    "language": "English",
+    "description": "Major international news network focusing on global politics and in-depth reporting.",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/80/Aljazeera_eng.png",
+    "stream_url": "https://live-hls-web-aje.getaj.net/AJE/01.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "aljazeera_ar",
+    "name": "Al Jazeera Arabic",
+    "category": "News",
+    "language": "Arabic",
+    "description": "Leading Arabic-language global news channel.",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/1/11/Aljazeera_ar.png",
+    "stream_url": "https://live-hls-web-ajd.getaj.net/AJD/01.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "rt_world",
+    "name": "RT Documentary",
+    "category": "Documentary",
+    "language": "English",
+    "description": "24/7 documentary channel focusing on culture, society, and global issues.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/RTD_logo.png",
+    "stream_url": "https://rt-lv-eur.rttv.com/live/rtdoc/playlist.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "arirang",
+    "name": "Arirang TV",
+    "category": "News",
+    "language": "English/Korean",
+    "description": "South Korea’s international English channel offering news and culture.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Arirang_TV_logo.svg",
+    "stream_url": "https://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8",
+    "epg_id": "arirang_tv",
+    "type": "live"
+  },
+  {
+    "id": "nhk_world",
+    "name": "NHK World Japan",
+    "category": "News",
+    "language": "English",
+    "description": "Japan's international broadcasting service delivering news and cultural programming.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1b/NHK_World.svg",
+    "stream_url": "https://nhkwlive-xjp.akamaized.net/hls/live/2003454/nhkwlive-xjp/index_4M.m3u8",
+    "epg_id": "nhk_world_japan",
+    "type": "live"
+  },
+
+
+
+  {
+    "id": "cspan",
+    "name": "C-SPAN",
+    "category": "Government",
+    "language": "English",
+    "description": "Live U.S. Congress, hearings, public affairs events, and civic programming.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/43/C-SPAN_logo.svg",
+    "stream_url": "https://d3sk9z5n7xj240.cloudfront.net/live/primary/index.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "cspan2",
+    "name": "C-SPAN 2",
+    "category": "Government",
+    "language": "English",
+    "description": "U.S. Senate, policy debates, hearings, and long-form government programming.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d8/C-SPAN2_logo.svg",
+    "stream_url": "https://d3sk9z5n7xj240.cloudfront.net/live/secondary/index.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "cspan3",
+    "name": "C-SPAN 3",
+    "category": "Government",
+    "language": "English",
+    "description": "Historical archives, federal events, Supreme Court audio, government forums.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c6/C-SPAN3_logo.svg",
+    "stream_url": "https://d3sk9z5n7xj240.cloudfront.net/live/tertiary/index.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "un_webtv",
+    "name": "UN Web TV",
+    "category": "Government",
+    "language": "Multilingual",
+    "description": "United Nations live meetings, assemblies, briefings, debates, and special events.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/UN_Web_TV_logo.png",
+    "stream_url": "https://bcliveunivsecure-lh.akamaihd.net/i/un150_1@122050/master.m3u8",
+    "epg_id": "un_webtv",
+    "type": "live"
+  },
+  {
+    "id": "un_human_rights",
+    "name": "UN Human Rights Council",
+    "category": "Government",
+    "language": "Multilingual",
+    "description": "Live Human Rights Council debates, meetings, and special sessions.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1e/United_Nations_Human_Rights_Council_logo.png",
+    "stream_url": "https://bcliveunivsecure-lh.akamaihd.net/i/un550_1@122053/master.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "un_security_council",
+    "name": "UN Security Council",
+    "category": "Government",
+    "language": "Multilingual",
+    "description": "Live UN Security Council meetings, votes, and emergency sessions.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5e/United_Nations_Security_Council_Seal.svg",
+    "stream_url": "https://bcliveunivsecure-lh.akamaihd.net/i/un300_1@122051/master.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "blm",
+    "name": "Bloomberg TV Global",
+    "category": "Business",
+    "language": "English",
+    "description": "Business news, market analysis, global economy coverage. Public redistribution allowed.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Bloomberg_logo.svg",
+    "stream_url": "https://liveprod.bloomberg.com/btv/us/master.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "nasa_tv",
+    "name": "NASA TV Public",
+    "category": "Science",
+    "language": "English",
+    "description": "NASA launches, spacewalks, mission updates, science documentaries.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_TV_logo.png",
+    "stream_url": "https://ntv1-akamai.akamaized.net/hls/live/2014075/ntv1/index_720.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+  {
+    "id": "nasa_media",
+    "name": "NASA Media Channel",
+    "category": "Science",
+    "language": "English",
+    "description": "Press briefings, astronaut Q&A, mission planning, raw mission footage.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_TV_logo.png",
+    "stream_url": "https://ntv2-akamai.akamaized.net/hls/live/2014076/ntv2/index_720.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "fema",
+    "name": "FEMA TV",
+    "category": "Government",
+    "language": "English",
+    "description": "Emergency management updates, disaster briefings, public safety alerts.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/28/FEMA_logo.svg",
+    "stream_url": "https://fema-ipvs.akamaized.net/hls/live/2002958/fema/playlist.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "whitehouse_live",
+    "name": "White House Live",
+    "category": "Government",
+    "language": "English",
+    "description": "Live White House events, press briefings, signing ceremonies, speeches.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Seal_of_the_President_of_the_United_States.svg",
+    "stream_url": "https://video.whitehouse.gov/live/wh-live.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "doj",
+    "name": "U.S. Department of Justice Live",
+    "category": "Government",
+    "language": "English",
+    "description": "Department of Justice press events, policy announcements, legal briefings.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Seal_of_the_United_States_Department_of_Justice.svg",
+    "stream_url": "https://www.justice.gov/live/video.webm",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "dod",
+    "name": "U.S. Department of Defense Live",
+    "category": "Government",
+    "language": "English",
+    "description": "Pentagon briefings, press conferences, military updates.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e0/US_Department_of_Defense_Logo.svg",
+    "stream_url": "https://www.defense.gov/desktopmodules/weblive/api/stream/live",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "uk_parliament",
+    "name": "UK Parliament TV",
+    "category": "Government",
+    "language": "English",
+    "description": "Live House of Commons & House of Lords debates, committees, and hearings.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7d/UK_Parliament_logo_2018.svg",
+    "stream_url": "https://parliamentlive.tv/Channel/Commons/Streams.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "id": "canada_parliament",
+    "name": "ParlVU (Canada)",
+    "category": "Government",
+    "language": "English/French",
+    "description": "Canadian Parliament live sessions, committees, and official events.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/05/Parliament_of_Canada_logo.svg",
+    "stream_url": "https://video-isilive.canadacentral.cloudapp.azure.com/live/hoc_1/playlist.m3u8",
+    "epg_id": null,
+    "type": "live"
+  },
+
+  {
+    "name": "European Parliament Live",
+    "url": "https://live.europarl.europa.eu/ep-live.m3u8",
+    "language": "Multilingual",
+    "category": "Government",
+    "recordable": true,
+    "id": "europarl",
+    "origin": "Unknown",
+    "status": "active",
+    "description": "EU Parliament plenary sessions, debates, and live coverage.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/European_Parliament_logo.svg/512px-European_Parliament_logo.svg.png",
+    "epg_id": null,
+    "type": "live"
+  },
+
+
+ {
+    "name": "UN Web TV",
+    "url": "https://cdnapi.kaltura.com/p/2503451/sp/250345100/playManifest/entryId/1_gb6tjmle/protocol/https/format/applehttp/a.m3u8",
+    "language": "English",
+    "category": "live",
+    "recordable": true,
+    "id": "un_web_tv",
+    "origin": "Unknown",
+    "status": "active"
+  }
+]

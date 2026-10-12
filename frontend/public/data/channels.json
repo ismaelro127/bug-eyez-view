@@ -1,0 +1,856 @@
+[
+  {
+    "name": "3ABN Dare To Dream Network",
+    "url": "https://3abn.bozztv.com/3abn2/d2d_live/smil:d2d_live.smil/playlist.m3u8",
+    "id": "167443",
+    "epgId": "167443",
+    "icon": ""
+  },
+  {
+    "name": "48 Hours",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/651432fa98020f000878b407/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1c2b30-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=2882b967-2b16-4fb7-ad00-ca48535d1336",
+    "id": "105784",
+    "epgId": "105784",
+    "icon": "https://epg.pw/media/images/epg/2024/06/09/20240609083618863455_85.png"
+  },
+  {
+    "name": "Armenia 2",
+    "url": "https://amtv.tulixcdn.com/amtv3/am3abr/index.m3u8",
+    "id": "409525",
+    "epgId": "409525",
+    "icon": "https://epg.pw/media/images/epg/2025/01/21/20250121021514804700_63.png"
+  },
+  {
+    "name": "Becker",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/630348a54c48ce00077eb6c7/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1ca065-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=c5b43dd2-234d-4338-9a94-c40967ccbed6",
+    "id": "105836",
+    "epgId": "105836",
+    "icon": "https://epg.pw/media/images/epg/2024/06/09/20240609084150315906_82.png"
+  },
+  {
+    "name": "BET Gospel",
+    "url": "https://fl3.moveonjoy.com/BET_GOSPEL/index.m3u8",
+    "id": "405730",
+    "epgId": "405730",
+    "icon": ""
+  },
+  {
+    "name": "BET Soul",
+    "url": "https://fl3.moveonjoy.com/BET_SOUL/index.m3u8",
+    "id": "405733",
+    "epgId": "405733",
+    "icon": ""
+  },
+  {
+    "name": "Big Ten Network",
+    "url": "https://fl3.moveonjoy.com/BIG_TEN_NETWORK/index.m3u8",
+    "id": "404738",
+    "epgId": "404738",
+    "icon": ""
+  },
+  {
+    "name": "C-SPAN",
+    "url": "https://fl3.moveonjoy.com/C-SPAN/index.m3u8",
+    "id": "403594",
+    "epgId": "403594",
+    "icon": ""
+  },
+  {
+    "name": "CBS Sports Network USA",
+    "url": "https://fl3.moveonjoy.com/CBS_SPORTS_NETWORK/index.m3u8",
+    "id": "403807",
+    "epgId": "403807",
+    "icon": ""
+  },
+  {
+    "name": "Classica",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/64240c3f9189ce00087dd17e/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c799157-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b0939c7d-0d09-49b1-a6ca-f5d30195d075",
+    "id": "76723",
+    "epgId": "76723",
+    "icon": ""
+  },
+  {
+    "name": "Golf Channel",
+    "url": "https://fl3.moveonjoy.com/GOLF_CHANNEL/index.m3u8",
+    "id": "399489",
+    "epgId": "399489",
+    "icon": ""
+  },
+  {
+    "name": "Haunt TV",
+    "url": "https://blueantmediacanada-haunttv-samsungca.amagi.tv/playlist.m3u8",
+    "id": "105793",
+    "epgId": "105793",
+    "icon": "https://epg.pw/media/images/epg/2024/06/09/20240609083708223018_15.png"
+  },
+  {
+    "name": "History",
+    "url": "http://23.237.104.106:8080/USA_HISTORY/index.m3u8",
+    "id": "410304",
+    "epgId": "410304",
+    "icon": "https://epg.pw/media/images/epg/2025/01/28/20250128162729505950_39"
+  },
+  {
+    "name": "INSP",
+    "url": "https://fl3.moveonjoy.com/INSP/index.m3u8",
+    "id": "403618",
+    "epgId": "403618",
+    "icon": ""
+  },
+  {
+    "name": "MLB Network",
+    "url": "https://fl3.moveonjoy.com/MLB_NETWORK/index.m3u8",
+    "id": "403836",
+    "epgId": "403836",
+    "icon": ""
+  },
+  {
+    "name": "MTV Live",
+    "url": "https://fl3.moveonjoy.com/MTV_LIVE/index.m3u8",
+    "id": "399517",
+    "epgId": "399517",
+    "icon": ""
+  },
+  {
+    "name": "MyTime Movie Network",
+    "url": "https://mytime-tcl.amagi.tv/playlist.m3u8",
+    "id": "421458",
+    "epgId": "421458",
+    "icon": "https://epg.pw/media/images/epg/2025/04/04/20250404040514456458_52.png"
+  },
+  {
+    "name": "National Geographic",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-nationalgeographic/index.m3u8",
+    "id": "6303",
+    "epgId": "6303",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608023610983794_53.png"
+  },
+  {
+    "name": "NFL Network",
+    "url": "https://fl3.moveonjoy.com/NFL_NETWORK/index.m3u8",
+    "id": "404687",
+    "epgId": "404687",
+    "icon": ""
+  },
+  {
+    "name": "NFL RedZone",
+    "url": "https://fl1.moveonjoy.com/NFL_RedZone/index.m3u8",
+    "id": "405192",
+    "epgId": "405192",
+    "icon": ""
+  },
+  {
+    "name": "Nickelodeon",
+    "url": "http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8",
+    "id": "368336",
+    "epgId": "368336",
+    "icon": ""
+  },
+  {
+    "name": "NickToons",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/654ca7f92c1d3300086b608c/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7b6610-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=359ee837-a829-4fe0-9d99-8dc36018ced2",
+    "id": "76736",
+    "epgId": "76736",
+    "icon": ""
+  },
+  {
+    "name": "Outdoor Channel",
+    "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00718-outdoorchannela-outdoortvnz-samsungnz/playlist.m3u8",
+    "id": "171940",
+    "epgId": "171940",
+    "icon": ""
+  },
+  {
+    "name": "QVC",
+    "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/master.m3u8",
+    "id": "76697",
+    "epgId": "76697",
+    "icon": ""
+  },
+  {
+    "name": "RFD-TV",
+    "url": "https://rfdtv-jw.cdn.vustreams.com/live/7cba1a3b-318a-4097-8492-374478370b91/live.isml/7cba1a3b-318a-4097-8492-374478370b91.m3u8",
+    "id": "403500",
+    "epgId": "403500",
+    "icon": ""
+  },
+  {
+    "name": "Salaam TV",
+    "url": "http://dvrfl05.bozztv.com/gin-salamtv/index.m3u8",
+    "id": "411648",
+    "epgId": "411648",
+    "icon": ""
+  },
+  {
+    "name": "Sportsman Channel",
+    "url": "https://fl3.moveonjoy.com/SPORTSMAN_CHANNEL/index.m3u8",
+    "id": "403703",
+    "epgId": "403703",
+    "icon": ""
+  },
+  {
+    "name": "TBN Armenia",
+    "url": "https://164475.gvideo.io/mpegts/164475_650646/master_mpegts.m3u8",
+    "id": "432072",
+    "epgId": "432072",
+    "icon": "https://epg.pw/media/images/epg/2025/05/20/20250520022046919554_17.png"
+  },
+  {
+    "name": "TUDN",
+    "url": "https://dai.google.com/linear/hls/event/LKaz-eTgQvawHshATl-Qdw/master.m3u8",
+    "id": "403707",
+    "epgId": "403707",
+    "icon": ""
+  },
+  {
+    "name": "TV One",
+    "url": "https://fl3.moveonjoy.com/TV_ONE/index.m3u8",
+    "id": "411948",
+    "epgId": "411948",
+    "icon": ""
+  },
+  {
+    "name": "Yes Network",
+    "url": "https://fl3.moveonjoy.com/YES_NETWORK/index.m3u8",
+    "id": "403670",
+    "epgId": "403670",
+    "icon": ""
+  },
+  {
+    "name": "Arise News",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-arise/index.m3u8",
+    "id": "422317",
+    "epgId": "422317",
+    "icon": "https://epg.pw/media/images/epg/2025/04/06/20250406040420826705_21.png"
+  },
+  {
+    "name": "BBC Two",
+    "url": "https://x.canlitvapp.com/u-bbc2/index.m3u8",
+    "id": "76757",
+    "epgId": "76757",
+    "icon": ""
+  },
+  {
+    "name": "CBeebies",
+    "url": "https://x.canlitvapp.com/u-cbeebies/index.m3u8",
+    "id": "369255",
+    "epgId": "369255",
+    "icon": "https://epg.pw/media/images/epg/2024/06/11/20240611155505628530_31.jpg"
+  },
+  {
+    "name": "Channel 5",
+    "url": "https://x.canlitvapp.com/u-channel-5/index.m3u8",
+    "id": "12568",
+    "epgId": "12568",
+    "icon": ""
+  },
+  {
+    "name": "E4",
+    "url": "https://x.canlitvapp.com/u-e4/index.m3u8",
+    "id": "12544",
+    "epgId": "12544",
+    "icon": ""
+  },
+  {
+    "name": "GB News",
+    "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-gbnewsnz-samsungnz/playlist.m3u8",
+    "id": "421902",
+    "epgId": "421902",
+    "icon": ""
+  },
+  {
+    "name": "Ghost Hunters",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65cf8ace332fec00081e7ea2/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7a54a3-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=733471ce-0ac1-447e-9326-012361ee2487",
+    "id": "255208",
+    "epgId": "255208",
+    "icon": "https://epg.pw/media/images/epg/2024/06/09/20240609083624230028_95.png"
+  },
+  {
+    "name": "Iqra TV",
+    "url": "https://cdn149.anystream.uk:8082/app/iq53la/playlist.m3u8",
+    "id": "12117",
+    "epgId": "12117",
+    "icon": ""
+  },
+  {
+    "name": "MTV Live",
+    "url": "http://190.102.246.93:9005/play/a01p",
+    "id": "399517",
+    "epgId": "399517",
+    "icon": ""
+  },
+  {
+    "name": "MTV Music",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6245d15062cd1f00070a2338/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1ec342-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a56dace8-66e4-4b9a-a55f-d5348160dae2",
+    "id": "12433",
+    "epgId": "12433",
+    "icon": ""
+  },
+  {
+    "name": "Now 70's",
+    "url": "https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8",
+    "id": "392171",
+    "epgId": "392171",
+    "icon": "https://epg.pw/media/images/epg/2024/09/30/20240930022432804367_25.png"
+  },
+  {
+    "name": "Now 80's",
+    "url": "https://lightning-now80s-samsungnz.amagi.tv/playlist.m3u8",
+    "id": "392167",
+    "epgId": "392167",
+    "icon": "https://epg.pw/media/images/epg/2024/09/30/20240930022105449352_20.png"
+  },
+  {
+    "name": "NOW Rock",
+    "url": "https://lightning-now90s-samsungnz.amagi.tv/playlist.m3u8",
+    "id": "430258",
+    "epgId": "430258",
+    "icon": ""
+  },
+  {
+    "name": "6ter",
+    "url": "https://origin-caf900c010ea8046.live.6cloud.fr/out/v1/29c7a579af3348b48230f76cd75699a5/dash_short_cenc10_6ter_hd_index.mpd",
+    "id": "54986",
+    "epgId": "54986",
+    "icon": ""
+  },
+  {
+    "name": "Action",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-actionhd/index.m3u8",
+    "id": "427718",
+    "epgId": "427718",
+    "icon": ""
+  },
+  {
+    "name": "Euronews",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60d35bcaf1ff4a00078af0a6/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e0614c6-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=90bc590c-c00a-4ff4-b9e2-ad20ea686992",
+    "id": "76768",
+    "epgId": "76768",
+    "icon": ""
+  },
+  {
+    "name": "Gulli",
+    "url": "https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8",
+    "id": "55873",
+    "epgId": "55873",
+    "icon": ""
+  },
+  {
+    "name": "MCM",
+    "url": "http://213.246.39.14:8070/MCM/index.m3u8",
+    "id": "55950",
+    "epgId": "55950",
+    "icon": ""
+  },
+  {
+    "name": "National Geographic",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-natgeofr/index.m3u8",
+    "id": "6303",
+    "epgId": "6303",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608023610983794_53.png"
+  },
+  {
+    "name": "RMC Sport 1",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-sfrsp1hd/index.m3u8",
+    "id": "54815",
+    "epgId": "54815",
+    "icon": ""
+  },
+  {
+    "name": "RMC Sport 2",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-rmcaccesssport2/index.m3u8",
+    "id": "55963",
+    "epgId": "55963",
+    "icon": ""
+  },
+  {
+    "name": "South Park",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/618e34ac4a270700077b1f32/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e0662e4-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=0d7bbd81-5b0c-45a3-b97c-c2ac8161fb85",
+    "id": "105810",
+    "epgId": "105810",
+    "icon": "https://epg.pw/media/images/epg/2024/06/09/20240609083910771896_66.png"
+  },
+  {
+    "name": "Trace Africa",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-traceafrica/index.m3u8",
+    "id": "437317",
+    "epgId": "437317",
+    "icon": ""
+  },
+  {
+    "name": "W9",
+    "url": "https://live20.bozztv.com/dvrfl06/astv/astv-w9tv/index.m3u8",
+    "id": "55815",
+    "epgId": "55815",
+    "icon": ""
+  },
+  {
+    "name": "Clubbing TV",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5f984784ccb4de0007dfad74/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84accbc2-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=642657d8-c59c-47a9-9046-f8d333c10389",
+    "id": "5771",
+    "epgId": "5771",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608020558325396_47.png"
+  },
+  {
+    "name": "Goldstar TV",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6192396135f3910007fc5fc7/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ad6806-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=9ec1275e-0641-49e2-81e6-6d37a37b7bd3",
+    "id": "76803",
+    "epgId": "76803",
+    "icon": ""
+  },
+  {
+    "name": "Marco Polo TV",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65004cf398020f00084ca8bc/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1e4e14-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=86370235-72a6-4e96-963e-db24b49333fb",
+    "id": "76776",
+    "epgId": "76776",
+    "icon": ""
+  },
+  {
+    "name": "MTV Ridiculousness",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5f9847fd513250000728a9a5/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ae0447-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=12cb5d0b-2c4f-4b1b-8610-d3689603c938",
+    "id": "219944",
+    "epgId": "219944",
+    "icon": "https://epg.pw/media/images/epg/2024/06/09/20240609083808904650_36.png"
+  },
+  {
+    "name": "N24 Doku",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60080e8a4bf36000076a81b1/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ae2b55-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=39199e43-689e-4f83-9f74-b89605373bf0",
+    "id": "76636",
+    "epgId": "76636",
+    "icon": ""
+  },
+  {
+    "name": "WELT",
+    "url": "https://s6.hopslan.com/n24X/index.m3u8",
+    "id": "76795",
+    "epgId": "76795",
+    "icon": ""
+  },
+  {
+    "name": "MCM",
+    "url": "http://213.246.39.14:8070/MCM/index.m3u8",
+    "id": "55950",
+    "epgId": "55950",
+    "icon": ""
+  },
+  {
+    "name": "DD Arun Prabha",
+    "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/308556d9fd1246adb479ef012a39bbfe/index_3.m3u8",
+    "id": "411635",
+    "epgId": "411635",
+    "icon": ""
+  },
+  {
+    "name": "DD Bangla",
+    "url": "https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/2e9e32a4-c4f7-49c3-96d6-c4e3660c7e3f/2.m3u8",
+    "id": "411821",
+    "epgId": "411821",
+    "icon": ""
+  },
+  {
+    "name": "DD Chandana",
+    "url": "https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/3829f99b-4951-4a9d-98c1-dbc3acfe5193/2.m3u8",
+    "id": "411628",
+    "epgId": "411628",
+    "icon": ""
+  },
+  {
+    "name": "DD Girnar",
+    "url": "https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/4a7a0c8a-c58d-43d6-baff-13492d67bf3e/2.m3u8",
+    "id": "411799",
+    "epgId": "411799",
+    "icon": ""
+  },
+  {
+    "name": "DD Malayalam",
+    "url": "https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/562ee8f9-9950-48a0-ba1d-effa00cf0478/2.m3u8",
+    "id": "411608",
+    "epgId": "411608",
+    "icon": ""
+  },
+  {
+    "name": "DD Odia",
+    "url": "https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/245d9a9e-4820-43b1-af33-4a3017d09f52/2.m3u8",
+    "id": "411589",
+    "epgId": "411589",
+    "icon": ""
+  },
+  {
+    "name": "DD Punjabi",
+    "url": "https://d3eyhgoylams0m.cloudfront.net/v1/manifest/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/20c8ad14-a158-4a42-8889-e032d070856e/2.m3u8",
+    "id": "411824",
+    "epgId": "411824",
+    "icon": ""
+  },
+  {
+    "name": "DD Sahyadri",
+    "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/66dcc3ebe182447ba42837e746cf0c7c/index.m3u8",
+    "id": "411835",
+    "epgId": "411835",
+    "icon": ""
+  },
+  {
+    "name": "DD Saptagiri",
+    "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/26e915d6d12b4a06822c5e33c088ed56/index.m3u8",
+    "id": "411784",
+    "epgId": "411784",
+    "icon": ""
+  },
+  {
+    "name": "MTV HD",
+    "url": "http://144.217.70.181:9587/hin2/MTVINDIA/index.m3u8",
+    "id": "365984",
+    "epgId": "365984",
+    "icon": ""
+  },
+  {
+    "name": "Nick HD+",
+    "url": "http://103.68.28.58:5001/live/1226.m3u8",
+    "id": "411712",
+    "epgId": "411712",
+    "icon": ""
+  },
+  {
+    "name": "Raj News Malayalam",
+    "url": "https://rajnewsmalayalam.ylivestream.com/rajnewsmalayalam/index.m3u8",
+    "id": "411626",
+    "epgId": "411626",
+    "icon": ""
+  },
+  {
+    "name": "ShowBox",
+    "url": "https://epiconvh.akamaized.net/live/showbox/master.m3u8",
+    "id": "411599",
+    "epgId": "411599",
+    "icon": ""
+  },
+  {
+    "name": "Star Sports 1 Tamil HD",
+    "url": "https://live20.bozztv.com/akamaissh101/ssh101/vboxsungosttamil/playlist.m3u8",
+    "id": "411839",
+    "epgId": "411839",
+    "icon": ""
+  },
+  {
+    "name": "2x2",
+    "url": "https://livetv.mylifeisgood.net.ru/channels/2x2.m3u8",
+    "id": "7103",
+    "epgId": "7103",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608021654488503_34.png"
+  },
+  {
+    "name": "360\u00b0 \u041d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "url": "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8",
+    "id": "5837",
+    "epgId": "5837",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608020945677582_27.png"
+  },
+  {
+    "name": ".black",
+    "url": "http://s1.merlive.am/black/index.m3u8",
+    "id": "7745",
+    "epgId": "7745",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608035733754241_47.png"
+  },
+  {
+    "name": ".sci-fi",
+    "url": "http://178.124.179.122:8088/Sci-Fi/index.m3u8",
+    "id": "7271",
+    "epgId": "7271",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033058833902_42.png"
+  },
+  {
+    "name": "Ani",
+    "url": "http://stv.mediacdn.ru/live/cdn/ani/playlist.m3u8",
+    "id": "6493",
+    "epgId": "6493",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608024650464655_68.png"
+  },
+  {
+    "name": "Big Planet",
+    "url": "http://178.217.72.66:8080/big_planet/index.m3u8",
+    "id": "6148",
+    "epgId": "6148",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608022802190360_53.png"
+  },
+  {
+    "name": "Bolt",
+    "url": "http://95.142.88.250:80/Bolt/index.m3u8",
+    "id": "6182",
+    "epgId": "6182",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608022944202696_75.png"
+  },
+  {
+    "name": "Channel 5",
+    "url": "http://178.217.72.66:8080/5_Kanal/index.m3u8",
+    "id": "12568",
+    "epgId": "12568",
+    "icon": ""
+  },
+  {
+    "name": "Cinema",
+    "url": "http://catchup.videoline.ru/cinema/tracks-v1a1/mono.m3u8",
+    "id": "7629",
+    "epgId": "7629",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608035107185912_90.png"
+  },
+  {
+    "name": "Da Vinci",
+    "url": "http://178.217.72.66:8080/Da_Vinchi/index.m3u8",
+    "id": "410364",
+    "epgId": "410364",
+    "icon": "https://epg.pw/media/images/epg/2025/01/29/20250129123733271651_29"
+  },
+  {
+    "name": "FoodTime",
+    "url": "http://31.148.48.15/Eda_Premium_HD/index.m3u8",
+    "id": "5917",
+    "epgId": "5917",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608021412179708_83.png"
+  },
+  {
+    "name": "Football",
+    "url": "http://31.148.48.15/Futbol_HD/index.m3u8",
+    "id": "427711",
+    "epgId": "427711",
+    "icon": ""
+  },
+  {
+    "name": "Kino 24",
+    "url": "http://sirius.greenhosting.ru/Kino24Ru/video.m3u8",
+    "id": "6979",
+    "epgId": "6979",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608031423337000_91.png"
+  },
+  {
+    "name": "Nickelodeon",
+    "url": "http://31.148.48.15/Nickelodeon/index.m3u8",
+    "id": "368336",
+    "epgId": "368336",
+    "icon": ""
+  },
+  {
+    "name": "RTG TV",
+    "url": "http://194.143.148.28:8080/RTG_HD/index.m3u8",
+    "id": "5981",
+    "epgId": "5981",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608032938365369_13.png"
+  },
+  {
+    "name": "START Air",
+    "url": "https://livetv.mylifeisgood.net.ru/channels/strwc.m3u8",
+    "id": "7349",
+    "epgId": "7349",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033531501609_54.png"
+  },
+  {
+    "name": "START World",
+    "url": "https://livetv.mylifeisgood.net.ru/channels/strvf.m3u8",
+    "id": "6446",
+    "epgId": "6446",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608024407729958_76.png"
+  },
+  {
+    "name": "TERRA",
+    "url": "https://livetv.mylifeisgood.net.ru/channels/terra.m3u8",
+    "id": "7840",
+    "epgId": "7840",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608040313586049_43.png"
+  },
+  {
+    "name": "\u0411\u043e\u043b\u044c\u0448\u0430\u044f \u0410\u0437\u0438\u044f",
+    "url": "http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8",
+    "id": "7087",
+    "epgId": "7087",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608032013435329_56.png"
+  },
+  {
+    "name": "\u0412\u043e\u043b\u0433\u043e\u0433\u0440\u0430\u0434 24",
+    "url": "https://vgtrkregion-reg.cdnvideo.ru/vgtrk/volgograd/russia1-hd/index.m3u8",
+    "id": "7418",
+    "epgId": "7418",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033939054206_49.png"
+  },
+  {
+    "name": "\u0412\u0440\u0435\u043c\u044f",
+    "url": "http://31.148.48.15/Vremya/index.m3u8",
+    "id": "6916",
+    "epgId": "6916",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608032640449930_22.png"
+  },
+  {
+    "name": "\u0414\u043e\u043c \u041a\u0438\u043d\u043e",
+    "url": "#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/",
+    "id": "7383",
+    "epgId": "7383",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033721052951_82.png"
+  },
+  {
+    "name": "\u0414\u043e\u043d 24",
+    "url": "https://donmedia.bonus-tv.ru/cdn/donmedia/playlist.m3u8",
+    "id": "5948",
+    "epgId": "5948",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608021605080425_62.png"
+  },
+  {
+    "name": "\u0417\u0432\u0435\u0437\u0434\u0430 \u041f\u043b\u044e\u0441",
+    "url": "http://tvchannelstream1.tvzvezda.ru/cdn/zvezdaplus/playlist.m3u8",
+    "id": "7184",
+    "epgId": "7184",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608032550218147_30.png"
+  },
+  {
+    "name": "\u0418\u0437\u0432\u0435\u0441\u0442\u0438\u044f",
+    "url": "http://igi-hls.cdnvideo.ru/igi/igi_tcode/playlist.m3u8",
+    "id": "6766",
+    "epgId": "6766",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608030157228849_53.png"
+  },
+  {
+    "name": "\u041a\u0430\u043b\u0435\u0439\u0434\u043e\u0441\u043a\u043e\u043f \u0422\u0412",
+    "url": "https://cdn-01.bonus-tv.ru/Kaleidoskop_edge/playlist.m3u8",
+    "id": "6271",
+    "epgId": "6271",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608023433230572_53.png"
+  },
+  {
+    "name": "\u041a\u0430\u0440\u0443\u0441\u0435\u043b\u044c",
+    "url": "#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/",
+    "id": "7570",
+    "epgId": "7570",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608034759865299_85.png"
+  },
+  {
+    "name": "\u041a\u0438\u043d\u043e\u043f\u043e\u043a\u0430\u0437",
+    "url": "http://31.148.48.15/Kinopokaz/index.m3u8",
+    "id": "7350",
+    "epgId": "7350",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033534469266_18.png"
+  },
+  {
+    "name": "\u041a\u0440\u0430\u0441\u043d\u0430\u044f \u043b\u0438\u043d\u0438\u044f",
+    "url": "http://s55766.cdn.ngenix.net/s55766-media-origin/rline_high/index.m3u8",
+    "id": "6228",
+    "epgId": "6228",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608023213708205_48.png"
+  },
+  {
+    "name": "\u041b\u0435\u0433\u0435\u043d\u0434\u0430\u0440\u043d\u044b\u0439 24",
+    "url": "https://sevas.1tvcrimea.ru/legendarniy24.m3u8",
+    "id": "412659",
+    "epgId": "412659",
+    "icon": "https://epg.pw/media/images/epg/2025/02/14/20250214022732599228_96.png"
+  },
+  {
+    "name": "\u041c\u0443\u0437\u044b\u043a\u0430 \u041f\u0435\u0440\u0432\u043e\u0433\u043e",
+    "url": "http://31.148.48.15/Muzika_Pervogo/index.m3u8",
+    "id": "5852",
+    "epgId": "5852",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608021036418880_76.png"
+  },
+  {
+    "name": "\u041d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u0430\u044f \u0420\u043e\u0441\u0441\u0438\u044f",
+    "url": "https://cdn.ntv.ru/unknown_russia/playlist.m3u8",
+    "id": "314776",
+    "epgId": "314776",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608035930945015_29.png"
+  },
+  {
+    "name": "\u041d\u0422\u0412 \u041f\u0440\u0430\u0432\u043e",
+    "url": "https://cdn.ntv.ru/th_pravo/playlist.m3u8",
+    "id": "7389",
+    "epgId": "7389",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033752035399_81.png"
+  },
+  {
+    "name": "\u041d\u0422\u0412 \u0421\u0435\u0440\u0438\u0430\u043b",
+    "url": "https://cdn.ntv.ru/th_serial/playlist.m3u8",
+    "id": "7315",
+    "epgId": "7315",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033327666397_10.png"
+  },
+  {
+    "name": "\u041d\u0422\u0412 \u0421\u0442\u0438\u043b\u044c",
+    "url": "https://cdn.ntv.ru/th_hit/playlist.m3u8",
+    "id": "6362",
+    "epgId": "6362",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608033502959171_93.png"
+  },
+  {
+    "name": "\u041f\u043e\u0435\u0445\u0430\u043b\u0438!",
+    "url": "http://31.148.48.15/Poehali/index.m3u8",
+    "id": "7666",
+    "epgId": "7666",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608035313126378_47.png"
+  },
+  {
+    "name": "\u041f\u0440\u043e\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435",
+    "url": "https://prodvizhenie.bonus-tv.ru/cdn/prodvizhenie/playlist.m3u8",
+    "id": "6370",
+    "epgId": "6370",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608023954261022_10.png"
+  },
+  {
+    "name": "\u0420\u0430\u0434\u043e\u0441\u0442\u044c \u043c\u043e\u044f",
+    "url": "https://radm.mediacdn.ru/cdn/radost/playlist.m3u8",
+    "id": "6095",
+    "epgId": "6095",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608024818573394_79.png"
+  },
+  {
+    "name": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439 \u0411\u0435\u0441\u0442\u0441\u0435\u043b\u043b\u0435\u0440",
+    "url": "http://31.148.48.15/Russkiy_Bestseller/index.m3u8",
+    "id": "6217",
+    "epgId": "6217",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608023141117033_41.png"
+  },
+  {
+    "name": "\u0421\u0422\u0410\u0420\u0422 \u0422\u0440\u0438\u0443\u043c\u0444",
+    "url": "https://bl.webcaster.pro/media/playlist/free_fe8dc1b768a84b8b0333db826471f17e_hd/33_85479982/1080p/8666c3e935faf6ef47ffd601e8e48868/4821408969.m3u8",
+    "id": "366052",
+    "epgId": "366052",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608025450341809_80.png"
+  },
+  {
+    "name": "\u0422\u044e\u043c\u0435\u043d\u0441\u043a\u043e\u0435 \u0432\u0440\u0435\u043c\u044f",
+    "url": "https://hls-sibinformburo.cdnvideo.ru/sibinformburo-srt/sibinformburo/playlist.m3u8",
+    "id": "5824",
+    "epgId": "5824",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608020907851254_36.png"
+  },
+  {
+    "name": "\u042e",
+    "url": "https://cdn-01.bonus-tv.ru/u/playlist.m3u8",
+    "id": "6947",
+    "epgId": "6947",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608031228360334_34.png"
+  },
+  {
+    "name": "\u042e\u0433\u0440\u0430",
+    "url": "https://live-ugratv.cdnvideo.ru/ugratv/ugratv/playlist.m3u8",
+    "id": "6419",
+    "epgId": "6419",
+    "icon": "https://epg.pw/media/images/epg/2024/06/08/20240608024226579948_95.png"
+  },
+  {
+    "name": "Bandamax",
+    "url": "https://linear-400.frequency.stream/mt/studio/400/hls/master/playlist.m3u8",
+    "id": "403686",
+    "epgId": "403686",
+    "icon": ""
+  },
+  {
+    "name": "Sony Channel",
+    "url": "https://fl3.moveonjoy.com/Sony_Movie_Channel/index.m3u8",
+    "id": "10653",
+    "epgId": "10653",
+    "icon": ""
+  },
+  {
+    "name": "Africanews",
+    "url": "https://rakuten-africanews-1-pt.samsung.wurl.tv/manifest/playlist.m3u8",
+    "id": "427819",
+    "epgId": "427819",
+    "icon": ""
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "name": "Ayeneh TV",
+    "url": "https://2nbyjjx7y53k-hls-live.5centscdn.com/cls040318/b0d2763968fd0bdd2dc0d44ba2abf9ce.sdp/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Burbank Channel (720p)",
+    "url": "https://cdn3.wowza.com/5/djRwZmQvTEJidmZD/burbank/G0240_009/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Calabasas Channel (480p)",
+    "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/calabasas/G0009_003/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "CGTN Documentary",
+    "url": "https://mn-nl.mncdn.com/dogusdyg_drone/cgtn/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Channel 82",
+    "url": "https://service.webvideocore.net/CL1olYogIrDWvwqiIKK7eBmnWbRkKKsu3nqabm9GlX02JOj3CDNXzodJMDEN2dk3/a_bq9clxfbupwg.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Charlotte County CC-TV (Charlotte County FA) (720p)",
+    "url": "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/charlotte/G0055_009/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Coral Gables Television (Coral Gables FL) (720p)",
+    "url": "https://cdn3.wowza.com/5/R09KQXpaMWlrRjly/coralgables/G0937_004/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Denver 8 TV (Denver CO) (720p)",
+    "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/denver/G0080_002/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "DLTV 8 (1080p)",
+    "url": "https://cdn-live.dltv.ac.th/dltv08.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "DLTV 4 (1080p)",
+    "url": "https://cdn-live.dltv.ac.th/dltv04.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "FB TV",
+    "url": "http://1hskrdto.rocketcdn.com/fenerbahcetv.smil/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "GB News",
+    "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-gbnewsnz-samsungnz/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Hillsborough County TV HTV (Hillsborough County FL) (360p)",
+    "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/hillsboroughcounty/G2155_002/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Indywood TV (720p)",
+    "url": "https://43wrzjnpqoxe-hls-live.wmncdn.net/indywood/indywoodtv/index.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Isaac TV (720p)",
+    "url": "https://livecdn.live247stream.com/isaac/tv/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "JooMusic (720p)",
+    "url": "https://livecdn.live247stream.com/joomusic/tv/playlist.m3u8",
+    "language": "English",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Lacrosse TV (720p)",
+    "url": "https://1840769862.rsc.cdn77.org/FTF/LSN_SCTE.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "MBC (1080p)",
+    "url": "https://cdn8.fntvchannel.com/v1/master/02eeb1726c343dc9c30c32e93dee82013e157021/FNTV-CHANNEL_CDN77/index.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Napa Valley TV Public Access Channel 28 (480p)",
+    "url": "https://cdn3.wowza.com/5/WDIrTW5sM1JEY1NN/napatv/G0360_004/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Noursat English (576p)",
+    "url": "https://svs.itworkscdn.net/noursatenglive/noursateng.smil/playlist.m3u8",
+    "language": "English",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "OAN (720p)",
+    "url": "https://a-cdn.klowdtv.com/live1/oan_720p/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Olelo Community Media Channel 49 (720p)",
+    "url": "https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/olelo/G0125_009/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Outdoor Channel",
+    "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00718-outdoorchannela-outdoortvnz-samsungnz/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Pinole Community Television (PCTV) Channel 26 (Pinole CA) (480p)",
+    "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/pinole/G0032_004/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Pinole Community Television (PCTV) Channel 28 (Pinole CA) (480p)",
+    "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/pinole/G0032_002/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Praise TV (720p)",
+    "url": "https://livecdn.live247stream.com/praise/tv/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "RFD-TV",
+    "url": "https://rfdtv-jw.cdn.vustreams.com/live/7cba1a3b-318a-4097-8492-374478370b91/live.isml/7cba1a3b-318a-4097-8492-374478370b91.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "RightNow TV (720p)",
+    "url": "https://a-cdn.klowdtv.com/live2/rightnowtv_720p/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "TJC (1080p)",
+    "url": "https://cdn-shop-lc-01.akamaized.net/Content/HLS_HLS/Live/channel(TJCOTT)/index.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Tracy Education and Governmental Access Channel (Tracy CA) (720p)",
+    "url": "https://cdn3.wowza.com/5/dk84U1p2UUdoMGxT/tracy-ca/G0950_002/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "TV4 (360p)",
+    "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/bullheadcity/G0860_002/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Vacaville Channel 26 (Vacaville CA) (720p)",
+    "url": "https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/vacaville/G0228_002/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Boreal (720p)",
+    "url": "https://cdn.borealtelevision.com:3712/live/borealtelevisionhdlive.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Calabasas Channel (480p)",
+    "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/calabasas/G0009_003/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Canal 21",
+    "url": "https://tls-cl.cdnz.cl/canal21tv/live/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "El-Roi TV (720p)",
+    "url": "https://cdn.streamhispanatv.net:3648/live/elroitvlive.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Haina Vision (720p)",
+    "url": "https://cdn.streamingcpanel.com:3447/live/hainavisionlive.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "María+Visión Medjugorje (720p)",
+    "url": "https://1601580044.rsc.cdn77.org/live/_jcn_/amlst:Italiasette/playlist.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Noticias 16",
+    "url": "https://cdn.essastream.com:3457/live/noticiasn16live.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Sol TV (720p)",
+    "url": "https://cdn.streamhispanatv.net:3409/live/soltvlive.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "Televisión Consciente (1080p)",
+    "url": "https://cdn318.fractalmedia.es/318/live/hls/tvc/master.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  },
+  {
+    "name": "TV Perú Noticias",
+    "url": "https://cdnhd.iblups.com/hls/902c1a0395264f269f1160efa00660e4.m3u8",
+    "language": "Unknown",
+    "category": "live",
+    "recordable": true,
+    "epg_id": null
+  }
+]

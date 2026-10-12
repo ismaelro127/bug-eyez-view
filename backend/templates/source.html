@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EPG Admin: {{ domain }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    .panel {
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="p-4">
+  <div class="container-fluid">
+    <h1>🔗 EPG Admin — {{ domain }}</h1>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mb-3">← Back to Sources</a>
+
+    <div class="row">
+      <!-- LEFT: Channels -->
+      <div class="col-md-4 panel">
+        <h4>Channels ({{ streams|length }})</h4>
+        <ul class="list-group">
+        {% for s in streams %}
+          <li class="list-group-item">
+            <a href="{{ url_for('source', domain=domain, stream=s.name) }}">{{ s.name }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      <!-- MIDDLE: Selected player -->
+      <div class="col-md-4 panel">
+        {% if selected_stream %}
+          <h4>{{ selected_stream.name }}</h4>
+          <p><code>{{ selected_stream.url }}</code></p>
+          <video id="player" width="100%" controls autoplay muted></video>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              const video = document.getElementById("player");
+              const src = "{{ selected_stream.url }}";
+              if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(src);
+                hls.attachMedia(video);
+              } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+                video.src = src;
+              }
+            });
+          </script>
+          <p>Current EPG ID: <b>{{ mappings.get(selected_stream.name, "None") }}</b></p>
+          <form method="post" action="/link" class="d-inline">
+            <input type="hidden" name="stream_name" value="{{ selected_stream.name }}">
+            <input type="text" name="epg_id" placeholder="Enter EPG ID" class="form-control mb-2">
+            <input type="hidden" name="domain" value="{{ domain }}">
+            <button class="btn btn-sm btn-success">Link EPG</button>
+          </form>
+          {% if mappings.get(selected_stream.name) %}
+          <form method="post" action="/unlink" class="mt-2">
+            <input type="hidden" name="stream_name" value="{{ selected_stream.name }}">
+            <input type="hidden" name="domain" value="{{ domain }}">
+            <button class="btn btn-sm btn-danger">Unlink</button>
+          </form>
+          {% endif %}
+        {% else %}
+          <p>Select a channel to view & link EPG.</p>
+        {% endif %}
+      </div>
+
+      <!-- RIGHT: EPG Filter + List -->
+      <div class="col-md-4 panel">
+        <form method="get" action="{{ url_for('source', domain=domain) }}" class="mb-3">
+          <input type="hidden" name="stream" value="{{ selected_stream.name if selected_stream else '' }}">
+          <input name="epg_q" value="{{ epg_query }}" placeholder="Filter EPG..." class="form-control">
+        </form>
+        <h4>EPG Channels ({{ epgs|length }})</h4>
+        {% for e in epgs %}
+        <div class="border rounded p-3 mb-3">
+          <b>ID:</b> {{ e.id }}<br>
+          <b>Names:</b> {{ e.names | join(", ") }}<br>
+          <b>Sample Programmes:</b>
+          <ul>
+            {% for title in programmes[e.id][:5] %}
+            <li>{{ title }}</li>
+            {% else %}
+            <li>No programmes.</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% else %}
+        <p>No EPG found.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+export const CREDIT_COSTS = {
+  SKIP_ADS_30_MIN: 10,
+  UNLOCK_CHANNEL: 25,
+};

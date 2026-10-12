@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+
+    "lib": ["ESNext", "DOM"],
+
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+
+    "esModuleInterop": true,
+
+    "module": "ESNext",
+    "moduleResolution": "Node",
+
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    "jsx": "preserve",
+    "incremental": true,
+
+    "baseUrl": ".",
+
+    "paths": {
+      "@/*": ["./*"]
+    },
+
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "types/**/*.d.ts"
+, "backend/routes/payments.js", "backend/config/creditPackages.js", "backend/services/creditService.js", "backend/services/mintCredits.js", "backend/routes/credits.js", "backend/routes/stripeWebhook.js", "backend/models/CoinLedger.js", "backend/models/CreditLedger.js", "backend/models/UserBalance.js", "backend/models/UserFeatures.js", "frontend/pages/admin/adminLedger.js", "backend/models/UnlockedChannel.js", "backend/config/lockedChannels.js", "backend/config/abuseThresholds.js", "backend/coins/getBalance.js", "backend/services/abuseDecay.js", "backend/services/abuseEscalation.js", "backend/services/abuseService.js", "backend/services/abuseStats.js", "backend/services/abuseTracker.js", "backend/services/adFraudSignals.js", "backend/services/adRewardGuard.js", "backend/services/buildTxHash.js", "backend/services/isAdShadowBanned.js", "backend/services/recordAdAbuse.js", "backend/services/spendCredits.js", "backend/services/verifyLedger.js", "backend/models/User.js", "backend/routes/admin/stability.js", "backend/lib/computeChannelStability.js", "backend/lib/supabase.js", "backend/routes/admin/insights.js", "backend/routes/admin/persistStability.js", "backend/services/persistChannelStability.js", "backend/services/adminChannelInsights.js", "backend/services/recordChannelPattern.js", "backend/routes/events.js", "frontend/shared/events.ts", "backend/utils/logger.js"  ],
+  "exclude": ["node_modules"]
+}

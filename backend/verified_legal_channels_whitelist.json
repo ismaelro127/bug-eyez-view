@@ -1,0 +1,107 @@
+[
+  {
+    "id": "fr24-en",
+    "name": "France 24 English",
+    "url": "https://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8",
+    "language": "English",
+    "category": "news"
+  },
+  {
+    "id": "dw-en",
+    "name": "DW News",
+    "url": "https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_1_av-p.m3u8",
+    "language": "English",
+    "category": "news"
+  },
+  {
+    "id": "nasa-uhd",
+    "name": "NASA TV UHD",
+    "url": "https://nasatv-uhd-apple-live.adaptive.level3.net/apple/uhd/master.m3u8",
+    "language": "English",
+    "category": "education"
+  },
+  {
+    "id": "classic-cartoons",
+    "name": "Classic Cartoons (Public Domain)",
+    "url": "https://cdn3.wowza.com/1/YmEyV3hOaXBCSFRS/classic_cartoons.stream/playlist.m3u8",
+    "language": "English",
+    "category": "entertainment"
+  },
+  {
+    "id": "weathernation",
+    "name": "WeatherNation",
+    "url": "https://stream.wtnow.tv/linear/wtn/playlist.m3u8",
+    "language": "English",
+    "category": "weather"
+  },
+  {
+    "id": "nhk-world",
+    "name": "NHK World",
+    "url": "https://nhkwlive-i.akamaihd.net/hls/live/523098/nhkwlive_1/index.m3u8",
+    "language": "English/Japanese",
+    "category": "news"
+  },
+  {
+    "id": "cheddar-news",
+    "name": "Cheddar News",
+    "url": "https://live.chdrstatic.com/cdn/cheddar_news.m3u8",
+    "language": "English",
+    "category": "news"
+  },
+  {
+    "id": "euronews-en",
+    "name": "Euronews English",
+    "url": "https://rakuten-euronews-1-eu.rakuten.wurl.tv/playlist.m3u8",
+    "language": "English",
+    "category": "news"
+  },
+  {
+    "id": "cgtn-en",
+    "name": "CGTN English",
+    "url": "https://news.cgtn.com/resource/live/english/cgtn-news.m3u8",
+    "language": "English",
+    "category": "news"
+  },
+  {
+    "id": "classic-movies",
+    "name": "Classic Movies (Retro Stream)",
+    "url": "https://pluto-safe.example.com/retro-movies.m3u8",
+    "language": "English",
+    "category": "entertainment"
+  },
+  {
+    "id": "loop-top40",
+    "name": "Loop TV - Top 40",
+    "url": "https://looptv-usa.streamabc.net/looptv_top40/playlist.m3u8",
+    "language": "English",
+    "category": "music"
+  },
+  {
+    "id": "daystar",
+    "name": "Daystar Christian TV",
+    "url": "https://daystar-lh.akamaihd.net/i/daystar_1@82909/master.m3u8",
+    "language": "English",
+    "category": "faith"
+  },
+  {
+    "id": "revn",
+    "name": "Rev’n",
+    "url": "https://revntv-sinclair-1-us.rakuten.wurl.tv/playlist.m3u8",
+    "language": "English",
+    "category": "lifestyle"
+  },
+  {
+    "id": "tbd",
+    "name": "TBD TV",
+    "url": "https://tbd-sinclair-1-us.rakuten.wurl.tv/playlist.m3u8",
+    "language": "English",
+    "category": "entertainment"
+  },
+  {
+    "id": "buzzr",
+    "name": "Buzzr (Classic Game Shows)",
+    "url": "https://buzzr-sinclair-1-us.rakuten.wurl.tv/playlist.m3u8",
+    "language": "English",
+    "category": "entertainment"
+  }
+]

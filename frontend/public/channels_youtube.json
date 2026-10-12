@@ -1,0 +1,17 @@
+[
+{
+  "id": "nasa_iss_live",
+  "name": "NASA – ISS Live",
+  "delivery": "youtube",
+  "youtubeId": "iYmvCUonukw",
+  "embed": {
+    "provider": "NASA",
+    "trusted": true,
+    "url": "https://www.youtube.com/embed/iYmvCUonukw"
+  },
+  "officialLinks": {
+    "website": "https://www.nasa.gov",
+    "youtube": "https://www.youtube.com/@NASA"
+  }
+}
+]

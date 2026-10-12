@@ -1,0 +1,7 @@
+{
+  "channel_id": "bugz_crime_time",
+  "display_name": "Bugz Crime Time",
+  "timezone": "America/Denver",
+  "schedule_source": "metadata/schedule_dayX.json",
+  "notes": "Replace X with 1-7 for each day. Uses Bugz Crime Time-specific blocks and movies_master.json runtimes."
+}

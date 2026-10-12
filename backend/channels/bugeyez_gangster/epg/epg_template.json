@@ -1,0 +1,7 @@
+{
+  "channel_id": "bugeyez_gangster",
+  "display_name": "Bug Eyez Crime & Mystery Classics",
+  "timezone": "America/Denver",
+  "schedule_source": "metadata/schedule_dayX.json",
+  "notes": "Replace X with 1-7 for each day of week. Use movies_master.json to resolve runtimes."
+}

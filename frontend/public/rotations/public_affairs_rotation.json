@@ -1,0 +1,66 @@
+[
+  {
+    "id": "house_live_proceedings",
+    "title": "U.S. House Live Proceedings",
+    "description": "Official live and archived proceedings from the U.S. House when the House is in session.",
+    "source": "Office of the Clerk, U.S. House of Representatives",
+    "video_url": "https://live.house.gov/",
+    "video_type": "external_link",
+    "duration_sec": 1800,
+    "category": "Government",
+    "topics": [
+      "Congress",
+      "House of Representatives",
+      "Public Affairs"
+    ],
+    "legal_status": "official_government_source"
+  },
+  {
+    "id": "senate_floor_webcast",
+    "title": "U.S. Senate Floor Webcast",
+    "description": "Official Senate floor webcast and floor activity information from Senate.gov.",
+    "source": "United States Senate",
+    "video_url": "https://www.senate.gov/legislative/floor_activity_pail.htm",
+    "video_type": "external_link",
+    "duration_sec": 1800,
+    "category": "Government",
+    "topics": [
+      "Congress",
+      "Senate",
+      "Public Affairs"
+    ],
+    "legal_status": "official_government_source"
+  },
+  {
+    "id": "congress_committee_video",
+    "title": "Congressional Committee Video",
+    "description": "Official congressional committee video directory for hearings and meetings.",
+    "source": "Congress.gov",
+    "video_url": "https://www.congress.gov/committees/video",
+    "video_type": "external_link",
+    "duration_sec": 1800,
+    "category": "Congressional Hearing",
+    "topics": [
+      "Hearings",
+      "Committees",
+      "Government"
+    ],
+    "legal_status": "official_government_source"
+  },
+  {
+    "id": "cspan_congressional_coverage",
+    "title": "C-SPAN Congressional Coverage",
+    "description": "Public affairs coverage focused on federal government events and congressional activity. Confirm item-level rights before repackaging individual videos.",
+    "source": "C-SPAN",
+    "video_url": "https://www.c-span.org/congress/",
+    "video_type": "external_link",
+    "duration_sec": 1800,
+    "category": "Public Affairs",
+    "topics": [
+      "Congress",
+      "Federal Government",
+      "Public Affairs"
+    ],
+    "legal_status": "cspan_federal_event_policy_review"
+  }
+]

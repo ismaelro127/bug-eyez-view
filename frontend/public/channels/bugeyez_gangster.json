@@ -1,0 +1,307 @@
+{
+  "id": "bugeyez_gangster",
+  "name": "Bug Eyez Crime & Mystery Classics",
+  "description": "Gangster-heavy crime & noir classics in a 24/7 FAST-style channel.",
+  "items": [
+    {
+      "id": "m001",
+      "title": "Kansas City Confidential",
+      "year": 1952,
+      "genre": "gangster"
+    },
+    {
+      "id": "m002",
+      "title": "The Hoodlum",
+      "year": 1951,
+      "genre": "gangster"
+    },
+    {
+      "id": "m003",
+      "title": "The Gangster",
+      "year": 1947,
+      "genre": "gangster"
+    },
+    {
+      "id": "m004",
+      "title": "The Scar (Hollow Triumph)",
+      "year": 1948,
+      "genre": "gangster"
+    },
+    {
+      "id": "m005",
+      "title": "He Walked by Night",
+      "year": 1948,
+      "genre": "gangster"
+    },
+    {
+      "id": "m006",
+      "title": "Too Late for Tears",
+      "year": 1949,
+      "genre": "gangster"
+    },
+    {
+      "id": "m007",
+      "title": "Quicksand",
+      "year": 1950,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m008",
+      "title": "The Payoff",
+      "year": 1935,
+      "genre": "gangster"
+    },
+    {
+      "id": "m009",
+      "title": "The Big Bluff",
+      "year": 1955,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m010",
+      "title": "The Big Shot",
+      "year": 1942,
+      "genre": "gangster"
+    },
+    {
+      "id": "m011",
+      "title": "Woman on the Run",
+      "year": 1950,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m012",
+      "title": "The Chase",
+      "year": 1946,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m013",
+      "title": "Behind Office Doors",
+      "year": 1931,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m014",
+      "title": "The Strange Love of Martha Ivers",
+      "year": 1946,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m015",
+      "title": "The Red House",
+      "year": 1947,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m016",
+      "title": "Beat the Devil",
+      "year": 1953,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m017",
+      "title": "The Big Night",
+      "year": 1951,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m018",
+      "title": "The Hatchet Man",
+      "year": 1932,
+      "genre": "gangster"
+    },
+    {
+      "id": "m019",
+      "title": "Gangs, Inc.",
+      "year": 1941,
+      "genre": "gangster"
+    },
+    {
+      "id": "m020",
+      "title": "Amazing Mr. X",
+      "year": 1948,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m021",
+      "title": "DOA",
+      "year": 1949,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m022",
+      "title": "The Big Combo",
+      "year": 1955,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m023",
+      "title": "Detour",
+      "year": 1945,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m024",
+      "title": "Impact",
+      "year": 1949,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m025",
+      "title": "Suddenly!",
+      "year": 1954,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m026",
+      "title": "Fear in the Night",
+      "year": 1947,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m027",
+      "title": "The Man Who Cheated Himself",
+      "year": 1950,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m028",
+      "title": "Port of New York",
+      "year": 1949,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m029",
+      "title": "The Limping Man",
+      "year": 1953,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m030",
+      "title": "Call It Murder",
+      "year": 1934,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m031",
+      "title": "The Stranger",
+      "year": 1946,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m032",
+      "title": "The Last Mile",
+      "year": 1932,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m033",
+      "title": "The Lady Confesses",
+      "year": 1945,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m034",
+      "title": "The Dark Hour",
+      "year": 1936,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m035",
+      "title": "Inner Sanctum",
+      "year": 1948,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m036",
+      "title": "Strange Illusion",
+      "year": 1945,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m037",
+      "title": "The Big Cat",
+      "year": 1949,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m038",
+      "title": "The Guilty",
+      "year": 1947,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m039",
+      "title": "The Fast and the Furious",
+      "year": 1954,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m040",
+      "title": "The Great Flamarion",
+      "year": 1945,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m041",
+      "title": "The Hitch-Hiker",
+      "year": 1953,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m042",
+      "title": "Cause for Alarm!",
+      "year": 1951,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m043",
+      "title": "Scarlet Street",
+      "year": 1945,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m044",
+      "title": "Mr. District Attorney",
+      "year": 1941,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m045",
+      "title": "The Green Glove",
+      "year": 1952,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m046",
+      "title": "The Bigamist",
+      "year": 1953,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m047",
+      "title": "The House on 92nd Street",
+      "year": 1945,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m048",
+      "title": "Journey into Fear",
+      "year": 1943,
+      "genre": "crime_thriller"
+    },
+    {
+      "id": "m049",
+      "title": "The Velvet Touch",
+      "year": 1948,
+      "genre": "crime_drama"
+    },
+    {
+      "id": "m050",
+      "title": "The Second Woman",
+      "year": 1950,
+      "genre": "crime_drama"
+    }
+  ]
+}

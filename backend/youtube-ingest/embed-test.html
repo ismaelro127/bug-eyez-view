@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="player"></div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      const videoId = new URLSearchParams(window.location.search).get("v");
+
+      function onYouTubeIframeAPIReady() {
+        new YT.Player("player", {
+          videoId,
+          events: {
+            onReady: () => {
+              logger.info("EMBED_OK");
+            },
+            onError: (e) => {
+              logger.info("EMBED_BLOCKED", e.data);
+            },
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

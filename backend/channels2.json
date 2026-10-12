@@ -1,0 +1,165 @@
+{
+  "documentary_culture": [
+    {
+      "id": "dw_documentary",
+      "name": "DW Documentary",
+      "short_description": "Award-winning global documentaries.",
+      "long_description": "DW Documentary delivers high-quality global documentaries covering politics, history, nature, technology, conflict zones, global culture, and social issues. Produced by Deutsche Welle, Germany’s international broadcaster.",
+      "category": "Documentary",
+      "language": "English",
+      "country": "Germany",
+      "tags": ["global issues", "politics", "nature", "culture", "investigation"],
+      "stream": "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/stream1/master.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6f/DW_Logo_2021.svg",
+      "website": "https://www.dw.com/en/tv/documentary/s-100895",
+      "epg_id": "dw_documentary",
+      "ai_priority": "deep_documentary"
+    },
+
+    {
+      "id": "arirang_culture",
+      "name": "Arirang TV Culture",
+      "short_description": "Korean culture, travel, food & documentaries.",
+      "long_description": "Arirang Culture presents Korean arts, lifestyle, cultural discoveries, travel programming, documentaries, and Asia-focused cultural explorations.",
+      "category": "Culture",
+      "language": "English",
+      "country": "South Korea",
+      "tags": ["korea", "travel", "cuisine", "culture", "documentary"],
+      "stream": "https://amdlive-ch03.ctnd.com.edgesuite.net/arirang_3ch/smil:arirang_3ch.smil/playlist.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Arirang_logo.png",
+      "website": "https://www.arirang.com",
+      "epg_id": "arirang_culture",
+      "ai_priority": "culture_asia"
+    },
+
+    {
+      "id": "cgtn_documentary",
+      "name": "CGTN Documentary",
+      "short_description": "Documentaries from China and around the world.",
+      "long_description": "CGTN Documentary showcases long-form documentaries focused on China, Asia, wildlife, global development, history, and science. A mix of investigative and cultural programs.",
+      "category": "Documentary",
+      "language": "English",
+      "country": "China",
+      "tags": ["wildlife", "asia", "history", "culture", "long-form"],
+      "stream": "https://live.cgtn.com/1000/doc/index.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/CGTN_Logo.svg",
+      "website": "https://www.cgtn.com/tv",
+      "epg_id": "cgtn_documentary",
+      "ai_priority": "wildlife_history"
+    },
+
+    {
+      "id": "france24_documentary",
+      "name": "France 24 Documentaries",
+      "short_description": "World documentaries from France 24.",
+      "long_description": "France 24 Documentaries features investigative films, human-interest stories, geopolitical analysis, and international culture coverage. Content focuses on Europe, Africa, and the Middle East.",
+      "category": "Documentary",
+      "language": "English",
+      "country": "France",
+      "tags": ["geopolitics", "culture", "france", "africa", "world"],
+      "stream": "https://static.france24.com/live/F24_EN_HI_HLS/live_tv.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8c/France_24_Logo.svg",
+      "website": "https://www.france24.com/en/tag/documentary/",
+      "epg_id": "france24_documentary",
+      "ai_priority": "europe_africa"
+    },
+
+    {
+      "id": "africanews_documentary",
+      "name": "Africanews Documentaries",
+      "short_description": "Documentaries & cultural features from across Africa.",
+      "long_description": "Africanews Documentary Channel highlights African culture, wildlife, innovation, human stories, and regional features that showcase diversity across the continent.",
+      "category": "Documentary",
+      "language": "English",
+      "country": "Congo (EU Channel)",
+      "tags": ["africa", "culture", "wildlife", "innovation"],
+      "stream": "https://rakuten-africanews-1-eu.rakuten.wurl.tv/playlist.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Africanews_logo.png",
+      "website": "https://www.africanews.com",
+      "epg_id": "africanews_documentary",
+      "ai_priority": "africa"
+    },
+
+    {
+      "id": "rtve_documentary",
+      "name": "RTVE Documentary",
+      "short_description": "Spanish documentaries & culture.",
+      "long_description": "Produced by Spain’s national broadcaster RTVE, this channel showcases cultural investigations, arts, travel, history, cuisine, and social documentaries.",
+      "category": "Documentary",
+      "language": "Spanish",
+      "country": "Spain",
+      "tags": ["spain", "hispanic", "culture", "history"],
+      "stream": "https://rtvelivestream.akamaized.net/rtve_doc/master.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/26/RTVE_logo.svg",
+      "website": "https://www.rtve.es",
+      "epg_id": "rtve_documentary",
+      "ai_priority": "culture_europe"
+    },
+
+    {
+      "id": "nhk_world_japan",
+      "name": "NHK World Japan",
+      "short_description": "Japan’s international broadcaster.",
+      "long_description": "NHK World Japan delivers documentaries on science, travel, Japanese culture, technology, food, global affairs, and Asia-focused news magazines.",
+      "category": "Culture",
+      "language": "English",
+      "country": "Japan",
+      "tags": ["japan", "culture", "travel", "technology", "food"],
+      "stream": "https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5e/NHK_World-Japan_logo.svg",
+      "website": "https://www3.nhk.or.jp/nhkworld/en/live/",
+      "epg_id": "nhk_world_japan",
+      "ai_priority": "japan_culture"
+    },
+
+    {
+      "id": "smithsonian_channel",
+      "name": "Smithsonian Channel FreeStream",
+      "short_description": "History, science, nature & culture documentaries.",
+      "long_description": "Smithsonian’s free FAST feed showcases American history, aviation, wildlife, ancient civilizations, paleontology, and curated Smithsonian Museum–backed knowledge.",
+      "category": "Documentary",
+      "language": "English",
+      "country": "United States",
+      "tags": ["history", "science", "museum", "wildlife", "knowledge"],
+      "stream": "https://smithsonianchannelfree-samsung.amagi.tv/playlist.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Smithsonian_Channel_logo.svg",
+      "website": "https://www.smithsonianchannel.com",
+      "epg_id": "smithsonian_channel",
+      "ai_priority": "history_science"
+    },
+
+    {
+      "id": "naturevision",
+      "name": "NatureVision TV",
+      "short_description": "Relaxing nature visuals and soundscapes.",
+      "long_description": "NatureVision offers beautiful 4K nature scenery, wildlife footage, waterfalls, oceans, and ambient relaxation environments with no narration.",
+      "category": "Documentary",
+      "language": "None (Ambient)",
+      "country": "United States",
+      "tags": ["nature", "relaxation", "wildlife", "ambient"],
+      "stream": "https://cdn.naturevision.tv/live/nature.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b8/NatureVision_TV_logo.png",
+      "website": "https://naturevisiontv.com",
+      "epg_id": "naturevision",
+      "ai_priority": "nature_relax"
+    },
+
+    {
+      "id": "wildplanet",
+      "name": "Wild Planet TV",
+      "short_description": "Wildlife documentaries & explorations.",
+      "long_description": "Wild Planet TV shows continuous wildlife programming including safaris, oceans, jungles, animal behavior, and natural science explorations.",
+      "category": "Documentary",
+      "language": "English",
+      "country": "United States",
+      "stream": "https://d3df02vweuhcaw.cloudfront.net/out/v1/master.m3u8",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wild_Planet_logo.png",
+      "website": "https://www.wildplanet.tv",
+      "epg_id": "wildplanet",
+      "ai_priority": "wildlife"
+    }
+  ]
+}
+https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
+https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
+

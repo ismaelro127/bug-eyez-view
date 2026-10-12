@@ -1,0 +1,10 @@
+{
+  "appId": "com.bugeyez.view",
+  "appName": "Bug Eyez View",
+  "webDir": "out",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://bug-eyez-view-site.vercel.app",
+    "cleartext": true
+  }
+}

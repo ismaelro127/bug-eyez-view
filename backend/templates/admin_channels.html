@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Channel Admin UI</title>
+  <style>
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    input { width: 90%; }
+    .button { padding: 6px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>🔧 Channel Admin Dashboard</h1>
+  <form id="channelForm">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Original Name</th>
+          <th>Patched Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ch in channels %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>
+              <input type="text" name="original_name" value="{{ ch.original_name or ch.name }}" readonly>
+            </td>
+            <td>
+              <input type="text" name="patched_name" value="{{ ch.name }}">
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <button type="button" class="button" onclick="submitForm()">💾 Save Patch</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      const rows = document.querySelectorAll("tbody tr");
+      const updates = [];
+
+      rows.forEach(row => {
+        const original = row.querySelector('input[name="original_name"]').value.trim();
+        const patched = row.querySelector('input[name="patched_name"]').value.trim();
+
+        if (original && patched && original !== patched) {
+          updates.push({ original_name: original, patched_name: patched });
+        }
+      });
+
+      fetch('/admin/update_patch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("✅ Patch updated and applied!");
+        location.reload();
+      });
+    }
+  </script>
+</body>
+</html>

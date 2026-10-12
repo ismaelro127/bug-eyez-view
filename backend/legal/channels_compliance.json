@@ -1,0 +1,146 @@
+[
+  {
+    "id": "aljazeera_en",
+    "name": "Al Jazeera English",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Informational / Attribution required",
+    "epg_source": "https://www.aljazeera.com/schedule",
+    "credit_line": "Program listings © Al Jazeera Media Network. Redistribution permitted for informational use with attribution."
+  },
+  {
+    "id": "arirang_tv",
+    "name": "Arirang TV",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public international broadcast / Attribution required",
+    "epg_source": "https://www.arirang.com/schedule?lang=en",
+    "credit_line": "Program listings © Arirang TV / Korea International Broadcasting Foundation. Redistribution permitted with credit."
+  },
+  {
+    "id": "cgtn_en",
+    "name": "CGTN English",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Open international broadcast / Attribution required",
+    "epg_source": "https://www.cgtn.com/tv",
+    "credit_line": "Program listings © CGTN / China Global Television Network. Redistribution permitted with credit."
+  },
+  {
+    "id": "cgtn_es",
+    "name": "CGTN Español",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Open international broadcast / Attribution required",
+    "epg_source": "https://espanol.cgtn.com/en-directo",
+    "credit_line": "Program listings © CGTN Español / China Global Television Network. Redistribution permitted with credit."
+  },
+  {
+    "id": "cgtn_fr",
+    "name": "CGTN Français",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Open international broadcast / Attribution required",
+    "epg_source": "https://francais.cgtn.com/channel",
+    "credit_line": "Program listings © CGTN Français / China Global Television Network. Redistribution permitted with credit."
+  },
+  {
+    "id": "dw_en",
+    "name": "DW English",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "CC-BY 4.0 (commercial attribution required)",
+    "epg_source": "https://www.dw.com/en/live-tv/channel-english",
+    "credit_line": "Program listings © Deutsche Welle. Used under Creative Commons Attribution 4.0 International license."
+  },
+  {
+    "id": "dw_es",
+    "name": "DW Español",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "CC-BY 4.0 (commercial attribution required)",
+    "epg_source": "https://www.dw.com/es/live-tv/channel-spanish",
+    "credit_line": "Program listings © Deutsche Welle Español. Used under Creative Commons Attribution 4.0 International license."
+  },
+  {
+    "id": "nhk_general_jp",
+    "name": "NHK General TV (Japan)",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public service / Attribution required",
+    "epg_source": "https://www.web.nhk/tv/pl/schedule-tep-g1-130-20251008",
+    "credit_line": "Program listings © NHK (Japan Broadcasting Corporation). Redistribution permitted for informational use."
+  },
+  {
+    "id": "nhk_world_en",
+    "name": "NHK World-Japan (English)",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public service / Attribution required",
+    "epg_source": "https://www3.nhk.or.jp/nhkworld/en/tv/schedule",
+    "credit_line": "Program listings © NHK World-Japan. Redistribution permitted for informational use."
+  },
+  {
+    "id": "un_webtv",
+    "name": "UN Web TV",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public domain / Attribution recommended",
+    "epg_source": "https://webtv.un.org/en/schedule",
+    "credit_line": "Program listings © United Nations. Public domain informational use."
+  },
+  {
+    "id": "pbs_nature",
+    "name": "PBS Nature",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public service / Attribution required",
+    "epg_source": "https://www.pbs.org/wnet/nature/schedule",
+    "credit_line": "Program listings © PBS Nature. Redistribution permitted with credit."
+  },
+  {
+    "id": "pbs_create",
+    "name": "PBS Create",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public service / Attribution required",
+    "epg_source": "https://createtv.com/schedule",
+    "credit_line": "Program listings © American Public Television / PBS Create. Redistribution permitted with credit."
+  },
+  {
+    "id": "pbs_mpt",
+    "name": "PBS MPT Baltimore (WMPB)",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Public service / Attribution required",
+    "epg_source": "https://www.mpt.org/schedule",
+    "credit_line": "Program listings © Maryland Public Television / PBS. Redistribution permitted with credit."
+  },
+  {
+    "id": "france24_en",
+    "name": "France 24 English",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Open / Attribution required",
+    "epg_source": "https://www.france24.com/en/tv-guide",
+    "credit_line": "Program listings © France Médias Monde / France 24 English. Redistribution permitted with credit."
+  },
+  {
+    "id": "france24_es",
+    "name": "France 24 Español",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Open / Attribution required",
+    "epg_source": "https://www.france24.com/es/tv-guide",
+    "credit_line": "Program listings © France Médias Monde / France 24 Español. Redistribution permitted with credit."
+  },
+  {
+    "id": "france24_fr",
+    "name": "France 24 Français",
+    "source_type": "html",
+    "redistribution_type": "direct",
+    "license_type": "Open / Attribution required",
+    "epg_source": "https://www.france24.com/fr/tv-guide",
+    "credit_line": "Program listings © France Médias Monde / France 24 Français. Redistribution permitted with credit."
+  }
+]

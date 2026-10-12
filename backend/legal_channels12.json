@@ -1,0 +1,27 @@
+[
+  {
+    "id": "un_webtv",
+    "name": "UN Web TV (540p)",
+    "logo": "/logos/un_webtv.png",
+    "url": "https://media.un.org/en/webtv",
+    "category": "International",
+    "language": "English",
+    "officialLinks": {
+      "website": "https://media.un.org/en/webtv",
+      "news": "https://news.un.org",
+      "youtube": "https://www.youtube.com/unitednations",
+      "twitter": "https://twitter.com/UNWebTV"
+    }
+  },
+  {
+    "id": "cgtn",
+    "name": "CGTN (1080p)",
+    "logo": "/logos/cgtn.png",
+    "url": "https://www.cgtn.com/",
+    "officialLinks": {
+      "website": "https://www.cgtn.com",
+      "news": "https://www.cgtn.com/news",
+      "twitter": "https://twitter.com/cgtn"
+    }
+  }
+]

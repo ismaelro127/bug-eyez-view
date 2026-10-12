@@ -1,0 +1,4 @@
+# Open your crontab: crontab -e
+# Add this line to run daily at 2 AM
+
+0 2 * * * /path/to/run_daily_pipeline.sh >> /path/to/admin/logs/pipeline.log 2>&1

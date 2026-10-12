@@ -1,0 +1,191 @@
+[
+  {
+    "name": "90210",
+    "normalized": "90210",
+    "epg_id": {
+      "epg_id": "3371"
+    }
+  },
+  {
+    "name": "ACTV",
+    "normalized": "actv",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "Becker",
+    "normalized": "becker",
+    "epg_id": {
+      "epg_id": "105836"
+    }
+  },
+  {
+    "name": "CRTV",
+    "normalized": "crtv",
+    "epg_id": {
+      "epg_id": "437221"
+    }
+  },
+  {
+    "name": "CSI",
+    "normalized": "csi",
+    "epg_id": {
+      "epg_id": "421460"
+    }
+  },
+  {
+    "name": "Degrassi",
+    "normalized": "degrassi",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "Frasier",
+    "normalized": "frasier",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "HSN2",
+    "normalized": "hsn2",
+    "epg_id": {
+      "epg_id": "408095"
+    }
+  },
+  {
+    "name": "Matlock",
+    "normalized": "matlock",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "MHZ",
+    "normalized": "mhz",
+    "epg_id": {
+      "epg_id": "404967"
+    }
+  },
+  {
+    "name": "MST3K",
+    "normalized": "mst3k",
+    "epg_id": {
+      "epg_id": "76670"
+    }
+  },
+  {
+    "name": "Nashville",
+    "normalized": "nashville",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "NickToons",
+    "normalized": "nicktoons",
+    "epg_id": {
+      "epg_id": "76736"
+    }
+  },
+  {
+    "name": "Nickelodeon",
+    "normalized": "nickelodeon",
+    "epg_id": {
+      "epg_id": "368336"
+    }
+  },
+  {
+    "name": "OTV",
+    "normalized": "otv",
+    "epg_id": {
+      "epg_id": "411610"
+    }
+  },
+  {
+    "name": "QVC",
+    "normalized": "qvc",
+    "epg_id": {
+      "epg_id": "76697"
+    }
+  },
+  {
+    "name": "RiffTrax",
+    "normalized": "rifftrax",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "Survivor",
+    "normalized": "survivor",
+    "epg_id": {
+      "epg_id": "400156"
+    }
+  },
+  {
+    "name": "TV2",
+    "normalized": "tv2",
+    "epg_id": {
+      "epg_id": "76653"
+    }
+  },
+  {
+    "name": "TVSConsumerDirect",
+    "normalized": "tvsconsumerdirect",
+    "epg_id": {
+      "epg_id": "3942"
+    }
+  },
+  {
+    "name": "12tv",
+    "normalized": "12tv",
+    "epg_id": {
+      "epg_id": "42052"
+    }
+  },
+  {
+    "name": "CHTV",
+    "normalized": "chtv",
+    "epg_id": {
+      "epg_id": "369182"
+    }
+  },
+  {
+    "name": "NatureTime",
+    "normalized": "naturetime",
+    "epg_id": {
+      "epg_id": "105815"
+    }
+  },
+  {
+    "name": "Novelisima",
+    "normalized": "novelisima",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "PSN",
+    "normalized": "psn",
+    "epg_id": {
+      "epg_id": "313786"
+    }
+  },
+  {
+    "name": "Telecontacto",
+    "normalized": "telecontacto",
+    "epg_id": {
+      "epg_id": "55866"
+    }
+  },
+  {
+    "name": "VNP",
+    "normalized": "vnp",
+    "epg_id": {
+      "epg_id": "322499"
+    }
+  }
+]

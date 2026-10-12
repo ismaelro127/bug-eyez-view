@@ -1,0 +1,326 @@
+[
+  {
+    "channel": "bugz_crime_time",
+    "title": "Behind Green Lights",
+    "file": "Behind_Green_Lights.mp4",
+    "start_utc": "2025-11-20T00:00:00Z",
+    "end_utc": "2025-11-20T01:01:34Z",
+    "duration_sec": 3694,
+    "year": 1946
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Big Combo",
+    "file": "Big_Combo_1955.mp4",
+    "start_utc": "2025-11-20T01:01:34Z",
+    "end_utc": "2025-11-20T02:29:02Z",
+    "duration_sec": 5248,
+    "year": 1955
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Crime Inc.",
+    "file": "Crime_Inc.mp4",
+    "start_utc": "2025-11-20T02:29:02Z",
+    "end_utc": "2025-11-20T03:41:57Z",
+    "duration_sec": 4315,
+    "year": 1945
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Dark Mountain",
+    "file": "Dark_Mountain_1944.mp4",
+    "start_utc": "2025-11-20T03:41:57Z",
+    "end_utc": "2025-11-20T04:38:44Z",
+    "duration_sec": 3387,
+    "year": 1944
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Detour",
+    "file": "Detour.mp4",
+    "start_utc": "2025-11-20T04:38:44Z",
+    "end_utc": "2025-11-20T05:46:22Z",
+    "duration_sec": 4058,
+    "year": 1945
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "D.O.A.",
+    "file": "DOA_1949.mp4",
+    "start_utc": "2025-11-20T05:46:22Z",
+    "end_utc": "2025-11-20T06:10:36Z",
+    "duration_sec": 1454,
+    "year": 1949
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Double Indemnity",
+    "file": "Double_Indemnity_1944.mp4",
+    "start_utc": "2025-11-20T06:10:36Z",
+    "end_utc": "2025-11-20T08:57:54Z",
+    "duration_sec": 6438,
+    "year": 1944
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Embryo",
+    "file": "Embryo_1976.mp4",
+    "start_utc": "2025-11-20T08:57:54Z",
+    "end_utc": "2025-11-20T10:41:56Z",
+    "duration_sec": 6242,
+    "year": 1976
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Fear in the Night",
+    "file": "Fear_in_the_Night.mp4",
+    "start_utc": "2025-11-20T10:41:56Z",
+    "end_utc": "2025-11-20T11:52:43Z",
+    "duration_sec": 4247,
+    "year": 1947
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Finger Man",
+    "file": "fm412201987.mp4",
+    "start_utc": "2025-11-20T11:52:43Z",
+    "end_utc": "2025-11-20T13:14:26Z",
+    "duration_sec": 4923,
+    "year": 1955
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Glen or Glenda",
+    "file": "Glen_Or_Glenda.mp4",
+    "start_utc": "2025-11-20T13:14:26Z",
+    "end_utc": "2025-11-20T14:25:09Z",
+    "duration_sec": 4243,
+    "year": 1953
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "He Walked By Night",
+    "file": "He_Walked_By_Night.mp4",
+    "start_utc": "2025-11-20T14:25:09Z",
+    "end_utc": "2025-11-20T15:43:52Z",
+    "duration_sec": 4723,
+    "year": 1948
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Impact",
+    "file": "impact.mp4",
+    "start_utc": "2025-11-20T15:43:52Z",
+    "end_utc": "2025-11-20T17:34:30Z",
+    "duration_sec": 6578,
+    "year": 1949
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Inner Sanctum",
+    "file": "inner_sanctum.mp4",
+    "start_utc": "2025-11-20T17:34:30Z",
+    "end_utc": "2025-11-20T18:31:05Z",
+    "duration_sec": 3455,
+    "year": 1948
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "In the Year 2889",
+    "file": "In_The_Year_2889_1967.mp4",
+    "start_utc": "2025-11-20T18:31:05Z",
+    "end_utc": "2025-11-20T19:50:50Z",
+    "duration_sec": 4785,
+    "year": 1967
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Kansas City Confidential",
+    "file": "kansas_city_confidencial.mp4",
+    "start_utc": "2025-11-20T19:50:50Z",
+    "end_utc": "2025-11-20T21:30:51Z",
+    "duration_sec": 5941,
+    "year": 1952
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Mr. Moto's Last Warning",
+    "file": "Mr._Motos_Last_Warning.mp4",
+    "start_utc": "2025-11-20T21:30:51Z",
+    "end_utc": "2025-11-20T22:41:33Z",
+    "duration_sec": 4242,
+    "year": 1939
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Mr. Moto Takes a Chance",
+    "file": "Mr._Moto_Takes_A_Chance_1938.mp4",
+    "start_utc": "2025-11-20T22:41:33Z",
+    "end_utc": "2025-11-20T23:45:03Z",
+    "duration_sec": 3810,
+    "year": 1938
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Mr. Wong, Detective",
+    "file": "Mr_Wong_Detective.mp4",
+    "start_utc": "2025-11-20T23:45:03Z",
+    "end_utc": "2025-11-21T00:53:30Z",
+    "duration_sec": 4107,
+    "year": 1938
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Mr. Wong in Chinatown",
+    "file": "Mr_Wong_in_Chinatown.mp4",
+    "start_utc": "2025-11-21T00:53:30Z",
+    "end_utc": "2025-11-21T02:03:04Z",
+    "duration_sec": 4234,
+    "year": 1939
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Payoff",
+    "file": "payoff.mp4",
+    "start_utc": "2025-11-21T02:03:04Z",
+    "end_utc": "2025-11-21T03:15:19Z",
+    "duration_sec": 4325,
+    "year": 1942
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Port of New York",
+    "file": "Port_of_New_York.mp4",
+    "start_utc": "2025-11-21T03:15:19Z",
+    "end_utc": "2025-11-21T04:35:09Z",
+    "duration_sec": 4790,
+    "year": 1949
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Quicksand",
+    "file": "Quicksand.mp4",
+    "start_utc": "2025-11-21T04:35:09Z",
+    "end_utc": "2025-11-21T05:54:11Z",
+    "duration_sec": 4742,
+    "year": 1950
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Scarlet Street",
+    "file": "Scarlet_Street_1945.mp4",
+    "start_utc": "2025-11-21T05:54:11Z",
+    "end_utc": "2025-11-21T07:36:34Z",
+    "duration_sec": 6143,
+    "year": 1945
+  },
+
+  {
+    "channel": "bugz_crime_time",
+    "title": "Shoot to Kill",
+    "file": "Shoot_to_Kill.mp4",
+    "start_utc": "2025-11-21T07:36:34Z",
+    "end_utc": "2025-11-21T08:40:11Z",
+    "duration_sec": 3817,
+    "year": 1947
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Suddenly",
+    "file": "suddenly.mp4",
+    "start_utc": "2025-11-21T08:40:11Z",
+    "end_utc": "2025-11-21T09:55:44Z",
+    "duration_sec": 4533,
+    "year": 1954
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "Sudden Danger",
+    "file": "Sudden_Danger_1955.mp4",
+    "start_utc": "2025-11-21T09:55:44Z",
+    "end_utc": "2025-11-21T11:00:19Z",
+    "duration_sec": 3935,
+    "year": 1955
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Limping Man",
+    "file": "The_Limping_Man.mp4",
+    "start_utc": "2025-11-21T11:00:19Z",
+    "end_utc": "2025-11-21T12:16:40Z",
+    "duration_sec": 4541,
+    "year": 1953
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Stranger",
+    "file": "The_Stranger.mp4",
+    "start_utc": "2025-11-21T12:16:40Z",
+    "end_utc": "2025-11-21T13:51:38Z",
+    "duration_sec": 5698,
+    "year": 1946
+  },  {
+    "channel": "bugz_crime_time",
+    "title": "They Made Me a Criminal",
+    "file": "they_made_me_a_criminal_1939.mp4",
+    "start_utc": "2025-11-21T13:51:38Z",
+    "end_utc": "2025-11-21T15:22:51Z",
+    "duration_sec": 5473,
+    "year": 1939
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Chase",
+    "file": "The_Chase_1946.mp4",
+    "start_utc": "2025-11-21T15:22:51Z",
+    "end_utc": "2025-11-21T16:48:43Z",
+    "duration_sec": 5152,
+    "year": 1946
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Hoodlum",
+    "file": "The_Hoodlum_1951.mp4",
+    "start_utc": "2025-11-21T16:48:43Z",
+    "end_utc": "2025-11-21T17:48:03Z",
+    "duration_sec": 3620,
+    "year": 1951
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Man Who Cheated Himself",
+    "file": "The_Man_Who_Cheated_Himself_1950.mp4",
+    "start_utc": "2025-11-21T17:48:03Z",
+    "end_utc": "2025-11-21T19:07:55Z",
+    "duration_sec": 4792,
+    "year": 1950
+  },
+    {
+    "channel": "bugz_crime_time",
+    "title": "The Naked City",
+    "file": "The_Naked_City_1948.mp4",
+    "start_utc": "2025-11-21T19:07:55Z",
+    "end_utc": "2025-11-21T20:43:52Z",
+    "duration_sec": 5757,
+    "year": 1948
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Red House",
+    "file": "The_Red_House.mp4",
+    "start_utc": "2025-11-21T20:43:52Z",
+    "end_utc": "2025-11-21T22:24:57Z",
+    "duration_sec": 6005,
+    "year": 1947
+  },
+  {
+    "channel": "bugz_crime_time",
+    "title": "The Stranger",
+    "file": "The_Stranger.mp4",
+    "start_utc": "2025-11-21T22:24:57Z",
+    "end_utc": "2025-11-21T23:59:15Z",
+    "duration_sec": 5698,
+    "year": 1946
+  }
+]

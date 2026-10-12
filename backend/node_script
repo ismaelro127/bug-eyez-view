@@ -1,0 +1,10 @@
+const fs = require('fs');
+const iniFiles = fs.readdirSync('./WebGrabPlus/siteini.pack').filter(f => f.endsWith('.ini'));
+let channels = '';
+
+iniFiles.forEach(f => {
+  const name = f.replace('.ini', '');
+  channels += `  <channel>\n    <site>${name}</site>\n    <site_id>CHANGE_ME</site_id>\n    <name>${name} Channel</name>\n  </channel>\n`;
+});
+
+fs.writeFileSync('WebGrab++.config.xml', `<settings>\n  <filename>guide.xml</filename>\n  <timespan>7</timespan>\n  <update>c</update>\n  <mode>n</mode>\n  <proxy>off</proxy>\n  <siteini>\n    <siteini_path>./siteini.pack</siteini_path>\n  </siteini>\n\n${channels}</settings>`);
