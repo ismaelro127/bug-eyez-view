@@ -14,7 +14,7 @@ type MobileProps = {
   unlockedChannelIds?: string[];
   credits?: number;
   appSettings?: BugEyezSettings;
-  onUnlockChannel?: (channelId: string) => void;
+  onUnlockChannel: (channelId: string) => void;
   userFeatures?: any;
   selectedProgram: EPGEntry | null;
   setSelectedProgram: (p: EPGEntry | null) => void;

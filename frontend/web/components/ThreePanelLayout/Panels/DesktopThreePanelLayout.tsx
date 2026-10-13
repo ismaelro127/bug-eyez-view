@@ -34,7 +34,7 @@ interface DesktopThreePanelLayoutProps {
   nowTs: number;
   unlockedChannelIds?: string[];
   credits?: number;
-  onUnlockChannel?: (channelId: string) => void;
+  onUnlockChannel: (channelId: string) => void;
   detectedPeople: any[];
   safeOfficialLinks: Record<string, string>;
   setAISummary: React.Dispatch<React.SetStateAction<any>>;
