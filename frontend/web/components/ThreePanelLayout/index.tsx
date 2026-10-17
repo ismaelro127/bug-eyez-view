@@ -648,11 +648,8 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [settings]);
 
-  // ðŸ”Œ Channel Health Live Updates (Socket.IO)
-  useEffect(() => {
-    const socket = io(API, {
-      transports: ["websocket"],
-    });useEffect(() => {
+// 🔌 Channel Health Live Updates (Socket.IO)
+useEffect(() => {
   if (!API) {
     logger.warn(
       "NEXT_PUBLIC_API_URL is not configured. Socket.IO connection skipped."
@@ -671,6 +668,7 @@ useEffect(() => {
   const handler = (payload: any) => {
     if (!payload) return;
 
+    // Map form: { channelId: {...}, channelId2: {...} }
     if (
       typeof payload === "object" &&
       !payload.channel_id
@@ -682,6 +680,7 @@ useEffect(() => {
       return;
     }
 
+    // Single form: { channel_id, ... }
     if (payload.channel_id) {
       setChannelHealth((prev) => ({
         ...prev,
@@ -690,53 +689,16 @@ useEffect(() => {
     }
   };
 
+  // Support both backend event names
   socket.on("channelHealth:update", handler);
   socket.on("channel-health-update", handler);
 
   return () => {
-    socket.off(
-      "channelHealth:update",
-      handler
-    );
-
-    socket.off(
-      "channel-health-update",
-      handler
-    );
-
+    socket.off("channelHealth:update", handler);
+    socket.off("channel-health-update", handler);
     socket.disconnect();
   };
 }, [API]);
-
-    // âœ… Support BOTH event names (so backend/frontend mismatch wonâ€™t break prod)
-    const handler = (payload: any) => {
-      // payload can be a single health object OR a map
-      if (!payload) return;
-
-      // map form: { channelId: {..}, channelId2: {..} }
-      if (typeof payload === "object" && !payload.channel_id) {
-        setChannelHealth((prev) => ({ ...prev, ...payload }));
-        return;
-      }
-
-      // single form: { channel_id, ... }
-      if (payload.channel_id) {
-        setChannelHealth((prev) => ({
-          ...prev,
-          [payload.channel_id]: payload,
-        }));
-      }
-    };
-
-    socket.on("channelHealth:update", handler);
-    socket.on("channel-health-update", handler);
-
-    return () => {
-      socket.off("channelHealth:update", handler);
-      socket.off("channel-health-update", handler);
-      socket.disconnect();
-    };
-  }, []);
 
   // âœ… Auto-swap if CURRENT channel becomes disabled via live health update
   useEffect(() => {
