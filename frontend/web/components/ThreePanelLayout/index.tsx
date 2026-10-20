@@ -45,8 +45,7 @@ const ThreePanelLayout: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [adOverlayOpen, setAdOverlayOpen] = useState(false);
 const [activeView, setActiveView] =
-useState<"home" | "live" | "profile" | "settings" | "admin">("live");
-  const [favoriteIDs, setFavoriteIDs] = useState<string[]>([]);
+  useState<"home" | "live" | "profile" | "settings" | "admin">("live");  const [favoriteIDs, setFavoriteIDs] = useState<string[]>([]);
 const warnedMissingEPGRef = useRef<Set<string>>(new Set());
 const warnedCrashEPGRef = useRef<Set<string>>(new Set());
 const DEBUG_EPG = false;
@@ -1716,6 +1715,161 @@ return (
           <span>Settings</span>
         </button>
 
+                
+                  <button
+          onClick={() => {
+            setActiveView("admin");
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "#fde047",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Admin</span>
+        </button>
+
+                 <button
+          onClick={() => {
+            setActiveView("home");
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "white",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Home</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveView("live");
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "white",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Live TV</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setAdOverlayOpen(true);
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "#fde047",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Watch Ad</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveView("profile");
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "white",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Profile</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveView("settings");
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "white",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Settings</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveView("admin");
+            setMenuOpen(false);
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            padding: "12px 16px",
+            color: "#fde047",
+            background: "transparent",
+            border: 0,
+            textAlign: "left",
+            fontSize: 16,
+            cursor: "pointer",
+          }}
+        >
+          <span>Admin</span>
+        </button>
+
         <button
           onClick={handleLogout}
           style={{
@@ -1733,30 +1887,7 @@ return (
             cursor: "pointer",
           }}
         >
-          
-          
-          <button
-  onClick={() => {
-    setActiveView("admin");
-    setMenuOpen(false);
-  }}
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-    width: "100%",
-    padding: "12px 16px",
-    color: "#fde047",
-    background: "transparent",
-    border: 0,
-    textAlign: "left",
-    fontSize: 16,
-    cursor: "pointer",
-  }}
->
-  <span>Admin</span>
-</button>
-<span>Logout</span>
+          <span>Logout</span>
         </button>
       </div>
     </div>,
