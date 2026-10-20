@@ -288,5 +288,18 @@ if (ops.length) {
     }
   );
 
-  return { updated: ops.length, processedEvents: events.length };
+  const updatedHealth =
+  ops.length > 0
+    ? await ChannelHealth.find({ channel_id: { $in: channelIds } })
+        .select(
+          "channel_id health_score tier suppressed suppressed_reason suppressed_until is_disabled disabled_reason disabled_at"
+        )
+        .lean()
+    : [];
+
+return {
+  updated: ops.length,
+  processedEvents: events.length,
+  health: updatedHealth,
+};
 }

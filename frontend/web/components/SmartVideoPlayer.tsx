@@ -236,7 +236,7 @@ const sendYouTubeCommand = (
       channelKind !== "government_live" &&
       channelKind !== "youtube" &&
       !((channel as any)?.embed?.url) &&
-      channelUrl.endsWith(".m3u8");
+      channelUrl.toLowerCase().includes(".m3u8");
 
     if (!video || !shouldUseHls) return;
 

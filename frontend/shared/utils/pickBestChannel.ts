@@ -33,10 +33,25 @@ export function pickBestChannel(
 
   const getH = (c: Channel) => healthMap[c.id] || (c as any).health || undefined;
 
-  const candidates = channels
-    .filter((c) => c && c.id && c.id !== current.id)
-    .filter((c) => !(getH(c)?.is_disabled));
+  const isPersonal = (c: Channel) => String(c.id).startsWith("personal:");
+const currentIsPersonal = isPersonal(current);
 
+const healthyCandidates = channels
+  .filter((c) => c && c.id && c.id !== current.id)
+  .filter((c) => {
+    const h = getH(c);
+    return !h?.is_disabled && !h?.suppressed;
+  });
+
+const sameSourceCandidates = healthyCandidates.filter(
+  (c) => isPersonal(c) === currentIsPersonal
+);
+
+const candidates =
+  sameSourceCandidates.length > 0
+    ? sameSourceCandidates
+    : healthyCandidates;
+    
   if (!candidates.length) return null;
 
   const sameGenre = currentGenre

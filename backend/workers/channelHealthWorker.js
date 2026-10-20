@@ -19,9 +19,11 @@ export function startChannelHealthWorker({ io }) {
       if (!redis) {
         const result = await processChannelHealth();
 
-        if (io && result?.updated > 0) {
-          io.emit("channelHealth:refresh");
+        if (io && result?.updated > 0 && Array.isArray(result.health)) {
+          for (const health of result.health) {
+            io.emit("channelHealth:update", health);
         }
+      }
 
         running = false;
         return;
@@ -43,8 +45,10 @@ export function startChannelHealthWorker({ io }) {
 
       const result = await processChannelHealth();
 
-      if (io && result?.updated > 0) {
-        io.emit("channelHealth:refresh");
+      if (io && result?.updated > 0 && Array.isArray(result.health)) {
+        for (const health of result.health) {
+          io.emit("channelHealth:update", health);
+        }
       }
 
     } catch (err) {
