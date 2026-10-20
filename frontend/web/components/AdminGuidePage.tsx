@@ -16,13 +16,75 @@ export default function AdminGuidePage() {
   const [selected, setSelected] = useState<Channel | null>(null);
 
   useEffect(() => {
-    fetch('/final_clean_channels.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setChannels(data);
-        if (data.length > 0) setSelected(data[0]);
-      });
-  }, []);
+  let alive = true;
+
+  const loadChannels = async () => {
+    try {
+      const response = await fetch("/personal_channels_verified.json");
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const json = await response.json();
+
+      if (!Array.isArray(json)) {
+        throw new Error("Invalid personal channel catalog");
+      }
+
+      const normalized: Channel[] = json
+        .filter(
+          (item: any) =>
+            item &&
+            typeof item.url === "string" &&
+            item.url.length > 0
+        )
+        .map((item: any, index: number): Channel => {
+          const tvgId = String(item["tvg-id"] || "").trim();
+          const group = String(
+            item["group-title"] || "Personal"
+          ).trim();
+
+          return {
+            id: `personal:${tvgId || index}`,
+            name:
+              String(item.name || "").trim() ||
+              `Personal Channel ${index + 1}`,
+            url: item.url,
+            delivery: "native",
+            logo:
+              String(item["tvg-logo"] || "").trim() ||
+              undefined,
+            genre: group,
+            category: group,
+            epgId: tvgId || undefined,
+            hasEPG: false,
+            status: "working",
+            offline: false,
+            isLive: true,
+            locked: false,
+            unlockDisabled: true,
+          };
+        });
+
+      if (!alive) return;
+
+      setChannels(normalized);
+
+      if (normalized.length > 0) {
+        setSelected(normalized[0]);
+      }
+    } catch (error) {
+      console.error("Failed to load Admin channel catalog:", error);
+    }
+  };
+
+  loadChannels();
+
+  return () => {
+    alive = false;
+  };
+}, []);
 
   return (
     <div className="flex h-screen bg-black">

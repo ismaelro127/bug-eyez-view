@@ -14,6 +14,7 @@ import SettingsView from "../Settings/SettingsView";
 import { useSettingsData } from "../Settings/useSettingsData";
 import HomeView from "../Home/HomeView";
 import { useToast } from "../ui/ToastProvider";
+import AdminGuidePage from "../AdminGuidePage";
 
 import ProfileView from "../Profile/ProfileView";
 import { apiFetch } from "../../../lib/apiFetch";
@@ -44,7 +45,7 @@ const ThreePanelLayout: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [adOverlayOpen, setAdOverlayOpen] = useState(false);
 const [activeView, setActiveView] =
-  useState<"home" | "live" | "profile" | "settings">("live");
+useState<"home" | "live" | "profile" | "settings" | "admin">("live");
   const [favoriteIDs, setFavoriteIDs] = useState<string[]>([]);
 const warnedMissingEPGRef = useRef<Set<string>>(new Set());
 const warnedCrashEPGRef = useRef<Set<string>>(new Set());
@@ -1732,7 +1733,30 @@ return (
             cursor: "pointer",
           }}
         >
-          <span>Logout</span>
+          
+          
+          <button
+  onClick={() => {
+    setActiveView("admin");
+    setMenuOpen(false);
+  }}
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    width: "100%",
+    padding: "12px 16px",
+    color: "#fde047",
+    background: "transparent",
+    border: 0,
+    textAlign: "left",
+    fontSize: 16,
+    cursor: "pointer",
+  }}
+>
+  <span>Admin</span>
+</button>
+<span>Logout</span>
         </button>
       </div>
     </div>,
@@ -2386,6 +2410,10 @@ unlockedChannelIds={unlockedChannelIds}
     {/* PROFILE VIEW */}
 {activeView === "profile" && (
   <ProfileView API_BASE={API} />
+)}
+{/* ADMIN VIEW */}
+{activeView === "admin" && (
+  <AdminGuidePage />
 )}
 
     {/* SETTINGS VIEW */}
