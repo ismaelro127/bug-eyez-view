@@ -319,11 +319,10 @@ const sendYouTubeCommand = (
     video.addEventListener("error", handleVideoError);
 
     startupTimer = setTimeout(() => {
-      if (!hasStartedRef.current) {
-        handleError("startup_timeout");
-        onRequestNextChannel?.("startup_timeout");
-      }
-    }, 12_000);
+  if (!hasStartedRef.current) {
+    handleError("startup_timeout");
+  }
+}, 12_000);
 
     video.play().catch(() => handleError("autoplay_blocked"));
 
