@@ -241,12 +241,17 @@ const sendYouTubeCommand = (
     if (!video || !shouldUseHls) return;
 
     let hls: Hls | null = null;
+    let startupTimer: ReturnType<typeof setTimeout> | null = null;
 
     onLoading?.();
 
     const handlePlaying = () => {
-      if (hasStartedRef.current) return;
-      hasStartedRef.current = true;
+      if (startupTimer) {
+        clearTimeout(startupTimer);
+        startupTimer = null;
+      }
+
+      if (hasStartedRef.current) return;      hasStartedRef.current = true;
 
       onPlaying?.();
       if (!channel) return;
@@ -310,12 +315,24 @@ const sendYouTubeCommand = (
     video.addEventListener("playing", handlePlaying);
     video.addEventListener("error", handleVideoError);
 
+    startupTimer = setTimeout(() => {
+      if (!hasStartedRef.current) {
+        handleError("startup_timeout");
+        onRequestNextChannel?.("startup_timeout");
+      }
+    }, 12_000);
+
     video.play().catch(() => handleError("autoplay_blocked"));
 
     const updateProgress = () => setProgress(video.currentTime);
     video.addEventListener("timeupdate", updateProgress);
 
     return () => {
+      if (startupTimer) {
+        clearTimeout(startupTimer);
+        startupTimer = null;
+      }
+      
       hasStartedRef.current = false;
 
       if (channel && sessionIdRef.current) {
