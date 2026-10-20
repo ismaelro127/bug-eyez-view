@@ -66,15 +66,28 @@ const MobileThreePanelLayout: React.FC<MobileProps> = ({
   favoriteIDs,
 }) => {
   const [activeTab, setActiveTab] = useState<"channels" | "ai">("channels");
+const [channelSource, setChannelSource] =
+  useState<"public" | "personal">("public");
+  
+const visibleChannels = useMemo(() => {
+  return channels.filter((ch) => {
+    const isPersonal = ch.id.startsWith("personal:");
 
-  const visibleChannels = useMemo(() => {
-    return channels.filter((ch) => {
-      if (!channelHealth) return true;
-      const health = channelHealth[ch.id];
-      if (!health) return true;
-      return !health.is_disabled && !health.suppressed;
-    });
-  }, [channels, channelHealth]);
+    if (channelSource === "personal") {
+      if (!isPersonal) return false;
+    } else {
+      if (isPersonal) return false;
+    }
+
+    if (!channelHealth) return true;
+
+    const health = channelHealth[ch.id];
+
+    if (!health) return true;
+
+    return !health.is_disabled && !health.suppressed;
+  });
+}, [channels, channelHealth, channelSource]);
 
   const summaryText = getSummaryText(aiSummary);
   const tags = Array.isArray(aiSummary?.tags) ? aiSummary.tags : [];
@@ -131,34 +144,66 @@ const MobileThreePanelLayout: React.FC<MobileProps> = ({
       </nav>
 
       {/* CONTENT AREA */}
-      <main className="min-h-0 flex-1 overflow-hidden">
-        {activeTab === "channels" && (
-          <div className="h-full min-h-0 overflow-hidden">
-            <TVGuidePanel
-              channels={visibleChannels}
-              allEPG={epgData}
-              favoriteIDs={favoriteIDs}
-              onToggleFavorite={onToggleFavorite}
-              nowTs={nowTs}
-              appSettings={appSettings}
-              selectedChannel={selected}
-              timelineRef={timelineRef}
-              onSelectChannel={(ch: Channel) => {
-                setSelected(ch);
-                setSelectedProgram(null);
-                setActiveTab("channels");
-              }}
-              onSelectProgram={(program: EPGEntry, channel: Channel) => {
-                setSelected(channel);
-                setSelectedProgram(program);
-                setActiveTab("ai");
-              }}
-              unlockedChannelIds={unlockedChannelIds}
-              credits={credits}
-              onUnlockChannel={onUnlockChannel}
-            />
-          </div>
-        )}
+<main className="min-h-0 flex-1 overflow-hidden">
+  {activeTab === "channels" && (
+    <div className="flex h-full min-h-0 flex-col overflow-hidden">
+      {/* CHANNEL SOURCE SELECTOR */}
+      <div className="shrink-0 border-b border-white/10 bg-[#05070a] px-3 py-2">
+        <div className="mx-auto grid max-w-[820px] grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={() => setChannelSource("public")}
+            className={`rounded-lg px-3 py-2 text-xs font-black transition ${
+              channelSource === "public"
+                ? "bg-cyan-400 text-black"
+                : "border border-white/10 bg-white/5 text-gray-300"
+            }`}
+          >
+            Public
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setChannelSource("personal")}
+            className={`rounded-lg px-3 py-2 text-xs font-black transition ${
+              channelSource === "personal"
+                ? "bg-cyan-400 text-black"
+                : "border border-white/10 bg-white/5 text-gray-300"
+            }`}
+          >
+            Personal
+          </button>
+        </div>
+      </div>
+
+      {/* GUIDE */}
+      <div className="min-h-0 flex-1 overflow-hidden">
+        <TVGuidePanel
+          channels={visibleChannels}
+          allEPG={epgData}
+          favoriteIDs={favoriteIDs}
+          onToggleFavorite={onToggleFavorite}
+          nowTs={nowTs}
+          appSettings={appSettings}
+          selectedChannel={selected}
+          timelineRef={timelineRef}
+          onSelectChannel={(ch: Channel) => {
+            setSelected(ch);
+            setSelectedProgram(null);
+            setActiveTab("channels");
+          }}
+          onSelectProgram={(program: EPGEntry, channel: Channel) => {
+            setSelected(channel);
+            setSelectedProgram(program);
+            setActiveTab("ai");
+          }}
+          unlockedChannelIds={unlockedChannelIds}
+          credits={credits}
+          onUnlockChannel={onUnlockChannel}
+        />
+      </div>
+    </div>
+  )}
 
         {activeTab === "ai" && (
           <div className="h-full overflow-y-auto bg-black px-4 py-4">

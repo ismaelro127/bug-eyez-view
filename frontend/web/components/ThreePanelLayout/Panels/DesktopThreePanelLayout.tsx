@@ -46,6 +46,7 @@ interface DesktopThreePanelLayoutProps {
 type ChannelTab =
   | "All"
   | "Favorites"
+  | "Personal"
   | "News"
   | "Government"
   | "Public TV"
@@ -55,6 +56,7 @@ type ChannelTab =
 const CHANNEL_TABS: ChannelTab[] = [
   "All",
   "Favorites",
+  "Personal",
   "News",
   "Government",
   "Public TV",
@@ -163,34 +165,52 @@ const DesktopThreePanelLayout: React.FC<DesktopThreePanelLayoutProps> = ({
     };
   }, []);
 
-  const filteredChannels = useMemo(() => {
-    return channels.filter((channel) => {
-      if (selected && channel.id === selected.id) return true;
+const filteredChannels = useMemo(() => {
+  return channels.filter((channel) => {
+    const isPersonal = channel.id.startsWith("personal:");
 
-      if (channelTab === "Favorites") {
-        return favoriteIDs.includes(channel.id);
-      }
+    // Favorites may contain either public or personal channels.
+    if (channelTab === "Favorites") {
+      return favoriteIDs.includes(channel.id);
+    }
 
-      if (channelTab === "All") return true;
+    // Personal is completely separate from the public guide.
+    if (channelTab === "Personal") {
+      return isPersonal;
+    }
 
-      const haystack = [
-        channel.category,
-        channel.genre,
-        channel.language,
-        channel.origin,
-        (channel as any).country,
-        (channel as any).group,
-      ]
-        .map(normalizeText)
-        .join(" ");
+    // All means all PUBLIC channels, not personal channels.
+    if (channelTab === "All") {
+      return !isPersonal;
+    }
 
-      if (channelTab === "Public TV") {
-        return haystack.includes("public") || haystack.includes("government") || haystack.includes("education");
-      }
+    // Category tabs are public-only.
+    if (isPersonal) {
+      return false;
+    }
 
-      return haystack.includes(normalizeText(channelTab));
-    });
-  }, [channels, channelTab, favoriteIDs, selected]);
+    const haystack = [
+      channel.category,
+      channel.genre,
+      channel.language,
+      channel.origin,
+      (channel as any).country,
+      (channel as any).group,
+    ]
+      .map(normalizeText)
+      .join(" ");
+
+    if (channelTab === "Public TV") {
+      return (
+        haystack.includes("public") ||
+        haystack.includes("government") ||
+        haystack.includes("education")
+      );
+    }
+
+    return haystack.includes(normalizeText(channelTab));
+  });
+}, [channels, channelTab, favoriteIDs]);
 
   const handleProgramSelect = (program: EPGEntry, channel: Channel) => {
     triggerActiveVisuals();

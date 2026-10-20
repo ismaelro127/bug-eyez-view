@@ -723,44 +723,153 @@ useEffect(() => {
     return () => clearInterval(id);
   }, []);
 
-// Ã°Å¸â€œÂ¡ Load channels
+// Load public + personal channels
 useEffect(() => {
   let alive = true;
 
   const loadChannels = async () => {
-    // Ã¢Å“â€¦ Check cache FIRST
-    
-    let data: Channel[] = [];
+    let publicChannels: Channel[] = [];
+    let personalChannels: Channel[] = [];
 
-    
+    // --------------------------------------------------
+    // Public / legal channels
+    // --------------------------------------------------
 
-   const res2 = await fetch("/legal_verified_channels.json", {
-  method: "GET",
-  cache: "no-store",
-});
+    try {
+      const response = await fetch(
+        "/legal_verified_channels.json",
+        {
+          method: "GET",
+          cache: "no-store",
+        }
+      );
 
-if (res2.ok) {
-  const json = await res2.json().catch(() => []);
+      if (response.ok) {
+        const json = await response.json().catch(() => []);
 
-  if (Array.isArray(json)) {
-    data = json;
-  } else {
-    logger.warn("Invalid legal_verified_channels.json format:", json);
-    data = [];
-  }
-} else {
-  logger.warn("Failed to load legal_verified_channels.json:", res2.status);
-}
+        if (Array.isArray(json)) {
+          publicChannels = json;
+        } else {
+          logger.warn(
+            "Invalid legal_verified_channels.json format:",
+            json
+          );
+        }
+      } else {
+        logger.warn(
+          "Failed to load legal_verified_channels.json:",
+          response.status
+        );
+      }
+    } catch (error) {
+      logger.warn(
+        "Failed to load public channels:",
+        error
+      );
+    }
 
-if (!alive) return;
+    // --------------------------------------------------
+    // Personal channels
+    // --------------------------------------------------
 
-setChannels(data);
+    try {
+      const response = await fetch(
+        "/personal_channels_verified.json",
+        {
+          method: "GET",
+          cache: "no-store",
+        }
+      );
 
-if (!selectedRef.current && data.length) {
-  const firstPlayable = data.find((ch) => ch.locked !== true) || data[0];
+      if (response.ok) {
+        const json = await response.json().catch(() => []);
 
-  _setSelected((prev) => prev ?? firstPlayable);
-}
+        if (Array.isArray(json)) {
+          personalChannels = json
+            .filter(
+              (item: any) =>
+                item &&
+                typeof item.url === "string" &&
+                item.url.length > 0
+            )
+            .map((item: any, index: number): Channel => {
+              const tvgId = String(
+                item["tvg-id"] || ""
+              ).trim();
+
+              const group = String(
+                item["group-title"] || "Personal"
+              ).trim();
+
+              return {
+                id: `personal:${tvgId || index}`,
+                name:
+                  String(item.name || "").trim() ||
+                  `Personal Channel ${index + 1}`,
+
+                url: item.url,
+                delivery: "native",
+
+                logo:
+                  String(item["tvg-logo"] || "").trim() ||
+                  undefined,
+
+                genre: group,
+                category: group,
+
+                epgId: tvgId || undefined,
+
+                hasEPG: false,
+
+                status: "working",
+                offline: false,
+                isLive: true,
+
+                locked: false,
+                unlockDisabled: true,
+              };
+            });
+        } else {
+          logger.warn(
+            "Invalid personal_channels_verified.json format:",
+            json
+          );
+        }
+      } else {
+        logger.warn(
+          "Failed to load personal_channels_verified.json:",
+          response.status
+        );
+      }
+    } catch (error) {
+      logger.warn(
+        "Failed to load personal channels:",
+        error
+      );
+    }
+
+    if (!alive) return;
+
+    const data: Channel[] = [
+      ...publicChannels,
+      ...personalChannels,
+    ];
+
+    logger.info(
+      `Loaded ${publicChannels.length} public channels and ${personalChannels.length} personal channels.`
+    );
+
+    setChannels(data);
+
+    if (!selectedRef.current && data.length) {
+      const firstPlayable =
+        data.find((channel) => channel.locked !== true) ||
+        data[0];
+
+      _setSelected(
+        (previous) => previous ?? firstPlayable
+      );
+    }
   };
 
   loadChannels();
@@ -768,7 +877,7 @@ if (!selectedRef.current && data.length) {
   return () => {
     alive = false;
   };
-}, []);// Ã°Å¸â€œÂ¡ Load channels
+}, []); // Load public + personal channels
 
 
 // Load EPG

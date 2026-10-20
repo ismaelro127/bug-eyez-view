@@ -1,40 +1,121 @@
-import requests, json
+import json
+import re
+import requests
+from pathlib import Path
 
-#  Choose your source:
-legal_m3u_url = "https://iptv-org.github.io/iptv/index.m3u"  # All categories
-# Or set to e.g.:
-# legal_m3u_url = "https://iptv-org.github.io/iptv/categories/news.m3u"
+BASE_DIR = Path(__file__).resolve().parent
 
-m3u_output = "legal_dyn.m3u"
-json_output = "legal_dyn.json"
-final_output = "final_clean_channels.json"
+SOURCE_URL = "https://iptv-org.github.io/iptv/index.m3u"
 
-headers = {"User-Agent": "Mozilla/5.0"}
-res = requests.get(legal_m3u_url, headers=headers, timeout=10)
-res.raise_for_status()
-m3u = res.text
+M3U_OUTPUT = BASE_DIR / "personal_channels_current.m3u"
+JSON_OUTPUT = BASE_DIR / "personal_channels.json"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
+
+
+def get_attribute(meta, name):
+    match = re.search(
+        rf'{re.escape(name)}="([^"]*)"',
+        meta,
+    )
+    return match.group(1).strip() if match else ""
+
+
+print("Downloading current IPTV playlist...")
+
+response = requests.get(
+    SOURCE_URL,
+    headers=HEADERS,
+    timeout=30,
+)
+response.raise_for_status()
+
+m3u = response.text
+
 if not m3u.strip().startswith("#EXTM3U"):
-    raise Exception("❌ Not an M3U file")
+    raise RuntimeError("Downloaded file is not a valid M3U playlist.")
+
+M3U_OUTPUT.write_text(
+    m3u,
+    encoding="utf-8",
+)
 
 lines = m3u.splitlines()
 channels = []
-for i, line in enumerate(lines):
-    if line.startswith("#EXTINF"):
-        meta = line
-        url = lines[i+1] if i+1 < len(lines) else ""
-        if not url.startswith("http"):
-            continue
-        name = meta.split(",")[-1]
-        grp = meta.split('group-title="')[1].split('"')[0] if 'group-title="' in meta else ""
-        tvg = meta.split('tvg-id="')[1].split('"')[0] if 'tvg-id="' in meta else ""
-        channels.append({"name": name, "url": url, "group-title": grp, "tvg-id": tvg})
 
-with open(m3u_output, "w", encoding="utf-8") as f:
-    f.write(m3u)
-with open(json_output, "w", encoding="utf-8") as f:
-    json.dump(channels, f, indent=2)
-with open(final_output, "w", encoding="utf-8") as f:
-    json.dump(channels, f, indent=2)
+pending_meta = None
 
-print(f" Loaded {len(channels)} channels")
-print(f"Outputs: {m3u_output}, {json_output}, {final_output}")
+for line in lines:
+    line = line.strip()
+
+    if line.startswith("#EXTINF:"):
+        pending_meta = line
+        continue
+
+    if (
+        pending_meta
+        and line.startswith(("http://", "https://"))
+    ):
+        if "," in pending_meta:
+            name = pending_meta.split(",", 1)[1].strip()
+        else:
+            name = ""
+
+        channels.append(
+            {
+                "name": name,
+                "url": line,
+                "group-title": get_attribute(
+                    pending_meta,
+                    "group-title",
+                ),
+                "tvg-id": get_attribute(
+                    pending_meta,
+                    "tvg-id",
+                ),
+                "tvg-logo": get_attribute(
+                    pending_meta,
+                    "tvg-logo",
+                ),
+            }
+        )
+
+        pending_meta = None
+
+
+with JSON_OUTPUT.open(
+    "w",
+    encoding="utf-8",
+) as file:
+    json.dump(
+        channels,
+        file,
+        indent=2,
+        ensure_ascii=False,
+    )
+
+
+epg_ids = [
+    channel["tvg-id"]
+    for channel in channels
+    if channel["tvg-id"]
+]
+
+with_logos = sum(
+    bool(channel["tvg-logo"])
+    for channel in channels
+)
+
+
+print()
+print("Personal channel refresh complete")
+print("---------------------------------")
+print(f"Parsed:          {len(channels)}")
+print(f"With tvg-id:     {len(epg_ids)}")
+print(f"Without tvg-id:  {len(channels) - len(epg_ids)}")
+print(f"Unique tvg-id:   {len(set(epg_ids))}")
+print(f"With logo:       {with_logos}")
+print()
+print(f"Output: {JSON_OUTPUT}")
