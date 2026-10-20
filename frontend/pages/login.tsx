@@ -86,6 +86,10 @@ if (!token) {
 
 localStorage.setItem("token", token);
 
+if (data.refreshToken) {
+  localStorage.setItem("refreshToken", data.refreshToken);
+}
+
 if (data.user) {
   localStorage.setItem("user", JSON.stringify(data.user));
 }

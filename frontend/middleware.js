@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(req) {
+export default function middleware(req) {
   const token =
     req.cookies.get("token")?.value ||
     req.headers.get("authorization")?.replace("Bearer ", "");
@@ -15,6 +15,5 @@ export function middleware(req) {
 
 // Protect ONLY these routes
 export const config = {
-  runtime: "nodejs",
   matcher: ["/", "/dashboard/:path*"],
 };

@@ -8,6 +8,9 @@ type Props = {
   source: "sidebar" | "epg" | "auto";
   onRequestNextChannel?: (reason: string) => void;
 
+   // True while the rewarded ad is covering the player.
+  adPlaying?: boolean;
+  
   // Mobile-only optional button.
   showAIButton?: boolean;
   onAIButtonClick?: () => void;
@@ -17,6 +20,7 @@ function SharedPlayer({
   channel,
   source,
   onRequestNextChannel,
+  adPlaying = false,
   showAIButton = false,
   onAIButtonClick,
 }: Props) {
@@ -46,11 +50,12 @@ function SharedPlayer({
       
       
       <SmartVideoPlayer
-        channel={channel}
-        source={source}
-        muted={muted}
-        onRequestNextChannel={onRequestNextChannel}
-      />
+  channel={channel}
+  source={source}
+  muted={muted}
+  adPlaying={adPlaying}
+  onRequestNextChannel={onRequestNextChannel}
+/>
 
       <div
   style={{

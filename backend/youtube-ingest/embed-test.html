@@ -12,11 +12,11 @@
           videoId,
           events: {
             onReady: () => {
-              logger.info("EMBED_OK");
-            },
-            onError: (e) => {
-              logger.info("EMBED_BLOCKED", e.data);
-            },
+  console.log("EMBED_OK");
+},
+onError: (e) => {
+  console.log("EMBED_BLOCKED", e.data);
+},
           },
         });
       }

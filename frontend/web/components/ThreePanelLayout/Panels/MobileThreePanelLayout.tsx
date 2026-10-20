@@ -8,6 +8,7 @@ import type { BugEyezSettings } from "../../Settings/useSettingsData";
 type MobileProps = {
   selected: Channel | null;
   setSelected: (ch: Channel | null) => void;
+  adPlaying?: boolean;
   channels: Channel[];
   onToggleFavorite?: (channelId: string) => void;
   channelHealth?: Record<string, any>;
@@ -48,6 +49,7 @@ const MobileThreePanelLayout: React.FC<MobileProps> = ({
   selected,
   setSelected,
   channels,
+  adPlaying = false,
   channelHealth,
   selectedProgram,
   setSelectedProgram,
@@ -86,7 +88,12 @@ const MobileThreePanelLayout: React.FC<MobileProps> = ({
         style={{ height: "clamp(220px, 38dvh, 390px)", maxWidth: "820px" }}
       >
         {selected ? (
-          <SharedPlayer channel={selected} source="sidebar" showAIButton={false} />
+<SharedPlayer
+  channel={selected}
+  source="sidebar"
+  adPlaying={adPlaying}
+  showAIButton={false}
+/>
         ) : (
           <div className="flex h-full items-center justify-center text-sm text-gray-500">
             Select a channel

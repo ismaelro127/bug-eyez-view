@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 
 const UserFeaturesSchema = new mongoose.Schema(
   {
@@ -64,6 +64,12 @@ const UserFeaturesSchema = new mongoose.Schema(
     youtubePackUnlockedAt: {
       type: Date,
       default: null,
+    },
+
+    youtubePackExpiresAt: {
+      type: Date,
+      default: null,
+      index: true,
     },
 
     abuseScore: {

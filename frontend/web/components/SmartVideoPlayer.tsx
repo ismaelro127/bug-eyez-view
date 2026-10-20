@@ -8,6 +8,7 @@ import { logger } from "../utils/logger";
 interface Props {
   channel: Channel | null;
   onLoading?: () => void;
+adPlaying?: boolean;
   onPlaying?: () => void;
   source: "sidebar" | "epg" | "auto";
   onError?: () => void;
@@ -40,14 +41,36 @@ const getChannelKind = (channel: Channel | null) => {
 const getYouTubeEmbedUrl = (channel: Channel) => {
   const anyChannel = channel as any;
 
-  if (anyChannel?.embed?.url) return anyChannel.embed.url;
+  const addYouTubeApiParams = (url: string) => {
+    if (!url) return "";
+
+    try {
+      const parsed = new URL(url, window.location.origin);
+
+      parsed.searchParams.set("enablejsapi", "1");
+      parsed.searchParams.set("playsinline", "1");
+      parsed.searchParams.set("rel", "0");
+
+      return parsed.toString();
+    } catch {
+      return url;
+    }
+  };
+
+  if (anyChannel?.embed?.url) {
+    return addYouTubeApiParams(anyChannel.embed.url);
+  }
 
   if (anyChannel.youtubeId) {
-    return `https://www.youtube.com/embed/${anyChannel.youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0`;
+    return addYouTubeApiParams(
+      `https://www.youtube.com/embed/${anyChannel.youtubeId}?autoplay=1&mute=1`
+    );
   }
 
   if (anyChannel.youtubeChannelId) {
-    return `https://www.youtube.com/embed/live_stream?channel=${anyChannel.youtubeChannelId}&autoplay=1&mute=1&playsinline=1&rel=0`;
+    return addYouTubeApiParams(
+      `https://www.youtube.com/embed/live_stream?channel=${anyChannel.youtubeChannelId}&autoplay=1&mute=1`
+    );
   }
 
   return "";
@@ -66,6 +89,7 @@ const extractYouTubeId = (url = "") => {
 
 export default function SmartVideoPlayer({
   channel,
+  adPlaying = false,
   onLoading,
   onPlaying,
   onError,
@@ -75,6 +99,25 @@ export default function SmartVideoPlayer({
 }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+const wasPlayingBeforeAdRef = useRef(false);
+const youtubeIframeRef = useRef<HTMLIFrameElement | null>(null);
+const rotationYoutubeIframeRef = useRef<HTMLIFrameElement | null>(null);
+
+const sendYouTubeCommand = (
+  iframe: HTMLIFrameElement | null,
+  command: string
+) => {
+  if (!iframe?.contentWindow) return;
+
+  iframe.contentWindow.postMessage(
+    JSON.stringify({
+      event: "command",
+      func: command,
+      args: [],
+    }),
+    "https://www.youtube.com"
+  );
+};
 
   const [showUI, setShowUI] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -304,6 +347,49 @@ export default function SmartVideoPlayer({
     if (videoRef.current) videoRef.current.muted = muted;
   }, [muted]);
 
+  useEffect(() => {
+  const video = videoRef.current;
+  if (!video) return;
+
+  if (adPlaying) {
+    // Remember whether the channel was actually playing.
+    wasPlayingBeforeAdRef.current = !video.paused && !video.ended;
+
+    // Stop the channel immediately while the ad is active.
+    video.pause();
+    return;
+  }
+
+  // Ad closed: resume only if the channel had been playing before it.
+  if (wasPlayingBeforeAdRef.current) {
+    wasPlayingBeforeAdRef.current = false;
+
+    video.play().catch((err) => {
+      console.warn("Unable to resume channel after ad:", err);
+    });
+  }
+}, [adPlaying]);
+
+useEffect(() => {
+  const command = adPlaying ? "pauseVideo" : "playVideo";
+
+  const sendCommand = (iframe: HTMLIFrameElement | null) => {
+    if (!iframe?.contentWindow) return;
+
+    iframe.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: command,
+        args: [],
+      }),
+      "https://www.youtube.com"
+    );
+  };
+
+  sendCommand(youtubeIframeRef.current);
+  sendCommand(rotationYoutubeIframeRef.current);
+}, [adPlaying]);
+
   const playerShellStyle = useMemo<React.CSSProperties | undefined>(() => {
     if (!playerExpanded) return undefined;
     return {
@@ -485,13 +571,19 @@ export default function SmartVideoPlayer({
 
     return (
       <button
-        type="button"
-        onClick={togglePlayerExpanded}
-        className="absolute bottom-3 right-3 z-[1000000] w-11 h-11 rounded-xl bg-black/80 border border-cyan-400/50 text-cyan-300 text-xl flex items-center justify-center shadow-[0_0_12px_rgba(0,255,255,0.45)]"
-        title={playerExpanded ? "Exit fullscreen" : "Fullscreen"}
-      >
-        {playerExpanded ? "🗕" : "⛶"}
-      </button>
+  type="button"
+  onClick={togglePlayerExpanded}
+  className="absolute z-[1000000] w-11 h-11 rounded-xl bg-black/80 border border-cyan-400/50 text-cyan-300 text-xl flex items-center justify-center shadow-[0_0_12px_rgba(0,255,255,0.45)]"
+  style={{
+    right: "12px",
+    bottom: playerExpanded
+      ? "max(56px, calc(env(safe-area-inset-bottom, 0px) + 12px))"
+      : "12px",
+  }}
+  title={playerExpanded ? "Exit fullscreen" : "Fullscreen"}
+>
+  {playerExpanded ? "🗕" : "⛶"}
+</button>
     );
   };
 
@@ -598,12 +690,18 @@ export default function SmartVideoPlayer({
           onClick={revealUI}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0`}
-            className="w-full h-full border-0"
-            allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-            allowFullScreen
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
+  ref={rotationYoutubeIframeRef}
+  src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0&enablejsapi=1`}
+  className="w-full h-full border-0"
+  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+  allowFullScreen
+  referrerPolicy="strict-origin-when-cross-origin"
+  onLoad={() => {
+    window.setTimeout(() => {
+      sendYouTubeCommand(rotationYoutubeIframeRef.current, "unMute");
+    }, 500);
+  }}
+/>
           <div className="absolute left-3 top-3 z-[1000000] max-w-[72%] rounded-xl bg-black/80 border border-cyan-400/40 px-3 py-2 text-xs text-white">
             <div className="font-black text-cyan-300">{currentRotationItem.title}</div>
             {currentRotationItem.source && <div className="text-gray-300">{currentRotationItem.source}</div>}
@@ -643,12 +741,18 @@ export default function SmartVideoPlayer({
         style={playerShellStyle}
       >
         <iframe
-          src={youtubeEmbedUrl}
-          className="w-full h-full border-0"
-          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-          allowFullScreen
-          referrerPolicy="strict-origin-when-cross-origin"
-        />
+  ref={youtubeIframeRef}
+  src={youtubeEmbedUrl}
+  className="w-full h-full border-0"
+  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+  allowFullScreen
+  referrerPolicy="strict-origin-when-cross-origin"
+  onLoad={() => {
+    window.setTimeout(() => {
+      sendYouTubeCommand(youtubeIframeRef.current, "unMute");
+    }, 500);
+  }}
+/>
         {renderExpandedButton()}
       </div>
     );
@@ -721,7 +825,9 @@ export default function SmartVideoPlayer({
           position: "absolute",
           left: 0,
           right: 0,
-          bottom: 0,
+bottom: playerExpanded
+  ? "max(56px, calc(env(safe-area-inset-bottom, 0px) + 12px))"
+  : 0,
           zIndex: 1000000,
           padding: "12px",
           background: "linear-gradient(to top, rgba(0,0,0,0.90), rgba(0,0,0,0.45), transparent)",

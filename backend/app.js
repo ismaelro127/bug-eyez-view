@@ -9,7 +9,7 @@ import { globalLimiter, authLimiter } from "./middleware/rateLimiters.js";
 import eventsRoutes from "./routes/events.js";
 import payments from "./routes/payments.js";
 import stripeWebhook from "./routes/stripeWebhook.js";
-import creditsRoutes from "./services/credits.js";
+import creditsRoutes from "./routes/credits.js";
 import userStatusRoutes from "./routes/userStatus.js";
 import adminRouter from "./routes/admin/index.js";
 import authRoutes from "./routes/auth.js";

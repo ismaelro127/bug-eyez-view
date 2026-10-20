@@ -489,7 +489,7 @@ router.post("/spend/unlock-channel", async (req, res) => {
       cost: unlockCost,
       action: "unlock_channel",
       source: "user",
-      refId: `unlock_${channelId}`,
+      refId: `unlock_${channelId}_${Date.now()}`,
       meta: {
         channelId,
         channelName: channel.name,

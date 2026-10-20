@@ -14,9 +14,9 @@
     "esModuleInterop": true,
 
     "module": "ESNext",
-    "moduleResolution": "Node",
-
-    "resolveJsonModule": true,
+"moduleResolution": "Bundler",
+"customConditions": ["react-native", "react-native-legacy-deep-imports"],    
+"resolveJsonModule": true,
     "isolatedModules": true,
 
     "jsx": "preserve",

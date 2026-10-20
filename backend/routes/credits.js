@@ -1,4 +1,4 @@
-import express from "express";
+﻿import express from "express";
 import authMiddleware from "../middleware/authMiddleware.js";
 
 import { mintCredits } from "../services/mintCredits.js";
@@ -116,7 +116,7 @@ async function getCurrentCredits(userId) {
 
 const router = express.Router();
 
-// 🔒 ALL routes below require auth
+// ðŸ”’ ALL routes below require auth
 router.use(authMiddleware);
 
 const SKIP_ADS_COST = 10;
@@ -124,7 +124,8 @@ const SKIP_ADS_MINUTES = 30;
 const UNLOCK_CHANNEL_COST = 25;
 const YOUTUBE_PACK_UNLOCK_COST = 100;
 const YOUTUBE_PACK_REF_ID = "unlock_youtube_pack_v1";
-
+const INDIVIDUAL_CHANNEL_UNLOCK_MS = 24 * 60 * 60 * 1000;
+const YOUTUBE_PACK_UNLOCK_MS = 24 * 60 * 60 * 1000;
 /**
  * ================================
  * POST /api/credits/award
@@ -157,7 +158,7 @@ router.post("/award", adAwardLimiter, async (req, res) => {
     const deviceHash = rawDeviceHash || effectiveDeviceHash || null;
 
     // ---------------------------
-    // 1️⃣ Ad session sanity
+    // 1ï¸âƒ£ Ad session sanity
     // ---------------------------
     if (
       !adSessionId ||
@@ -168,7 +169,7 @@ router.post("/award", adAwardLimiter, async (req, res) => {
     }
 
     // ---------------------------
-    // 2️⃣ Duration validation
+    // 2ï¸âƒ£ Duration validation
     // ---------------------------
     if (
       typeof durationWatched !== "number" ||
@@ -205,14 +206,14 @@ router.post("/award", adAwardLimiter, async (req, res) => {
     }
 
     // ---------------------------
-    // 3️⃣ Ad type lock
+    // 3ï¸âƒ£ Ad type lock
     // ---------------------------
     if (adType !== "rewarded_video") {
       return res.status(400).json({ error: "INVALID_AD_TYPE" });
     }
 
     // ---------------------------
-    // 4️⃣ Guard cooldown / duplicate / limits
+    // 4ï¸âƒ£ Guard cooldown / duplicate / limits
     // ---------------------------
     await assertAdRewardAllowed({
       userId,
@@ -222,7 +223,7 @@ router.post("/award", adAwardLimiter, async (req, res) => {
     });
 
     // ---------------------------
-    // 5️⃣ Reward amount
+    // 5ï¸âƒ£ Reward amount
     // ---------------------------
     const features = await UserFeatures.findOne({ userId }).lean();
     const trustTier = features?.trustTier ?? "normal";
@@ -246,7 +247,7 @@ router.post("/award", adAwardLimiter, async (req, res) => {
 
     
     // ---------------------------
-    // 6️⃣ Mint credits
+    // 6ï¸âƒ£ Mint credits
     // ---------------------------
     let result;
 
@@ -269,9 +270,9 @@ router.post("/award", adAwardLimiter, async (req, res) => {
         },
       });
 
-      console.log("✅ CREDITS MINTED", result);
+      console.log("âœ… CREDITS MINTED", result);
     } catch (mintErr) {
-      console.error("❌ mintCredits failed:", {
+      console.error("âŒ mintCredits failed:", {
         message: mintErr?.message,
         code: mintErr?.code,
         name: mintErr?.name,
@@ -304,7 +305,7 @@ return res.json({
         body: req.body,
         userId,
       },
-      "❌ AWARD ERROR"
+      "âŒ AWARD ERROR"
     );
 
     if (userId && err?.code) {
@@ -410,22 +411,32 @@ router.post("/spend/unlock-channel", async (req, res) => {
     const unlockCost = Number(channel.unlockCost ?? UNLOCK_CHANNEL_COST);
 
     // Prevent double unlock
-    const already = await UnlockedChannel.findOne({ userId, channelId });
-    if (already) {
-      return res.json({
-        ok: true,
-        alreadyUnlocked: true,
-        channelId,
-      });
-    }
+    // Prevent charging again while this individual unlock is still active.
+const now = new Date();
 
-    // 💸 Spend credits only after channel is confirmed available
+const already = await UnlockedChannel.findOne({
+  userId,
+  channelId,
+  unlockType: "individual",
+  expiresAt: { $gt: now },
+}).lean();
+
+if (already) {
+  return res.json({
+    ok: true,
+    alreadyUnlocked: true,
+    channelId,
+    expiresAt: already.expiresAt,
+  });
+}
+
+    // ðŸ’¸ Spend credits only after channel is confirmed available
     const result = await spendCredits({
       userId,
       cost: unlockCost,
       action: "unlock_channel",
       source: "user",
-      refId: `unlock_${channelId}`,
+      refId: `unlock_${channelId}_${Date.now()}`,
       meta: {
         channelId,
         channelName: channel.name,
@@ -434,18 +445,32 @@ router.post("/spend/unlock-channel", async (req, res) => {
       },
     });
 
-    // 🔓 Grant unlock
-    await UnlockedChannel.create({
-      userId,
-      channelId,
-    });
+    // Grant this individual channel for 24 hours.
+const expiresAt = new Date(
+  Date.now() + INDIVIDUAL_CHANNEL_UNLOCK_MS
+);
+
+await UnlockedChannel.findOneAndUpdate(
+  { userId, channelId },
+  {
+    $set: {
+      unlockType: "individual",
+      expiresAt,
+    },
+  },
+  {
+    upsert: true,
+    new: true,
+  }
+);
 
     res.json({
       ok: true,
       credits: result.credits,
       channelId,
       unlockCost,
-    });
+      expiresAt,
+ });
   } catch (err) {
     res.status(400).json({
       error: err.code || "UNLOCK_FAILED",
@@ -467,8 +492,19 @@ router.post("/spend/unlock-youtube-pack", async (req, res) => {
   try {
     const existingFeatures = await UserFeatures.findOne({ userId }).lean();
 
-    if (existingFeatures?.youtubePackUnlocked === true) {
-      const playableYoutubeChannels = getPlayableYoutubeChannels();
+const now = new Date();
+
+const existingPackExpiresAt =
+  existingFeatures?.youtubePackExpiresAt
+    ? new Date(existingFeatures.youtubePackExpiresAt)
+    : null;
+
+const existingPackIsActive =
+  existingFeatures?.youtubePackUnlocked === true &&
+  existingPackExpiresAt !== null &&
+  existingPackExpiresAt > now;
+
+if (existingPackIsActive) {      const playableYoutubeChannels = getPlayableYoutubeChannels();
       const youtubeChannelIds = playableYoutubeChannels.map((channel) => channel.id);
 
       return res.json({
@@ -476,9 +512,12 @@ router.post("/spend/unlock-youtube-pack", async (req, res) => {
         alreadyUnlocked: true,
         youtubePackUnlocked: true,
         unlockedChannelIds: youtubeChannelIds,
-        credits: await getCurrentCredits(userId),
+credits: await getCurrentCredits(userId),
+expiresAt: youtubePackExpiresAt,
         unlockCost: 0,
-      });
+      
+        expiresAt: existingPackExpiresAt,
+    });
     }
 
     const playableYoutubeChannels = getPlayableYoutubeChannels();
@@ -498,7 +537,7 @@ router.post("/spend/unlock-youtube-pack", async (req, res) => {
       cost: YOUTUBE_PACK_UNLOCK_COST,
       action: "unlock_youtube_pack",
       source: "user",
-      refId: YOUTUBE_PACK_REF_ID,
+      refId: `${YOUTUBE_PACK_REF_ID}_${Date.now()}`,
       meta: {
         unlockedCount: youtubeChannelIds.length,
         delivery: "youtube",
@@ -506,29 +545,22 @@ router.post("/spend/unlock-youtube-pack", async (req, res) => {
       },
     });
 
+    const youtubePackExpiresAt = new Date(
+  Date.now() + YOUTUBE_PACK_UNLOCK_MS
+);
+
     await UserFeatures.findOneAndUpdate(
       { userId },
       {
         $set: {
-          youtubePackUnlocked: true,
-          youtubePackUnlockedAt: new Date(),
-        },
+  youtubePackUnlocked: true,
+  youtubePackUnlockedAt: new Date(),
+  youtubePackExpiresAt,
+},
       },
       { upsert: true, new: true }
     );
 
-    if (youtubeChannelIds.length) {
-      await UnlockedChannel.bulkWrite(
-        youtubeChannelIds.map((channelId) => ({
-          updateOne: {
-            filter: { userId, channelId },
-            update: { $setOnInsert: { userId, channelId } },
-            upsert: true,
-          },
-        })),
-        { ordered: false }
-      );
-    }
 
     return res.json({
       ok: true,
@@ -554,27 +586,80 @@ router.post("/spend/unlock-youtube-pack", async (req, res) => {
 router.get("/user/unlocks", async (req, res) => {
   const userId = req.user._id;
 
-  const [unlocks, features] = await Promise.all([
-    UnlockedChannel.find({ userId }).lean(),
-    UserFeatures.findOne({ userId }).lean(),
-  ]);
+  try {
+    const now = new Date();
 
-  const baseUnlockedIds = unlocks.map((u) => u.channelId);
-  const youtubePackUnlocked = features?.youtubePackUnlocked === true;
-  const youtubeChannelIds = youtubePackUnlocked
-    ? getPlayableYoutubeChannels().map((channel) => channel.id).filter(Boolean)
-    : [];
+    const [unlocks, features] = await Promise.all([
+      UnlockedChannel.find({
+        userId,
+        unlockType: "individual",
+        expiresAt: { $gt: now },
+      }).lean(),
 
-  const unlockedChannelIds = Array.from(
-    new Set([...baseUnlockedIds, ...youtubeChannelIds])
-  );
+      UserFeatures.findOne({ userId }).lean(),
+    ]);
 
-  res.json({
-    unlockedChannelIds,
-    youtubePackUnlocked,
-    youtubePackUnlockCost: YOUTUBE_PACK_UNLOCK_COST,
-    youtubeUnlockedChannelIds: youtubeChannelIds,
-  });
+    const baseUnlockedIds = unlocks.map(
+      (unlock) => unlock.channelId
+    );
+
+    const individualUnlocks = unlocks.map(
+      (unlock) => ({
+        channelId: unlock.channelId,
+        expiresAt: unlock.expiresAt,
+      })
+    );
+
+    const youtubePackExpiresAt =
+      features?.youtubePackExpiresAt
+        ? new Date(features.youtubePackExpiresAt)
+        : null;
+
+    const youtubePackUnlocked =
+      features?.youtubePackUnlocked === true &&
+      youtubePackExpiresAt !== null &&
+      youtubePackExpiresAt > now;
+
+    const youtubeChannelIds = youtubePackUnlocked
+      ? getPlayableYoutubeChannels()
+          .map((channel) => channel.id)
+          .filter(Boolean)
+      : [];
+
+    const unlockedChannelIds = Array.from(
+      new Set([
+        ...baseUnlockedIds,
+        ...youtubeChannelIds,
+      ])
+    );
+
+    res.json({
+      unlockedChannelIds,
+      individualUnlocks,
+      youtubePackUnlocked,
+      youtubePackUnlockCost: YOUTUBE_PACK_UNLOCK_COST,
+      youtubePackExpiresAt: youtubePackUnlocked
+        ? youtubePackExpiresAt
+        : null,
+      youtubeUnlockedChannelIds: youtubeChannelIds,
+    });
+  } catch (err) {
+    logger.error(
+      {
+        err: {
+          message: err?.message,
+          stack: err?.stack,
+        },
+        userId,
+      },
+      "Failed to load user unlocks"
+    );
+
+    res.status(500).json({
+      error: "UNLOCK_LOAD_FAILED",
+      message: err.message,
+    });
+  }
 });
 
 /**
@@ -617,3 +702,5 @@ router.post("/spend/skip-ads", async (req, res) => {
 });
 
 export default router;
+
+

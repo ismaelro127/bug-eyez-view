@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
@@ -8,7 +8,7 @@ import { Channel, EPGEntry } from "../../../types";
 import { normalizeEPG } from "../../../shared/utils/normalizeEPG";
 import { getDeviceHash } from "../../../shared/device";
 import { io } from "socket.io-client";
-import { pickBestChannel } from "../../../shared/utils/pickBestChannel"; // âœ… add
+import { pickBestChannel } from "../../../shared/utils/pickBestChannel"; // Ã¢Å“â€¦ add
 import { logger } from "../../utils/logger";
 import SettingsView from "../Settings/SettingsView";
 import { useSettingsData } from "../Settings/useSettingsData";
@@ -53,7 +53,7 @@ const DEBUG_EPG = false;
   channelId: string;
   channelName: string;
   unlockCost: number;
-  unlockType: "channel" | "youtube_pack";
+  unlockType: "channel" | "youtube_pack" | "youtube_choice";
   channelCount?: number;
 } | null>(null);
 
@@ -95,11 +95,11 @@ const filteredChannels = useMemo(() => {
     selectedRef.current = selected;
   }, [selected]);
 
-  // âœ… Real AI summary state shared by desktop + mobile panels
+  // Ã¢Å“â€¦ Real AI summary state shared by desktop + mobile panels
   const [aiSummary, setAISummary] = useState<any>(null);
   const [loadingAI, setLoadingAI] = useState(false);
 
-  // ðŸ”’ Optional data placeholders
+  // Ã°Å¸â€â€™ Optional data placeholders
   const liveNewsData: any[] = [];
   const relatedPrograms: any[] = [];
   const detectedPeople: any[] = [];
@@ -317,7 +317,7 @@ const API = (
   });
 }, []);
 
-  // âœ… CENTRALIZED SELECTION (ALL paths must go here)
+  // Ã¢Å“â€¦ CENTRALIZED SELECTION (ALL paths must go here)
  const selectChannel = useCallback(
   (ch: Channel) => {
     if (!ch) return;
@@ -399,7 +399,7 @@ const API = (
 }
 };
 
-  // âœ… Wrapper so children can still call `setSelected(ch)`
+  // Ã¢Å“â€¦ Wrapper so children can still call `setSelected(ch)`
   // without bypassing centralized logic
   const setSelectedSafe = useCallback(
     (value: any) => {
@@ -525,7 +525,7 @@ const issueOverlayAdReward = async (
 };
 
 
-  // ðŸ“± Mobile + Tablet detection
+  // Ã°Å¸â€œÂ± Mobile + Tablet detection
 useEffect(() => {
   const check = () => {
     const width = window.innerWidth;
@@ -648,7 +648,7 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [settings]);
 
-// 🔌 Channel Health Live Updates (Socket.IO)
+// ðŸ”Œ Channel Health Live Updates (Socket.IO)
 useEffect(() => {
   if (!API) {
     logger.warn(
@@ -700,7 +700,7 @@ useEffect(() => {
   };
 }, [API]);
 
-  // âœ… Auto-swap if CURRENT channel becomes disabled via live health update
+  // Ã¢Å“â€¦ Auto-swap if CURRENT channel becomes disabled via live health update
   useEffect(() => {
   if (!selected) return;
 
@@ -715,7 +715,7 @@ useEffect(() => {
   }
 }, [channelHealth, selected, channels]);
 
-  // â±ï¸ Clock tick
+  // Ã¢ÂÂ±Ã¯Â¸Â Clock tick
   useEffect(() => {
     const id = setInterval(() => {
       setNowTs(Date.now());
@@ -723,12 +723,12 @@ useEffect(() => {
     return () => clearInterval(id);
   }, []);
 
-// ðŸ“¡ Load channels
+// Ã°Å¸â€œÂ¡ Load channels
 useEffect(() => {
   let alive = true;
 
   const loadChannels = async () => {
-    // âœ… Check cache FIRST
+    // Ã¢Å“â€¦ Check cache FIRST
     
     let data: Channel[] = [];
 
@@ -768,7 +768,7 @@ if (!selectedRef.current && data.length) {
   return () => {
     alive = false;
   };
-}, []);// ðŸ“¡ Load channels
+}, []);// Ã°Å¸â€œÂ¡ Load channels
 
 
 // Load EPG
@@ -917,7 +917,7 @@ useEffect(() => {
   };
 }, [channels]);
 
-  // â­ Favorites
+  // Ã¢Â­Â Favorites
   useEffect(() => {
   try {
     const stored =
@@ -1024,12 +1024,12 @@ if (!res.ok) {
 
   return;
 }
-  // âœ… update local balance immediately if backend returned it
+  // Ã¢Å“â€¦ update local balance immediately if backend returned it
   if (typeof data?.credits === "number") {
     setCreditBalance(data.credits);
   }
 
-  // âœ… refresh balance + unlocked channels used by TVGuidePanel
+  // Ã¢Å“â€¦ refresh balance + unlocked channels used by TVGuidePanel
 showToast(
   typeof data?.amount === "number"
     ? `+${data.amount} credits earned`
@@ -1080,12 +1080,19 @@ const loadUnlockData = async () => {
 
       if (typeof data?.youtubePackUnlocked === "boolean") {
         setUserFeatures((prev: any) => ({
-          ...(prev || {}),
-          youtubePackUnlocked: data.youtubePackUnlocked,
-          youtubePackUnlockCost: Number(
-            data?.youtubePackUnlockCost ?? 100
-          ),
-        }));
+  ...(prev || {}),
+  youtubePackUnlocked: data.youtubePackUnlocked,
+  youtubePackUnlockCost: Number(
+    data?.youtubePackUnlockCost ?? 100
+  ),
+  youtubePackExpiresAt:
+    data?.youtubePackExpiresAt ?? null,
+  individualUnlocks: Array.isArray(
+    data?.individualUnlocks
+  )
+    ? data.individualUnlocks
+    : [],
+}));
       }
     }
   } catch (err) {
@@ -1096,6 +1103,113 @@ const loadUnlockData = async () => {
 useEffect(() => {
   void loadUnlockData();
 }, []);
+
+useEffect(() => {
+  type UnlockExpiration = {
+    expiresAt: number;
+    type: "channel" | "youtube_pack";
+    channelId?: string;
+  };
+
+  const expirations: UnlockExpiration[] = [];
+  const now = Date.now();
+
+  const individualUnlocks = Array.isArray(
+    (userFeatures as any)?.individualUnlocks
+  )
+    ? (userFeatures as any).individualUnlocks
+    : [];
+
+  for (const unlock of individualUnlocks) {
+    const expiresAt = new Date(unlock?.expiresAt).getTime();
+
+    if (
+      Number.isFinite(expiresAt) &&
+      expiresAt > now
+    ) {
+      expirations.push({
+        expiresAt,
+        type: "channel",
+        channelId: unlock?.channelId,
+      });
+    }
+  }
+
+  const youtubePackExpiresAt = new Date(
+    (userFeatures as any)?.youtubePackExpiresAt ?? 0
+  ).getTime();
+
+  if (
+    Number.isFinite(youtubePackExpiresAt) &&
+    youtubePackExpiresAt > now
+  ) {
+    expirations.push({
+      expiresAt: youtubePackExpiresAt,
+      type: "youtube_pack",
+    });
+  }
+
+  if (expirations.length === 0) {
+    return;
+  }
+
+  const nextExpiration = Math.min(
+    ...expirations.map((item) => item.expiresAt)
+  );
+
+  const expiringItems = expirations.filter(
+    (item) => item.expiresAt === nextExpiration
+  );
+
+  const delay = Math.max(
+    0,
+    nextExpiration - Date.now() + 1000
+  );
+
+  const timer = window.setTimeout(() => {
+    const packExpired = expiringItems.some(
+      (item) => item.type === "youtube_pack"
+    );
+
+    if (packExpired) {
+      showToast(
+        "Your 24-hour YouTube access has expired. You can keep watching the current channel until you switch.",
+        "info"
+      );
+    } else {
+      const expiredChannelIds = expiringItems
+        .filter((item) => item.type === "channel")
+        .map((item) => item.channelId)
+        .filter(Boolean);
+
+      if (expiredChannelIds.length === 1) {
+        const expiredChannel = channels.find(
+          (channel) => channel.id === expiredChannelIds[0]
+        );
+
+        showToast(
+          `${expiredChannel?.name || "Channel"} access has expired. You can keep watching until you switch channels.`,
+          "info"
+        );
+      } else {
+        showToast(
+          "Your channel access has expired. Currently playing channels can continue until you switch.",
+          "info"
+        );
+      }
+    }
+
+    void loadUnlockData();
+  }, delay);
+
+  return () => {
+    window.clearTimeout(timer);
+  };
+}, [
+  (userFeatures as any)?.individualUnlocks,
+  (userFeatures as any)?.youtubePackExpiresAt,
+  channels,
+]);
 
 const handleUnlockChannel = (channelId: string) => {
   if (unlockPromptOpenRef.current) return;
@@ -1143,12 +1257,10 @@ const handleUnlockChannel = (channelId: string) => {
     unlockPromptOpenRef.current = true;
 
     setUnlockConfirm({
-      channelId: "__youtube_pack__",
-      channelName: "YouTube Channel Pack",
-      unlockCost: Number(
-        userFeatures?.youtubePackUnlockCost ?? 100
-      ),
-      unlockType: "youtube_pack",
+      channelId: channel.id,
+      channelName: channel.name || "YouTube Channel",
+      unlockCost: Number(channel.unlockCost ?? 25),
+      unlockType: "youtube_choice",
       channelCount: playableYoutubeChannels.length,
     });
 
@@ -1165,13 +1277,18 @@ const handleUnlockChannel = (channelId: string) => {
   });
 };
 
-const confirmUnlockChannel = async () => {
+const confirmUnlockChannel = async (
+  requestedUnlockType?: "channel" | "youtube_pack"
+) => {
   if (!unlockConfirm || unlockBusy) return;
 
-  const {
-    channelId,
-    unlockType,
-  } = unlockConfirm;
+  const { channelId } = unlockConfirm;
+
+  const unlockType =
+    requestedUnlockType ??
+    (unlockConfirm.unlockType === "youtube_choice"
+      ? "channel"
+      : unlockConfirm.unlockType);
 
   const isYoutubePack =
     unlockType === "youtube_pack";
@@ -1244,6 +1361,10 @@ const confirmUnlockChannel = async () => {
         ...(previous || {}),
         youtubePackUnlocked: true,
         youtubePackUnlockCost: 100,
+        youtubePackExpiresAt:
+          data?.expiresAt ??
+          data?.youtubePackExpiresAt ??
+          null,
       }));
     } else {
       setUnlockedChannelIds((previous) => {
@@ -1258,11 +1379,26 @@ const confirmUnlockChannel = async () => {
       });
     }
 
-    await loadUnlockData();
+await loadUnlockData();
 
-    setUnlockConfirm(null);
-    unlockPromptOpenRef.current = false;
-  } catch (err) {
+if (isYoutubePack) {
+  showToast(
+    "All YouTube channels unlocked for 24 hours.",
+    "success"
+  );
+} else {
+  const unlockedChannel = channels.find(
+    (channel) => channel.id === channelId
+  );
+
+  showToast(
+    `${unlockedChannel?.name || "Channel"} unlocked for 24 hours.`,
+    "success"
+  );
+}
+
+setUnlockConfirm(null);
+unlockPromptOpenRef.current = false;  } catch (err) {
     logger.error(
       "Unlock request failed:",
       err
@@ -1270,14 +1406,15 @@ const confirmUnlockChannel = async () => {
 
     showToast(
       isYoutubePack
-        ? "YouTube pack unlock request failed."
-        : "Channel unlock request failed.",
+        ? "YouTube pack unlock failed."
+        : "Channel unlock failed.",
       "error"
     );
   } finally {
     setUnlockBusy(false);
   }
 };
+
 const cancelUnlockChannel = () => {
   setUnlockConfirm(null);
   unlockPromptOpenRef.current = false;
@@ -1574,7 +1711,6 @@ return (
         <video
           src="/ads/test-ad.mp4"
           autoPlay
-          muted
           playsInline
           controls={false}
           style={{
@@ -1659,7 +1795,7 @@ return (
           CHANNEL ACCESS
         </div>
 
-        <h3
+       <h3
   id="unlock-dialog-title"
   style={{
     margin: 0,
@@ -1668,49 +1804,37 @@ return (
     fontWeight: 900,
   }}
 >
-  {unlockConfirm.unlockType === "youtube_pack"
-    ? "Unlock YouTube Pack?"
-    : "Unlock channel?"}
+  {unlockConfirm.unlockType === "youtube_choice"
+    ? "Choose YouTube Access"
+    : unlockConfirm.unlockType === "youtube_pack"
+      ? "Unlock YouTube Pack?"
+      : "Unlock channel?"}
 </h3>
 
-{unlockConfirm.unlockType === "youtube_pack" ? (
-  <p
+{unlockConfirm.unlockType === "youtube_choice" && (
+  <button
+    type="button"
+    disabled={unlockBusy}
+    onClick={() => {
+      void confirmUnlockChannel("channel");
+    }}
     style={{
-      margin: "16px 0 0",
-      color: "#d1d5db",
-      fontSize: 16,
-      lineHeight: 1.5,
+      minWidth: 150,
+      padding: "11px 18px",
+      borderRadius: 12,
+      border: "1px solid #fde68a",
+      background: "rgba(250,204,21,0.12)",
+      color: "#fde047",
+      fontSize: 15,
+      fontWeight: 900,
+      cursor: unlockBusy ? "not-allowed" : "pointer",
+      opacity: unlockBusy ? 0.65 : 1,
     }}
   >
-    Unlock all currently playable YouTube channels
-    {typeof unlockConfirm.channelCount === "number"
-      ? ` (${unlockConfirm.channelCount} channels)`
-      : ""}{" "}
-    for{" "}
-    <strong style={{ color: "#fde047" }}>
-      {unlockConfirm.unlockCost} credits
-    </strong>
-    ?
-  </p>
-) : (
-  <p
-    style={{
-      margin: "16px 0 0",
-      color: "#d1d5db",
-      fontSize: 16,
-      lineHeight: 1.5,
-    }}
-  >
-    Unlock{" "}
-    <strong style={{ color: "#fde047" }}>
-      {unlockConfirm.channelName}
-    </strong>{" "}
-    for{" "}
-    <strong style={{ color: "#fde047" }}>
-      {unlockConfirm.unlockCost} credits
-    </strong>
-    ?
-  </p>
+    {unlockBusy
+      ? "Unlocking..."
+      : `${unlockConfirm.unlockCost} Credits — This Channel`}
+  </button>
 )}
         <div
           style={{
@@ -1744,8 +1868,12 @@ return (
             type="button"
             disabled={unlockBusy}
             onClick={() => {
-              void confirmUnlockChannel();
-            }}
+  void confirmUnlockChannel(
+    unlockConfirm.unlockType === "youtube_choice"
+      ? "youtube_pack"
+      : undefined
+  );
+}}
             style={{
               minWidth: 110,
               padding: "11px 18px",
@@ -1760,7 +1888,11 @@ return (
               boxShadow: "0 0 22px rgba(250,204,21,0.5)",
             }}
           >
-            {unlockBusy ? "Unlocking..." : "Unlock"}
+            {unlockBusy
+  ? "Unlocking..."
+  : unlockConfirm.unlockType === "youtube_choice"
+    ? "100 Credits — All YouTube"
+    : "Unlock"}
           </button>
         </div>
       </div>
@@ -1770,11 +1902,13 @@ return (
     
 {/* TOP APP MENU */}
 <div
-  className="flex-shrink-0 relative bg-black border-b border-white/10"
   style={{
-    zIndex: 2147483000,
-    minHeight: 44,
-  }}
+  zIndex: 2147483645,
+  minHeight: isMobile ? 52 : 44,
+  paddingTop: isMobile
+    ? "calc(env(safe-area-inset-top, 0px) + -20px)"
+    : 0,
+}}
 >
   <div
     style={{
@@ -1829,8 +1963,11 @@ return (
         lineHeight: 1,
       }}
     >
-      {menuOpen ? "×" : "☰"}
-    </button>
+{menuOpen ? (
+  <>&times;</>
+) : (
+  <>&#9776;</>
+)}    </button>
 
     {/* APP TITLE */}
     <div
@@ -1885,7 +2022,7 @@ return (
         whiteSpace: "nowrap",
       }}
     >
-      <span aria-hidden="true">▶</span>
+      <span aria-hidden="true"></span>
       <span>Play Ad</span>
     </button>
   </div>
@@ -1930,8 +2067,8 @@ return (
       fontWeight: 900,
       lineHeight: 1,
     }}
-  >
-    ‹
+    >
+    &lsaquo;
   </button>
 
   {/* SCROLLABLE TAB AREA */}
@@ -1986,14 +2123,18 @@ return (
     const active = selectedGenre === genre;
 
     return (
-      <button
-        key={genre}
-        type="button"
-        onClick={() => setSelectedGenre(genre)}
-        className={`
-          flex-none whitespace-nowrap rounded-full
-          px-4 py-1.5 text-sm transition
-          ${
+<button
+  key={genre}
+  type="button"
+  onClick={() => setSelectedGenre(genre)}
+  style={{
+    whiteSpace: "nowrap",
+    flexShrink: 0,
+  }}
+  className={`
+    flex-none whitespace-nowrap rounded-full
+    px-4 py-1.5 text-sm transition
+              ${
             active
               ? "bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-semibold"
               : "bg-white/5 text-gray-300 hover:bg-white/10"
@@ -2033,8 +2174,8 @@ return (
       fontWeight: 900,
       lineHeight: 1,
     }}
-  >
-    ›
+   >
+    &rsaquo;
   </button>
 </div>
 
@@ -2045,6 +2186,7 @@ return (
     {isMobile ? (
       <MobileThreePanelLayout
         selected={selected}
+        adPlaying={adOverlayOpen}
         setSelected={setSelectedSafe}
 channels={filteredChannels}
         selectedProgram={selectedProgram}
@@ -2161,3 +2303,5 @@ setUserProfile={setUserProfile}
 );
 }
 export default ThreePanelLayout;
+
+
