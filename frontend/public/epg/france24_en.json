@@ -12,101 +12,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
+    "duration_min": 10.0,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261019220000 +0000",
-    "stop_utc_xml": "20261019221500 +0000",
+    "stop_utc_xml": "20261019221000 +0000",
     "start_utc": "2026-10-19T22:00:00Z",
-    "stop_utc": "2026-10-19T22:15:00Z",
+    "stop_utc": "2026-10-19T22:10:00Z",
     "start_min": 0.0,
-    "end_min": 15.0
+    "end_min": 10.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "00:15",
-    "title": "Entre nous",
+    "time_local": "00:10",
+    "title": "The debate",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 6.933333333333334,
-    "link": "https://www.france24.com/en/tv-shows/entre-nous/",
-    "start_utc_xml": "20261019221500 +0000",
-    "stop_utc_xml": "20261019222156 +0000",
-    "start_utc": "2026-10-19T22:15:00Z",
-    "stop_utc": "2026-10-19T22:21:56Z",
-    "start_min": 15.0,
-    "end_min": 21.933333333333334
-  },
-  {
-    "channel": "France 24 (ES)",
-    "channel_id": "france24_en",
-    "channel_name": "France 24 (ES)",
-    "date": "2026-10-20",
-    "time_local": "00:21",
-    "title": "Tech 24",
-    "episode": "",
-    "description": "",
-    "genre": "News",
-    "tags": [
-      "News"
-    ],
-    "duration_min": 8.066666666666666,
-    "link": "https://www.france24.com/en/tv-shows/tech24/",
-    "start_utc_xml": "20261019222156 +0000",
-    "stop_utc_xml": "20261019223000 +0000",
-    "start_utc": "2026-10-19T22:21:56Z",
-    "stop_utc": "2026-10-19T22:30:00Z",
-    "start_min": 21.933333333333334,
-    "end_min": 30.0
-  },
-  {
-    "channel": "France 24 (ES)",
-    "channel_id": "france24_en",
-    "channel_name": "France 24 (ES)",
-    "date": "2026-10-20",
-    "time_local": "00:30",
-    "title": "News",
-    "episode": "",
-    "description": "",
-    "genre": "News",
-    "tags": [
-      "News"
-    ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261019223000 +0000",
-    "stop_utc_xml": "20261019224500 +0000",
-    "start_utc": "2026-10-19T22:30:00Z",
-    "stop_utc": "2026-10-19T22:45:00Z",
-    "start_min": 30.0,
-    "end_min": 45.0
-  },
-  {
-    "channel": "France 24 (ES)",
-    "channel_id": "france24_en",
-    "channel_name": "France 24 (ES)",
-    "date": "2026-10-20",
-    "time_local": "00:45",
-    "title": "People & profit",
-    "episode": "",
-    "description": "",
-    "genre": "News",
-    "tags": [
-      "News"
-    ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/tv-shows/people-profit/",
-    "start_utc_xml": "20261019224500 +0000",
+    "duration_min": 50.0,
+    "link": "https://www.france24.com/en/tv-shows/debate/",
+    "start_utc_xml": "20261019221000 +0000",
     "stop_utc_xml": "20261019230000 +0000",
-    "start_utc": "2026-10-19T22:45:00Z",
+    "start_utc": "2026-10-19T22:10:00Z",
     "stop_utc": "2026-10-19T23:00:00Z",
-    "start_min": 45.0,
+    "start_min": 10.0,
     "end_min": 60.0
   },
   {
@@ -137,50 +71,94 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "01:15",
-    "title": "Reporters",
+    "title": "Business",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 35.666666666666664,
-    "link": "https://www.france24.com/en/tv-shows/reporters/",
+    "duration_min": 5.0,
+    "link": "https://www.france24.com/en/tv-shows/business/",
     "start_utc_xml": "20261019231500 +0000",
-    "stop_utc_xml": "20261019235040 +0000",
+    "stop_utc_xml": "20261019232000 +0000",
     "start_utc": "2026-10-19T23:15:00Z",
-    "stop_utc": "2026-10-19T23:50:40Z",
+    "stop_utc": "2026-10-19T23:20:00Z",
     "start_min": 75.0,
-    "end_min": 110.66666666666667
+    "end_min": 80.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "01:50",
-    "title": "The observers",
+    "time_local": "01:20",
+    "title": "Focus",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 6.0,
-    "link": "https://www.france24.com/en/tv-shows/observers/",
-    "start_utc_xml": "20261019235040 +0000",
-    "stop_utc_xml": "20261019235640 +0000",
-    "start_utc": "2026-10-19T23:50:40Z",
-    "stop_utc": "2026-10-19T23:56:40Z",
-    "start_min": 110.66666666666667,
-    "end_min": 116.66666666666667
+    "duration_min": 10.0,
+    "link": "https://www.france24.com/en/tv-shows/focus/",
+    "start_utc_xml": "20261019232000 +0000",
+    "stop_utc_xml": "20261019233000 +0000",
+    "start_utc": "2026-10-19T23:20:00Z",
+    "stop_utc": "2026-10-19T23:30:00Z",
+    "start_min": 80.0,
+    "end_min": 90.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "01:56",
+    "time_local": "01:30",
+    "title": "News",
+    "episode": "",
+    "description": "",
+    "genre": "News",
+    "tags": [
+      "News"
+    ],
+    "duration_min": 15.0,
+    "link": "https://www.france24.com/en/",
+    "start_utc_xml": "20261019233000 +0000",
+    "stop_utc_xml": "20261019234500 +0000",
+    "start_utc": "2026-10-19T23:30:00Z",
+    "stop_utc": "2026-10-19T23:45:00Z",
+    "start_min": 90.0,
+    "end_min": 105.0
+  },
+  {
+    "channel": "France 24 (ES)",
+    "channel_id": "france24_en",
+    "channel_name": "France 24 (ES)",
+    "date": "2026-10-20",
+    "time_local": "01:45",
+    "title": "Arts24",
+    "episode": "",
+    "description": "",
+    "genre": "News",
+    "tags": [
+      "News"
+    ],
+    "duration_min": 9.85,
+    "link": "https://www.france24.com/en/tv-shows/arts24/",
+    "start_utc_xml": "20261019234500 +0000",
+    "stop_utc_xml": "20261019235451 +0000",
+    "start_utc": "2026-10-19T23:45:00Z",
+    "stop_utc": "2026-10-19T23:54:51Z",
+    "start_min": 105.0,
+    "end_min": 114.85
+  },
+  {
+    "channel": "France 24 (ES)",
+    "channel_id": "france24_en",
+    "channel_name": "France 24 (ES)",
+    "date": "2026-10-20",
+    "time_local": "01:54",
     "title": "Entr",
     "episode": "",
     "description": "",
@@ -188,13 +166,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 3.3333333333333335,
+    "duration_min": 5.15,
     "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261019235640 +0000",
+    "start_utc_xml": "20261019235451 +0000",
     "stop_utc_xml": "20261020000000 +0000",
-    "start_utc": "2026-10-19T23:56:40Z",
+    "start_utc": "2026-10-19T23:54:51Z",
     "stop_utc": "2026-10-20T00:00:00Z",
-    "start_min": 116.66666666666667,
+    "start_min": 114.85,
     "end_min": 120.0
   },
   {
@@ -225,7 +203,7 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "02:15",
-    "title": "The 51%",
+    "title": "A propos",
     "episode": "",
     "description": "",
     "genre": "News",
@@ -233,7 +211,7 @@
       "News"
     ],
     "duration_min": 15.0,
-    "link": "https://www.france24.com/en/tv-shows/51-percent/",
+    "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020001500 +0000",
     "stop_utc_xml": "20261020003000 +0000",
     "start_utc": "2026-10-20T00:15:00Z",
@@ -254,14 +232,14 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
+    "duration_min": 15.083333333333334,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020003000 +0000",
-    "stop_utc_xml": "20261020004500 +0000",
+    "stop_utc_xml": "20261020004505 +0000",
     "start_utc": "2026-10-20T00:30:00Z",
-    "stop_utc": "2026-10-20T00:45:00Z",
+    "stop_utc": "2026-10-20T00:45:05Z",
     "start_min": 150.0,
-    "end_min": 165.0
+    "end_min": 165.08333333333334
   },
   {
     "channel": "France 24 (ES)",
@@ -269,20 +247,20 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "02:45",
-    "title": "France in focus",
+    "title": "Eye on africa",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/tv-shows/france-focus/",
-    "start_utc_xml": "20261020004500 +0000",
+    "duration_min": 14.916666666666666,
+    "link": "https://www.france24.com/en/tv-shows/eye-africa/",
+    "start_utc_xml": "20261020004505 +0000",
     "stop_utc_xml": "20261020010000 +0000",
-    "start_utc": "2026-10-20T00:45:00Z",
+    "start_utc": "2026-10-20T00:45:05Z",
     "stop_utc": "2026-10-20T01:00:00Z",
-    "start_min": 165.0,
+    "start_min": 165.08333333333334,
     "end_min": 180.0
   },
   {
@@ -298,79 +276,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
+    "duration_min": 10.0,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020010000 +0000",
-    "stop_utc_xml": "20261020011500 +0000",
+    "stop_utc_xml": "20261020011000 +0000",
     "start_utc": "2026-10-20T01:00:00Z",
-    "stop_utc": "2026-10-20T01:15:00Z",
+    "stop_utc": "2026-10-20T01:10:00Z",
     "start_min": 180.0,
-    "end_min": 195.0
+    "end_min": 190.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "03:15",
-    "title": "Talking europe",
+    "time_local": "03:10",
+    "title": "The debate",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/tv-shows/talking-europe/",
-    "start_utc_xml": "20261020011500 +0000",
-    "stop_utc_xml": "20261020013000 +0000",
-    "start_utc": "2026-10-20T01:15:00Z",
-    "stop_utc": "2026-10-20T01:30:00Z",
-    "start_min": 195.0,
-    "end_min": 210.0
-  },
-  {
-    "channel": "France 24 (ES)",
-    "channel_id": "france24_en",
-    "channel_name": "France 24 (ES)",
-    "date": "2026-10-20",
-    "time_local": "03:30",
-    "title": "News",
-    "episode": "",
-    "description": "",
-    "genre": "News",
-    "tags": [
-      "News"
-    ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020013000 +0000",
-    "stop_utc_xml": "20261020014500 +0000",
-    "start_utc": "2026-10-20T01:30:00Z",
-    "stop_utc": "2026-10-20T01:45:00Z",
-    "start_min": 210.0,
-    "end_min": 225.0
-  },
-  {
-    "channel": "France 24 (ES)",
-    "channel_id": "france24_en",
-    "channel_name": "France 24 (ES)",
-    "date": "2026-10-20",
-    "time_local": "03:45",
-    "title": "Talking europe",
-    "episode": "",
-    "description": "",
-    "genre": "News",
-    "tags": [
-      "News"
-    ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/tv-shows/talking-europe/",
-    "start_utc_xml": "20261020014500 +0000",
+    "duration_min": 50.0,
+    "link": "https://www.france24.com/en/tv-shows/debate/",
+    "start_utc_xml": "20261020011000 +0000",
     "stop_utc_xml": "20261020020000 +0000",
-    "start_utc": "2026-10-20T01:45:00Z",
+    "start_utc": "2026-10-20T01:10:00Z",
     "stop_utc": "2026-10-20T02:00:00Z",
-    "start_min": 225.0,
+    "start_min": 190.0,
     "end_min": 240.0
   },
   {
@@ -386,35 +320,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 10.0,
+    "duration_min": 15.0,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020020000 +0000",
-    "stop_utc_xml": "20261020021000 +0000",
+    "stop_utc_xml": "20261020021500 +0000",
     "start_utc": "2026-10-20T02:00:00Z",
-    "stop_utc": "2026-10-20T02:10:00Z",
+    "stop_utc": "2026-10-20T02:15:00Z",
     "start_min": 240.0,
-    "end_min": 250.0
+    "end_min": 255.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "04:10",
-    "title": "Revisited",
+    "time_local": "04:15",
+    "title": "Access asia",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 20.0,
-    "link": "https://www.france24.com/en/tv-shows/revisited/",
-    "start_utc_xml": "20261020021000 +0000",
+    "duration_min": 15.0,
+    "link": "https://www.france24.com/en/tv-shows/access-asia/",
+    "start_utc_xml": "20261020021500 +0000",
     "stop_utc_xml": "20261020023000 +0000",
-    "start_utc": "2026-10-20T02:10:00Z",
+    "start_utc": "2026-10-20T02:15:00Z",
     "stop_utc": "2026-10-20T02:30:00Z",
-    "start_min": 250.0,
+    "start_min": 255.0,
     "end_min": 270.0
   },
   {
@@ -430,35 +364,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 10.0,
+    "duration_min": 15.0,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020023000 +0000",
-    "stop_utc_xml": "20261020024000 +0000",
+    "stop_utc_xml": "20261020024500 +0000",
     "start_utc": "2026-10-20T02:30:00Z",
-    "stop_utc": "2026-10-20T02:40:00Z",
+    "stop_utc": "2026-10-20T02:45:00Z",
     "start_min": 270.0,
-    "end_min": 280.0
+    "end_min": 285.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "04:40",
-    "title": "Le paris des arts",
+    "time_local": "04:45",
+    "title": "The 51%",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 20.0,
-    "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020024000 +0000",
+    "duration_min": 15.0,
+    "link": "https://www.france24.com/en/tv-shows/51-percent/",
+    "start_utc_xml": "20261020024500 +0000",
     "stop_utc_xml": "20261020030000 +0000",
-    "start_utc": "2026-10-20T02:40:00Z",
+    "start_utc": "2026-10-20T02:45:00Z",
     "stop_utc": "2026-10-20T03:00:00Z",
-    "start_min": 280.0,
+    "start_min": 285.0,
     "end_min": 300.0
   },
   {
@@ -474,14 +408,14 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
+    "duration_min": 15.083333333333334,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020030000 +0000",
-    "stop_utc_xml": "20261020031500 +0000",
+    "stop_utc_xml": "20261020031505 +0000",
     "start_utc": "2026-10-20T03:00:00Z",
-    "stop_utc": "2026-10-20T03:15:00Z",
+    "stop_utc": "2026-10-20T03:15:05Z",
     "start_min": 300.0,
-    "end_min": 315.0
+    "end_min": 315.0833333333333
   },
   {
     "channel": "France 24 (ES)",
@@ -489,20 +423,20 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "05:15",
-    "title": "Across africa",
+    "title": "Eye on africa",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
-    "link": "https://www.france24.com/en/tv-shows/across-africa/",
-    "start_utc_xml": "20261020031500 +0000",
+    "duration_min": 14.916666666666666,
+    "link": "https://www.france24.com/en/tv-shows/eye-africa/",
+    "start_utc_xml": "20261020031505 +0000",
     "stop_utc_xml": "20261020033000 +0000",
-    "start_utc": "2026-10-20T03:15:00Z",
+    "start_utc": "2026-10-20T03:15:05Z",
     "stop_utc": "2026-10-20T03:30:00Z",
-    "start_min": 315.0,
+    "start_min": 315.0833333333333,
     "end_min": 330.0
   },
   {
@@ -540,13 +474,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.0,
+    "duration_min": 9.85,
     "link": "https://www.france24.com/en/tv-shows/arts24/",
     "start_utc_xml": "20261020034500 +0000",
-    "stop_utc_xml": "20261020040000 +0000",
+    "stop_utc_xml": "20261020035451 +0000",
     "start_utc": "2026-10-20T03:45:00Z",
-    "stop_utc": "2026-10-20T04:00:00Z",
+    "stop_utc": "2026-10-20T03:54:51Z",
     "start_min": 345.0,
+    "end_min": 354.85
+  },
+  {
+    "channel": "France 24 (ES)",
+    "channel_id": "france24_en",
+    "channel_name": "France 24 (ES)",
+    "date": "2026-10-20",
+    "time_local": "05:54",
+    "title": "Entr",
+    "episode": "",
+    "description": "",
+    "genre": "News",
+    "tags": [
+      "News"
+    ],
+    "duration_min": 5.15,
+    "link": "https://www.france24.com/en/",
+    "start_utc_xml": "20261020035451 +0000",
+    "stop_utc_xml": "20261020040000 +0000",
+    "start_utc": "2026-10-20T03:54:51Z",
+    "stop_utc": "2026-10-20T04:00:00Z",
+    "start_min": 354.85,
     "end_min": 360.0
   },
   {
@@ -1281,28 +1237,50 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "11:46",
-    "title": "Access asia",
+    "title": "The observers",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 12.566666666666666,
-    "link": "https://www.france24.com/en/tv-shows/access-asia/",
+    "duration_min": 6.466666666666667,
+    "link": "https://www.france24.com/en/tv-shows/observers/",
     "start_utc_xml": "20261020094610 +0000",
-    "stop_utc_xml": "20261020095844 +0000",
+    "stop_utc_xml": "20261020095238 +0000",
     "start_utc": "2026-10-20T09:46:10Z",
-    "stop_utc": "2026-10-20T09:58:44Z",
+    "stop_utc": "2026-10-20T09:52:38Z",
     "start_min": 706.1666666666666,
-    "end_min": 718.7333333333333
+    "end_min": 712.6333333333333
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "11:58",
+    "time_local": "11:52",
+    "title": "Focus",
+    "episode": "",
+    "description": "",
+    "genre": "News",
+    "tags": [
+      "News"
+    ],
+    "duration_min": 5.0,
+    "link": "https://www.france24.com/en/tv-shows/focus/",
+    "start_utc_xml": "20261020095238 +0000",
+    "stop_utc_xml": "20261020095738 +0000",
+    "start_utc": "2026-10-20T09:52:38Z",
+    "stop_utc": "2026-10-20T09:57:38Z",
+    "start_min": 712.6333333333333,
+    "end_min": 717.6333333333333
+  },
+  {
+    "channel": "France 24 (ES)",
+    "channel_id": "france24_en",
+    "channel_name": "France 24 (ES)",
+    "date": "2026-10-20",
+    "time_local": "11:57",
     "title": "Headlines",
     "episode": "",
     "description": "",
@@ -1310,13 +1288,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 1.2666666666666666,
+    "duration_min": 2.3666666666666667,
     "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020095844 +0000",
+    "start_utc_xml": "20261020095738 +0000",
     "stop_utc_xml": "20261020100000 +0000",
-    "start_utc": "2026-10-20T09:58:44Z",
+    "start_utc": "2026-10-20T09:57:38Z",
     "stop_utc": "2026-10-20T10:00:00Z",
-    "start_min": 718.7333333333333,
+    "start_min": 717.6333333333333,
     "end_min": 720.0
   },
   {
@@ -1332,21 +1310,21 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.166666666666666,
+    "duration_min": 10.166666666666666,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020100000 +0000",
-    "stop_utc_xml": "20261020101510 +0000",
+    "stop_utc_xml": "20261020101010 +0000",
     "start_utc": "2026-10-20T10:00:00Z",
-    "stop_utc": "2026-10-20T10:15:10Z",
+    "stop_utc": "2026-10-20T10:10:10Z",
     "start_min": 720.0,
-    "end_min": 735.1666666666666
+    "end_min": 730.1666666666666
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "12:15",
+    "time_local": "12:10",
     "title": "Introduction",
     "episode": "",
     "description": "",
@@ -1356,19 +1334,41 @@
     ],
     "duration_min": 1.0,
     "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020101510 +0000",
-    "stop_utc_xml": "20261020101610 +0000",
-    "start_utc": "2026-10-20T10:15:10Z",
-    "stop_utc": "2026-10-20T10:16:10Z",
-    "start_min": 735.1666666666666,
-    "end_min": 736.1666666666666
+    "start_utc_xml": "20261020101010 +0000",
+    "stop_utc_xml": "20261020101110 +0000",
+    "start_utc": "2026-10-20T10:10:10Z",
+    "stop_utc": "2026-10-20T10:11:10Z",
+    "start_min": 730.1666666666666,
+    "end_min": 731.1666666666666
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "12:16",
+    "time_local": "12:11",
+    "title": "Fashion",
+    "episode": "",
+    "description": "",
+    "genre": "News",
+    "tags": [
+      "News"
+    ],
+    "duration_min": 6.0,
+    "link": "https://www.france24.com/en/tv-shows/fashion/",
+    "start_utc_xml": "20261020101110 +0000",
+    "stop_utc_xml": "20261020101710 +0000",
+    "start_utc": "2026-10-20T10:11:10Z",
+    "stop_utc": "2026-10-20T10:17:10Z",
+    "start_min": 731.1666666666666,
+    "end_min": 737.1666666666666
+  },
+  {
+    "channel": "France 24 (ES)",
+    "channel_id": "france24_en",
+    "channel_name": "France 24 (ES)",
+    "date": "2026-10-20",
+    "time_local": "12:17",
     "title": "Arts24",
     "episode": "",
     "description": "",
@@ -1376,13 +1376,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 13.833333333333334,
+    "duration_min": 12.833333333333334,
     "link": "https://www.france24.com/en/tv-shows/arts24/",
-    "start_utc_xml": "20261020101610 +0000",
+    "start_utc_xml": "20261020101710 +0000",
     "stop_utc_xml": "20261020103000 +0000",
-    "start_utc": "2026-10-20T10:16:10Z",
+    "start_utc": "2026-10-20T10:17:10Z",
     "stop_utc": "2026-10-20T10:30:00Z",
-    "start_min": 736.1666666666666,
+    "start_min": 737.1666666666666,
     "end_min": 750.0
   },
   {
@@ -1398,21 +1398,21 @@
     "tags": [
       "News"
     ],
-    "duration_min": 15.166666666666666,
+    "duration_min": 10.166666666666666,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020103000 +0000",
-    "stop_utc_xml": "20261020104510 +0000",
+    "stop_utc_xml": "20261020104010 +0000",
     "start_utc": "2026-10-20T10:30:00Z",
-    "stop_utc": "2026-10-20T10:45:10Z",
+    "stop_utc": "2026-10-20T10:40:10Z",
     "start_min": 750.0,
-    "end_min": 765.1666666666666
+    "end_min": 760.1666666666666
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "12:45",
+    "time_local": "12:40",
     "title": "Introduction",
     "episode": "",
     "description": "",
@@ -1422,19 +1422,41 @@
     ],
     "duration_min": 1.0,
     "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020104510 +0000",
-    "stop_utc_xml": "20261020104610 +0000",
-    "start_utc": "2026-10-20T10:45:10Z",
-    "stop_utc": "2026-10-20T10:46:10Z",
-    "start_min": 765.1666666666666,
-    "end_min": 766.1666666666666
+    "start_utc_xml": "20261020104010 +0000",
+    "stop_utc_xml": "20261020104110 +0000",
+    "start_utc": "2026-10-20T10:40:10Z",
+    "stop_utc": "2026-10-20T10:41:10Z",
+    "start_min": 760.1666666666666,
+    "end_min": 761.1666666666666
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "12:46",
+    "time_local": "12:41",
+    "title": "French connections",
+    "episode": "",
+    "description": "",
+    "genre": "News",
+    "tags": [
+      "News"
+    ],
+    "duration_min": 6.5,
+    "link": "https://www.france24.com/en/tv-shows/french-connections/",
+    "start_utc_xml": "20261020104110 +0000",
+    "stop_utc_xml": "20261020104740 +0000",
+    "start_utc": "2026-10-20T10:41:10Z",
+    "stop_utc": "2026-10-20T10:47:40Z",
+    "start_min": 761.1666666666666,
+    "end_min": 767.6666666666666
+  },
+  {
+    "channel": "France 24 (ES)",
+    "channel_id": "france24_en",
+    "channel_name": "France 24 (ES)",
+    "date": "2026-10-20",
+    "time_local": "12:47",
     "title": "Focus",
     "episode": "",
     "description": "",
@@ -1444,19 +1466,19 @@
     ],
     "duration_min": 5.0,
     "link": "https://www.france24.com/en/tv-shows/focus/",
-    "start_utc_xml": "20261020104610 +0000",
-    "stop_utc_xml": "20261020105110 +0000",
-    "start_utc": "2026-10-20T10:46:10Z",
-    "stop_utc": "2026-10-20T10:51:10Z",
-    "start_min": 766.1666666666666,
-    "end_min": 771.1666666666666
+    "start_utc_xml": "20261020104740 +0000",
+    "stop_utc_xml": "20261020105240 +0000",
+    "start_utc": "2026-10-20T10:47:40Z",
+    "stop_utc": "2026-10-20T10:52:40Z",
+    "start_min": 767.6666666666666,
+    "end_min": 772.6666666666666
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "12:51",
+    "time_local": "12:52",
     "title": "Sports",
     "episode": "",
     "description": "",
@@ -1464,13 +1486,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 8.833333333333334,
+    "duration_min": 7.333333333333333,
     "link": "https://www.france24.com/en/tv-shows/sports/",
-    "start_utc_xml": "20261020105110 +0000",
+    "start_utc_xml": "20261020105240 +0000",
     "stop_utc_xml": "20261020110000 +0000",
-    "start_utc": "2026-10-20T10:51:10Z",
+    "start_utc": "2026-10-20T10:52:40Z",
     "stop_utc": "2026-10-20T11:00:00Z",
-    "start_min": 771.1666666666666,
+    "start_min": 772.6666666666666,
     "end_min": 780.0
   },
   {
@@ -1567,7 +1589,7 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "13:45",
-    "title": "Down to earth",
+    "title": "Entre nous",
     "episode": "",
     "description": "",
     "genre": "News",
@@ -1575,7 +1597,7 @@
       "News"
     ],
     "duration_min": 6.166666666666667,
-    "link": "https://www.france24.com/en/tv-shows/down-earth/",
+    "link": "https://www.france24.com/en/tv-shows/entre-nous/",
     "start_utc_xml": "20261020114500 +0000",
     "stop_utc_xml": "20261020115110 +0000",
     "start_utc": "2026-10-20T11:45:00Z",
@@ -1699,28 +1721,28 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "14:45",
-    "title": "Scoop",
+    "title": "France in focus",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 14.183333333333334,
-    "link": "https://www.france24.com/en/tv-shows/scoop/",
+    "duration_min": 12.483333333333333,
+    "link": "https://www.france24.com/en/tv-shows/france-focus/",
     "start_utc_xml": "20261020124500 +0000",
-    "stop_utc_xml": "20261020125911 +0000",
+    "stop_utc_xml": "20261020125729 +0000",
     "start_utc": "2026-10-20T12:45:00Z",
-    "stop_utc": "2026-10-20T12:59:11Z",
+    "stop_utc": "2026-10-20T12:57:29Z",
     "start_min": 885.0,
-    "end_min": 899.1833333333333
+    "end_min": 897.4833333333333
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "14:59",
+    "time_local": "14:57",
     "title": "Headlines",
     "episode": "",
     "description": "",
@@ -1728,13 +1750,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 0.8166666666666667,
+    "duration_min": 2.5166666666666666,
     "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020125911 +0000",
+    "start_utc_xml": "20261020125729 +0000",
     "stop_utc_xml": "20261020130000 +0000",
-    "start_utc": "2026-10-20T12:59:11Z",
+    "start_utc": "2026-10-20T12:57:29Z",
     "stop_utc": "2026-10-20T13:00:00Z",
-    "start_min": 899.1833333333333,
+    "start_min": 897.4833333333333,
     "end_min": 900.0
   },
   {
@@ -1750,35 +1772,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 42.0,
+    "duration_min": 43.0,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020130000 +0000",
-    "stop_utc_xml": "20261020134200 +0000",
+    "stop_utc_xml": "20261020134300 +0000",
     "start_utc": "2026-10-20T13:00:00Z",
-    "stop_utc": "2026-10-20T13:42:00Z",
+    "stop_utc": "2026-10-20T13:43:00Z",
     "start_min": 900.0,
-    "end_min": 942.0
+    "end_min": 943.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "15:42",
-    "title": "France in focus",
+    "time_local": "15:43",
+    "title": "Talking europe",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 18.0,
-    "link": "https://www.france24.com/en/tv-shows/france-focus/",
-    "start_utc_xml": "20261020134200 +0000",
+    "duration_min": 17.0,
+    "link": "https://www.france24.com/en/tv-shows/talking-europe/",
+    "start_utc_xml": "20261020134300 +0000",
     "stop_utc_xml": "20261020140000 +0000",
-    "start_utc": "2026-10-20T13:42:00Z",
+    "start_utc": "2026-10-20T13:43:00Z",
     "stop_utc": "2026-10-20T14:00:00Z",
-    "start_min": 942.0,
+    "start_min": 943.0,
     "end_min": 960.0
   },
   {
@@ -1816,35 +1838,35 @@
     "tags": [
       "News"
     ],
-    "duration_min": 10.0,
+    "duration_min": 15.0,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020143000 +0000",
-    "stop_utc_xml": "20261020144000 +0000",
+    "stop_utc_xml": "20261020144500 +0000",
     "start_utc": "2026-10-20T14:30:00Z",
-    "stop_utc": "2026-10-20T14:40:00Z",
+    "stop_utc": "2026-10-20T14:45:00Z",
     "start_min": 990.0,
-    "end_min": 1000.0
+    "end_min": 1005.0
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "16:40",
-    "title": "Revisited",
+    "time_local": "16:45",
+    "title": "France in focus",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 20.0,
-    "link": "https://www.france24.com/en/tv-shows/revisited/",
-    "start_utc_xml": "20261020144000 +0000",
+    "duration_min": 15.0,
+    "link": "https://www.france24.com/en/tv-shows/france-focus/",
+    "start_utc_xml": "20261020144500 +0000",
     "stop_utc_xml": "20261020150000 +0000",
-    "start_utc": "2026-10-20T14:40:00Z",
+    "start_utc": "2026-10-20T14:45:00Z",
     "stop_utc": "2026-10-20T15:00:00Z",
-    "start_min": 1000.0,
+    "start_min": 1005.0,
     "end_min": 1020.0
   },
   {
@@ -1963,50 +1985,28 @@
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
     "time_local": "17:46",
-    "title": "French connections",
+    "title": "The 51%",
     "episode": "",
     "description": "",
     "genre": "News",
     "tags": [
       "News"
     ],
-    "duration_min": 6.5,
-    "link": "https://www.france24.com/en/tv-shows/french-connections/",
+    "duration_min": 12.95,
+    "link": "https://www.france24.com/en/tv-shows/51-percent/",
     "start_utc_xml": "20261020154610 +0000",
-    "stop_utc_xml": "20261020155240 +0000",
+    "stop_utc_xml": "20261020155907 +0000",
     "start_utc": "2026-10-20T15:46:10Z",
-    "stop_utc": "2026-10-20T15:52:40Z",
+    "stop_utc": "2026-10-20T15:59:07Z",
     "start_min": 1066.1666666666667,
-    "end_min": 1072.6666666666667
+    "end_min": 1079.1166666666666
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "17:52",
-    "title": "Fashion",
-    "episode": "",
-    "description": "",
-    "genre": "News",
-    "tags": [
-      "News"
-    ],
-    "duration_min": 6.0,
-    "link": "https://www.france24.com/en/tv-shows/fashion/",
-    "start_utc_xml": "20261020155240 +0000",
-    "stop_utc_xml": "20261020155840 +0000",
-    "start_utc": "2026-10-20T15:52:40Z",
-    "stop_utc": "2026-10-20T15:58:40Z",
-    "start_min": 1072.6666666666667,
-    "end_min": 1078.6666666666667
-  },
-  {
-    "channel": "France 24 (ES)",
-    "channel_id": "france24_en",
-    "channel_name": "France 24 (ES)",
-    "date": "2026-10-20",
-    "time_local": "17:58",
+    "time_local": "17:59",
     "title": "Headlines",
     "episode": "",
     "description": "",
@@ -2014,13 +2014,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 1.3333333333333333,
+    "duration_min": 0.8833333333333333,
     "link": "https://www.france24.com/en/",
-    "start_utc_xml": "20261020155840 +0000",
+    "start_utc_xml": "20261020155907 +0000",
     "stop_utc_xml": "20261020160000 +0000",
-    "start_utc": "2026-10-20T15:58:40Z",
+    "start_utc": "2026-10-20T15:59:07Z",
     "stop_utc": "2026-10-20T16:00:00Z",
-    "start_min": 1078.6666666666667,
+    "start_min": 1079.1166666666666,
     "end_min": 1080.0
   },
   {
@@ -2146,14 +2146,14 @@
     "tags": [
       "News"
     ],
-    "duration_min": 10.716666666666667,
+    "duration_min": 10.566666666666666,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020170000 +0000",
-    "stop_utc_xml": "20261020171043 +0000",
+    "stop_utc_xml": "20261020171034 +0000",
     "start_utc": "2026-10-20T17:00:00Z",
-    "stop_utc": "2026-10-20T17:10:43Z",
+    "stop_utc": "2026-10-20T17:10:34Z",
     "start_min": 1140.0,
-    "end_min": 1150.7166666666667
+    "end_min": 1150.5666666666666
   },
   {
     "channel": "France 24 (ES)",
@@ -2168,13 +2168,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 49.28333333333333,
+    "duration_min": 49.43333333333333,
     "link": "https://www.france24.com/en/tv-shows/debate/",
-    "start_utc_xml": "20261020171043 +0000",
+    "start_utc_xml": "20261020171034 +0000",
     "stop_utc_xml": "20261020180000 +0000",
-    "start_utc": "2026-10-20T17:10:43Z",
+    "start_utc": "2026-10-20T17:10:34Z",
     "stop_utc": "2026-10-20T18:00:00Z",
-    "start_min": 1150.7166666666667,
+    "start_min": 1150.5666666666666,
     "end_min": 1200.0
   },
   {
@@ -2344,21 +2344,21 @@
     "tags": [
       "News"
     ],
-    "duration_min": 11.266666666666667,
+    "duration_min": 10.95,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020193000 +0000",
-    "stop_utc_xml": "20261020194116 +0000",
+    "stop_utc_xml": "20261020194057 +0000",
     "start_utc": "2026-10-20T19:30:00Z",
-    "stop_utc": "2026-10-20T19:41:16Z",
+    "stop_utc": "2026-10-20T19:40:57Z",
     "start_min": 1290.0,
-    "end_min": 1301.2666666666667
+    "end_min": 1300.95
   },
   {
     "channel": "France 24 (ES)",
     "channel_id": "france24_en",
     "channel_name": "France 24 (ES)",
     "date": "2026-10-20",
-    "time_local": "21:41",
+    "time_local": "21:40",
     "title": "Eye on africa",
     "episode": "",
     "description": "",
@@ -2366,13 +2366,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 18.733333333333334,
+    "duration_min": 19.05,
     "link": "https://www.france24.com/en/tv-shows/eye-africa/",
-    "start_utc_xml": "20261020194116 +0000",
+    "start_utc_xml": "20261020194057 +0000",
     "stop_utc_xml": "20261020200000 +0000",
-    "start_utc": "2026-10-20T19:41:16Z",
+    "start_utc": "2026-10-20T19:40:57Z",
     "stop_utc": "2026-10-20T20:00:00Z",
-    "start_min": 1301.2666666666667,
+    "start_min": 1300.95,
     "end_min": 1320.0
   },
   {
@@ -2389,7 +2389,7 @@
       "News"
     ],
     "duration_min": 15.0,
-    "link": "https://www.france24.com/en/",
+    "link": "https://www.france24.com/en/live",
     "start_utc_xml": "20261020200000 +0000",
     "stop_utc_xml": "20261020201500 +0000",
     "start_utc": "2026-10-20T20:00:00Z",
@@ -2476,14 +2476,14 @@
     "tags": [
       "News"
     ],
-    "duration_min": 13.15,
+    "duration_min": 13.55,
     "link": "https://www.france24.com/en/",
     "start_utc_xml": "20261020203200 +0000",
-    "stop_utc_xml": "20261020204509 +0000",
+    "stop_utc_xml": "20261020204533 +0000",
     "start_utc": "2026-10-20T20:32:00Z",
-    "stop_utc": "2026-10-20T20:45:09Z",
+    "stop_utc": "2026-10-20T20:45:33Z",
     "start_min": 1352.0,
-    "end_min": 1365.15
+    "end_min": 1365.55
   },
   {
     "channel": "France 24 (ES)",
@@ -2498,13 +2498,13 @@
     "tags": [
       "News"
     ],
-    "duration_min": 14.85,
+    "duration_min": 14.45,
     "link": "https://www.france24.com/en/tv-shows/eye-africa/",
-    "start_utc_xml": "20261020204509 +0000",
+    "start_utc_xml": "20261020204533 +0000",
     "stop_utc_xml": "20261020210000 +0000",
-    "start_utc": "2026-10-20T20:45:09Z",
+    "start_utc": "2026-10-20T20:45:33Z",
     "stop_utc": "2026-10-20T21:00:00Z",
-    "start_min": 1365.15,
+    "start_min": 1365.55,
     "end_min": 1380.0
   },
   {

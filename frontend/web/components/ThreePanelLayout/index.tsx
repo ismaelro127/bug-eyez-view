@@ -2320,6 +2320,7 @@ return (
         selected={selected}
         adPlaying={adOverlayOpen}
         setSelected={setSelectedSafe}
+        onRequestNextChannel={requestNextChannel}
 channels={filteredChannels}
         selectedProgram={selectedProgram}
         setSelectedProgram={setSelectedProgram}

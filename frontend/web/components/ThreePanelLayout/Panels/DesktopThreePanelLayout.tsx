@@ -46,7 +46,6 @@ interface DesktopThreePanelLayoutProps {
 type ChannelTab =
   | "All"
   | "Favorites"
-  | "Personal"
   | "News"
   | "Government"
   | "Public TV"
@@ -56,7 +55,6 @@ type ChannelTab =
 const CHANNEL_TABS: ChannelTab[] = [
   "All",
   "Favorites",
-  "Personal",
   "News",
   "Government",
   "Public TV",
@@ -118,6 +116,7 @@ const DesktopThreePanelLayout: React.FC<DesktopThreePanelLayoutProps> = ({
   const [summaryCache, setSummaryCache] = useState<Record<string, any>>({});
   const [showNowNext, setShowNowNext] = useState(false);
   const [channelTab, setChannelTab] = useState<ChannelTab>("All");
+  const [personalMode, setPersonalMode] = useState(false);
   const { prefs } = usePrefs();
 
   useEffect(() => {
@@ -169,20 +168,20 @@ const filteredChannels = useMemo(() => {
   return channels.filter((channel) => {
     const isPersonal = channel.id.startsWith("personal:");
 
-    // Favorites may contain either public or personal channels.
-    if (channelTab === "Favorites") {
-      return favoriteIDs.includes(channel.id);
-    }
+    /// Personal mode is separate from the normal public guide tabs.
+if (personalMode) {
+  return isPersonal;
+}
 
-    // Personal is completely separate from the public guide.
-    if (channelTab === "Personal") {
-      return isPersonal;
-    }
+// Favorites in the normal guide are public-only.
+if (channelTab === "Favorites") {
+  return !isPersonal && favoriteIDs.includes(channel.id);
+}
 
-    // All means all PUBLIC channels, not personal channels.
-    if (channelTab === "All") {
-      return !isPersonal;
-    }
+// All means all PUBLIC channels.
+if (channelTab === "All") {
+  return !isPersonal;
+}
 
     // Category tabs are public-only.
     if (isPersonal) {
@@ -210,7 +209,7 @@ const filteredChannels = useMemo(() => {
 
     return haystack.includes(normalizeText(channelTab));
   });
-}, [channels, channelTab, favoriteIDs]);
+}, [channels, channelTab, favoriteIDs, personalMode]);
 
   const handleProgramSelect = (program: EPGEntry, channel: Channel) => {
     triggerActiveVisuals();
@@ -335,9 +334,28 @@ const filteredChannels = useMemo(() => {
         >
           <div className="flex h-full min-h-0 flex-col">
             <div className="flex items-center justify-between border-b border-white/10 px-3 py-2">
-              <div className="text-sm font-black tracking-wide text-cyan-200">Guide</div>
-              <div className="text-[11px] text-white/45">{filteredChannels.length} channels</div>
-            </div>
+  <div className="text-sm font-black tracking-wide text-cyan-200">Guide</div>
+
+  <div className="flex items-center gap-2">
+    <div className="text-[11px] text-white/45">
+      {filteredChannels.length} channels
+    </div>
+
+    <button
+      type="button"
+      onClick={() => setPersonalMode((current) => !current)}
+      title={personalMode ? "Show public channels" : "Show personal channels"}
+      aria-label={personalMode ? "Show public channels" : "Show personal channels"}
+      className={`flex h-8 w-8 items-center justify-center rounded-md border text-sm transition ${
+        personalMode
+          ? "border-cyan-300 bg-cyan-400 text-black"
+          : "border-white/15 bg-white/5 text-gray-300"
+      }`}
+    >
+      {personalMode ? "⌂" : "♙"}
+    </button>
+  </div>
+</div>
 
             <div className="border-b border-white/10 px-2 py-2">
               <div className="flex gap-2 overflow-x-auto pb-1">

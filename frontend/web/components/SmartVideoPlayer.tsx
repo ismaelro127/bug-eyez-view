@@ -230,15 +230,16 @@ const sendYouTubeCommand = (
 
   useEffect(() => {
     const video = videoRef.current;
-    const shouldUseHls =
+    const shouldUseNativeVideo =
       channel &&
       channelKind !== "rotation" &&
       channelKind !== "government_live" &&
       channelKind !== "youtube" &&
       !((channel as any)?.embed?.url) &&
-      channelUrl.toLowerCase().includes(".m3u8");
+      Boolean(channelUrl);
+    const looksLikeHls = channelUrl.toLowerCase().includes(".m3u8");
 
-    if (!video || !shouldUseHls) return;
+    if (!video || !shouldUseNativeVideo) return;
 
     let hls: Hls | null = null;
     let startupTimer: ReturnType<typeof setTimeout> | null = null;
@@ -294,7 +295,7 @@ const sendYouTubeCommand = (
 
     const handleVideoError = () => handleError("video_error");
 
-    if (Hls.isSupported()) {
+    if (looksLikeHls && Hls.isSupported()) {
       hls = new Hls({ enableWorker: true });
 
       hls.on(Hls.Events.ERROR, (_event, data) => {
@@ -307,7 +308,9 @@ const sendYouTubeCommand = (
 
       hls.loadSource(channelUrl);
       hls.attachMedia(video);
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    } else {
+      // Non-HLS personal streams previously never received a video src at all,
+      // which produced a permanent black screen and bypassed the startup timer.
       video.src = channelUrl;
     }
 

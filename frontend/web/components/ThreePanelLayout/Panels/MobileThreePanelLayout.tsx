@@ -8,6 +8,7 @@ import type { BugEyezSettings } from "../../Settings/useSettingsData";
 type MobileProps = {
   selected: Channel | null;
   setSelected: (ch: Channel | null) => void;
+  onRequestNextChannel?: (reason: string) => void;
   adPlaying?: boolean;
   channels: Channel[];
   onToggleFavorite?: (channelId: string) => void;
@@ -48,6 +49,7 @@ const getSummaryText = (aiSummary: any) => {
 const MobileThreePanelLayout: React.FC<MobileProps> = ({
   selected,
   setSelected,
+  onRequestNextChannel,
   channels,
   adPlaying = false,
   channelHealth,
@@ -106,6 +108,7 @@ const visibleChannels = useMemo(() => {
   source="sidebar"
   adPlaying={adPlaying}
   showAIButton={false}
+  onRequestNextChannel={onRequestNextChannel}
 />
         ) : (
           <div className="flex h-full items-center justify-center text-sm text-gray-500">
@@ -147,35 +150,34 @@ const visibleChannels = useMemo(() => {
 <main className="min-h-0 flex-1 overflow-hidden">
   {activeTab === "channels" && (
     <div className="flex h-full min-h-0 flex-col overflow-hidden">
-      {/* CHANNEL SOURCE SELECTOR */}
-      <div className="shrink-0 border-b border-white/10 bg-[#05070a] px-3 py-2">
-        <div className="mx-auto grid max-w-[820px] grid-cols-2 gap-2">
-          <button
-            type="button"
-            onClick={() => setChannelSource("public")}
-            className={`rounded-lg px-3 py-2 text-xs font-black transition ${
-              channelSource === "public"
-                ? "bg-cyan-400 text-black"
-                : "border border-white/10 bg-white/5 text-gray-300"
-            }`}
-          >
-            Public
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setChannelSource("personal")}
-            className={`rounded-lg px-3 py-2 text-xs font-black transition ${
-              channelSource === "personal"
-                ? "bg-cyan-400 text-black"
-                : "border border-white/10 bg-white/5 text-gray-300"
-            }`}
-          >
-            Personal
-          </button>
-        </div>
-      </div>
-
+      {/* PERSONAL CHANNEL TOGGLE */}
+<div className="shrink-0 flex justify-end px-2 py-1">
+  <button
+    type="button"
+    onClick={() =>
+      setChannelSource((current) =>
+        current === "personal" ? "public" : "personal"
+      )
+    }
+    title={
+      channelSource === "personal"
+        ? "Show public channels"
+        : "Show personal channels"
+    }
+    aria-label={
+      channelSource === "personal"
+        ? "Show public channels"
+        : "Show personal channels"
+    }
+    className={`flex h-8 w-8 items-center justify-center rounded-md border text-sm transition ${
+      channelSource === "personal"
+        ? "border-cyan-300 bg-cyan-400 text-black"
+        : "border-white/15 bg-white/5 text-gray-300"
+    }`}
+  >
+    {channelSource === "personal" ? "⌂" : "♙"}
+  </button>
+</div>
       {/* GUIDE */}
       <div className="min-h-0 flex-1 overflow-hidden">
         <TVGuidePanel
