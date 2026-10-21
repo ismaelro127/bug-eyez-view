@@ -326,7 +326,18 @@ const API = (
     if (current && current.id === ch.id) return;
 
     const h = channelHealth[ch.id] || (ch as any).health;
+const isPersonal = ch.id.startsWith("personal:");
 
+if (isPersonal) {
+  if (selectedRef.current?.id === ch.id) {
+    return;
+  }
+
+  _setSelected(ch);
+  selectedRef.current = ch;
+  recordRecentChannel(ch.id);
+  return;
+}
     // 1) Hard disabled => instantly swap to best option
     if (h?.is_disabled) {
       const next = pickBestChannel(channels, ch, channelHealth);
@@ -429,18 +440,21 @@ const API = (
     const current = selectedRef.current;
     if (!current) return;
 
+    // Personal channels are manually selected.
+    // A playback failure must not trigger automatic channel switching.
+    if (current.id.startsWith("personal:")) {
+      return;
+    }
+
     const next = pickBestChannel(
-  channels.filter((ch) => ch.locked !== true),
-  current,
-  channelHealth
-);
+      channels.filter((ch) => ch.locked !== true),
+      current,
+      channelHealth
+    );
 
-if (!next) return;
+    if (!next || next.id === current.id) return;
 
-selectChannel(next);
-
-    // Optional: you can also log this auto action to backend if you want
-    // emitEvent("channel-auto-swapped", { from: current.id, to: next.id, reason })
+    selectChannel(next);
   },
   [channels, channelHealth, selectChannel]
 );

@@ -176,10 +176,27 @@ const youtubeChannels = settingsFilteredChannels.filter(
 
   const [scrollTop, setScrollTop] = React.useState(0);
 
-const visibleChannels = sortedChannels;
+const OVERSCAN_ROWS = 8;
+const VIEWPORT_HEIGHT = 900;
 
-const topSpacer = 0;
-const bottomSpacer = 0;
+const startIndex = Math.max(
+  0,
+  Math.floor(scrollTop / ROW_HEIGHT) - OVERSCAN_ROWS
+);
+
+const visibleRowCount =
+  Math.ceil(VIEWPORT_HEIGHT / ROW_HEIGHT) + OVERSCAN_ROWS * 2;
+
+const endIndex = Math.min(
+  sortedChannels.length,
+  startIndex + visibleRowCount
+);
+
+const visibleChannels = sortedChannels.slice(startIndex, endIndex);
+
+const topSpacer = startIndex * ROW_HEIGHT;
+const bottomSpacer =
+  Math.max(0, (sortedChannels.length - endIndex) * ROW_HEIGHT);
 
   return (
     <div
@@ -777,9 +794,11 @@ fontSize: guideDensity === "ultra" ? "11px" : guideDensity === "compact" ? "12px
 )}
         </div>
       </div>
-    </React.Fragment>
+        </React.Fragment>
   );
 })}
+
+<div style={{ height: bottomSpacer }} />
 </div>
       </div>
     </div>

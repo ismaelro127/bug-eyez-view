@@ -831,8 +831,22 @@ useEffect(() => {
         </div>
       )}
 
-      {channel ? (
-        <video ref={videoRef} className="w-full h-full object-contain bg-black" playsInline muted={isMuted} />
+            {channel ? (
+        <>
+          <video
+            ref={videoRef}
+            className="w-full h-full object-contain bg-black"
+            playsInline
+            muted={isMuted}
+          />
+
+          <div
+            className="absolute left-2 top-2 z-40 rounded bg-black/75 px-2 py-1 text-[10px] font-mono text-cyan-200 pointer-events-none"
+            title={channel.id}
+          >
+            ID: {channel.id}
+          </div>
+        </>
       ) : (
         <div className="flex items-center justify-center w-full h-full bg-black text-gray-400">
           Select a channel to start playback
