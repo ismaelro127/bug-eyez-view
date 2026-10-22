@@ -1,0 +1,32 @@
+Bug Eyez View - Personal Channel Refresh + Playback Fix
+
+Install from C:\BugEyezView by extracting this ZIP with overwrite enabled.
+
+What changed:
+- Source refresh writes atomically and preserves the old catalog if download/parsing fails.
+- Validator rechecks stale working streams instead of trusting them forever.
+- Transient failures retry after 30 minutes; hard failures after 24 hours; working streams after 6 hours.
+- HTTP 401/403/451 are classified as restricted_or_geoblocked (a likely restriction signal, not proof of geography).
+- 404/410 are classified dead_or_expired; 429 rate_limited; 5xx server_error.
+- Verified output is regenerated without deleting the master personal_channels.json.
+- Verified output is synchronized to frontend/public/personal_channels_verified.json.
+- refresh_personal_channels.py runs source refresh + validation in one command.
+- SmartVideoPlayer now assigns non-HLS native streams to the <video> element, so they no longer bypass playback/error/startup-timeout handling.
+- Mobile player now receives onRequestNextChannel, enabling the same dead-stream failover path used by the app controller.
+- Existing Personal compact-icon UI changes are included.
+
+After extracting:
+  cd C:\BugEyezView
+  python backend\refresh_personal_channels.py
+
+Force every URL to be rechecked:
+  python backend\refresh_personal_channels.py --force
+
+Validate current catalog without downloading a new source:
+  python backend\refresh_personal_channels.py --skip-source-refresh
+
+Before committing, run:
+  cd C:\BugEyezView\frontend\web
+  npx tsc --noEmit --pretty false
+
+The validator only labels 401/403/451 as restricted_or_geoblocked; it does not claim a geo-lock with certainty.

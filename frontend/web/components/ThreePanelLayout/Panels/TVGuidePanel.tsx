@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import type { Channel, EPGEntry, ChannelHealth } from "../../../../types";
 import type { BugEyezSettings } from "../../Settings/useSettingsData";
 import { useToast } from "../../ui/ToastProvider";
@@ -88,6 +88,38 @@ onSelectChannel,
   const TIMELINE_WIDTH = SLOT_COUNT * PX_PER_SLOT;
   const TOTAL_WIDTH = CHANNEL_COL_WIDTH + TIMELINE_WIDTH;
 const { showToast } = useToast();
+  const [channelMenu, setChannelMenu] = useState<Channel | null>(null);
+  const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const longPressTriggeredRef = useRef(false);
+  const PLAYLIST_KEY = "bugz_channel_playlist_v1";
+
+  const beginChannelLongPress = (ch: Channel) => {
+    longPressTriggeredRef.current = false;
+    if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+    longPressTimerRef.current = setTimeout(() => {
+      longPressTriggeredRef.current = true;
+      setChannelMenu(ch);
+    }, 550);
+  };
+
+  const cancelChannelLongPress = () => {
+    if (longPressTimerRef.current) {
+      clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+  };
+
+  const addChannelToPlaylist = (ch: Channel) => {
+    try {
+      const current = JSON.parse(localStorage.getItem(PLAYLIST_KEY) || "[]") as string[];
+      const next = current.includes(ch.id) ? current : [...current, ch.id];
+      localStorage.setItem(PLAYLIST_KEY, JSON.stringify(next));
+      showToast(`${ch.name} added to playlist.`, "success");
+    } catch {
+      showToast("Could not update playlist.", "error");
+    }
+    setChannelMenu(null);
+  };
   const guideDensity =
   appSettings?.guideDensity ??
   (appSettings?.compactGuideMode ? "compact" : "comfortable");
@@ -400,7 +432,6 @@ const isLocked = ch.locked === true && !isUnlocked;
 const isDisabled = !!health?.is_disabled;
 const isUnstable = health?.tier === "unstable";
 const isMedium = health?.tier === "medium";
-const isFavorite = favoriteIDs.includes(ch.id);
 
   const cardBg = isDisabled
   ? "bg-gray-800 opacity-40"
@@ -472,44 +503,26 @@ const channelClickAllowed = !isDisabled;
     ? "3px solid var(--bug-accent)"
     : "3px solid transparent",
 }}
+          onPointerDown={() => beginChannelLongPress(ch)}
+          onPointerUp={cancelChannelLongPress}
+          onPointerCancel={cancelChannelLongPress}
+          onPointerLeave={cancelChannelLongPress}
+          onContextMenu={(event) => {
+            event.preventDefault();
+            cancelChannelLongPress();
+            setChannelMenu(ch);
+          }}
           onClick={() => {
-  if (!channelClickAllowed) return;
-
-  // 🔒 Locked channels should NOT auto-open unlock prompt.
-  // Only the unlock button should trigger unlock.
-  if (isLocked) return;
-
-  onSelectChannel?.(ch);
-}}
+            if (longPressTriggeredRef.current) {
+              longPressTriggeredRef.current = false;
+              return;
+            }
+            if (!channelClickAllowed) return;
+            if (isLocked) return;
+            onSelectChannel?.(ch);
+          }}
         >
-        <button
-  type="button"
-  onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    onToggleFavorite?.(ch.id);
-  }}
-  className="
-    w-7 h-7 rounded-md text-sm shrink-0
-    flex items-center justify-center
-    border pointer-events-auto cursor-pointer
-  "
-  
-  style={{
-    background: isFavorite
-      ? "var(--bug-accent)"
-      : "rgba(255,255,255,0.10)",
-    color: isFavorite ? "black" : "rgba(255,255,255,0.65)",
-    borderColor: isFavorite
-      ? "var(--bug-accent-border)"
-      : "rgba(255,255,255,0.12)",
-    boxShadow: isFavorite ? "var(--bug-glow)" : "none",
-  }}
-  title={isFavorite ? "Remove favorite" : "Add favorite"}
->
-  {isFavorite ? "★" : "☆"}
 
-</button>
           <div
             style={{
               width: LOGO_SIZE,
@@ -801,6 +814,39 @@ fontSize: guideDensity === "ultra" ? "11px" : guideDensity === "compact" ? "12px
 <div style={{ height: bottomSpacer }} />
 </div>
       </div>
+
+      {channelMenu && (
+        <div
+          className="fixed inset-0 z-[2147483646] flex items-center justify-center bg-black/65 p-4"
+          onClick={() => setChannelMenu(null)}
+        >
+          <div
+            className="w-full max-w-sm rounded-2xl border border-cyan-400/35 bg-[#090d12] p-4 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-3 text-sm font-black text-white">{channelMenu.name}</div>
+            <div className="grid gap-2">
+              <button
+                type="button"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-bold text-white"
+                onClick={() => {
+                  onToggleFavorite?.(channelMenu.id);
+                  setChannelMenu(null);
+                }}
+              >
+                {favoriteIDs.includes(channelMenu.id) ? "★ Remove from Favorites" : "☆ Add to Favorites"}
+              </button>
+              <button
+                type="button"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-bold text-white"
+                onClick={() => addChannelToPlaylist(channelMenu)}
+              >
+                ＋ Add to Playlist
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
 
 );

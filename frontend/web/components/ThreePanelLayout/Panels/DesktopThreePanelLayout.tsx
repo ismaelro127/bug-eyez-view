@@ -334,7 +334,7 @@ if (channelTab === "All") {
         >
           <div className="flex h-full min-h-0 flex-col">
             <div className="flex items-center justify-between border-b border-white/10 px-3 py-2">
-  <div className="text-sm font-black tracking-wide text-cyan-200">Guide</div>
+  <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-400/5 text-lg text-cyan-200" title="Guide" aria-label="Guide">▦</div>
 
   <div className="flex items-center gap-2">
     <div className="text-[11px] text-white/45">
@@ -422,7 +422,12 @@ if (channelTab === "All") {
                   onRequestNextChannel={(reason) => {
                     const current = selectedRef.current;
                     if (!current) return;
-                    const next = pickBestChannel(channels, current, channelHealth);
+                    // Personal channels are user-controlled.
+                    // A failed stream must not automatically change the user's selection.
+                      if (current.id.startsWith("personal:")) {
+                        return;
+                  }
+        const next = pickBestChannel(channels, current, channelHealth);
                     if (!next) return;
                     setSelected(next);
                   }}
@@ -452,8 +457,8 @@ if (channelTab === "All") {
           style={{ zIndex: menuOpen ? 0 : 15, pointerEvents: menuOpen ? "none" : "auto" }}
         >
           <div className="flex h-full min-h-0 flex-col">
-            <div className="border-b border-white/10 px-3 py-2 text-center text-sm font-black text-white/85">
-              AI PANEL
+            <div className="flex justify-center border-b border-white/10 px-3 py-1.5">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-400/25 bg-emerald-400/5 text-lg text-emerald-200" title="AI Summary" aria-label="AI Summary">✦</div>
             </div>
 
             <div className="min-h-0 flex-1 overflow-y-auto p-3">

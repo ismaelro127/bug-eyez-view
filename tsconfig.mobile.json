@@ -1,0 +1,19 @@
+{
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "customConditions": [
+      "react-native",
+      "react-native-legacy-deep-imports"
+    ]
+  },
+  "include": [
+    "App.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "frontend",
+    "backend"
+  ]
+}

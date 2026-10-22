@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
@@ -458,6 +458,41 @@ if (isPersonal) {
   },
   [channels, channelHealth, selectChannel]
 );
+
+
+useEffect(() => {
+  const moveChannel = (direction: number) => {
+    const current = selectedRef.current;
+    if (!current || filteredChannels.length === 0) return;
+    const currentIndex = filteredChannels.findIndex((ch) => ch.id === current.id);
+    const base = currentIndex >= 0 ? currentIndex : 0;
+    const nextIndex = (base + direction + filteredChannels.length) % filteredChannels.length;
+    selectChannel(filteredChannels[nextIndex]);
+    setSelectedProgram(null);
+  };
+  const previous = () => moveChannel(-1);
+  const next = () => moveChannel(1);
+  window.addEventListener("bugz-player-prev", previous);
+  window.addEventListener("bugz-player-next", next);
+  return () => {
+    window.removeEventListener("bugz-player-prev", previous);
+    window.removeEventListener("bugz-player-next", next);
+  };
+}, [filteredChannels, selectChannel]);
+
+useEffect(() => {
+  if (!selected) return;
+  const entries = epgData[selected.id] || [];
+  const currentProgram = selectedProgram || entries.find((program) => {
+    const start = new Date(program.start_utc).getTime();
+    const stop = new Date(program.stop_utc).getTime();
+    return Number.isFinite(start) && Number.isFinite(stop) && start <= nowTs && nowTs < stop;
+  }) || null;
+
+  window.dispatchEvent(new CustomEvent("bugz-player-context", {
+    detail: { channel: selected, program: currentProgram },
+  }));
+}, [selected, selectedProgram, epgData, nowTs]);
 
 const loadServerPreferences = async () => {
   try {
@@ -1735,21 +1770,15 @@ return (
             setActiveView("admin");
             setMenuOpen(false);
           }}
+          title="Admin tools"
+          aria-label="Admin tools"
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            width: "100%",
-            padding: "12px 16px",
-            color: "#fde047",
-            background: "transparent",
-            border: 0,
-            textAlign: "left",
-            fontSize: 16,
-            cursor: "pointer",
+            width: 42, height: 42, margin: "8px 16px", borderRadius: 12,
+            border: "1px solid rgba(250,204,21,0.45)", background: "rgba(250,204,21,0.08)",
+            color: "#fde047", cursor: "pointer", fontSize: 18
           }}
         >
-          <span>Admin</span>
+          ⚙
         </button>
 
         <button
@@ -2050,9 +2079,9 @@ return (
 <div
   style={{
   zIndex: 2147483645,
-  minHeight: isMobile ? 52 : 44,
+  minHeight: isMobile ? 72 : 44,
   paddingTop: isMobile
-    ? "calc(env(safe-area-inset-top, 0px) + -20px)"
+    ? "calc(env(safe-area-inset-top, 0px) + 16px)"
     : 0,
 }}
 >
@@ -2110,7 +2139,7 @@ return (
       }}
     >
 {menuOpen ? (
-  <>&times;</>
+  <span aria-hidden="true">⌃</span>
 ) : (
   <>&#9776;</>
 )}    </button>
@@ -2129,48 +2158,7 @@ return (
       Bug Eyez View
     </div>
 
-    {/* PLAY AD BUTTON */}
-    <button
-      type="button"
-      title="Play rewarded ad"
-      onClick={(event) => {
-        event.preventDefault();
-        event.stopPropagation();
-
-        setMenuOpen(false);
-        setAdOverlayOpen(true);
-      }}
-      style={{
-        position: "absolute",
-        right: 10,
-        top: "50%",
-        transform: "translateY(-50%)",
-        zIndex: 10,
-        minWidth: 86,
-        height: 32,
-        padding: "0 12px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 6,
-        borderRadius: 10,
-        border:
-          "1px solid rgba(250,204,21,0.75)",
-        background:
-          "rgba(250,204,21,0.14)",
-        color: "#fde047",
-        boxShadow:
-          "0 0 14px rgba(250,204,21,0.25)",
-        cursor: "pointer",
-        pointerEvents: "auto",
-        fontSize: 12,
-        fontWeight: 900,
-        whiteSpace: "nowrap",
-      }}
-    >
-      <span aria-hidden="true"></span>
-      <span>Play Ad</span>
-    </button>
+    {/* Rewarded ads remain available from Menu → Watch Ad. */}
   </div>
 </div>
         {/* LIVE TV VIEW */}
@@ -2202,14 +2190,14 @@ return (
       top: "50%",
       transform: "translateY(-50%)",
       zIndex: 20,
-      width: 30,
-      height: 30,
+      width: 26,
+      height: 26,
       borderRadius: "50%",
       border: "1px solid rgba(34,211,238,0.55)",
       background: "rgba(0,0,0,0.92)",
       color: "#22d3ee",
       cursor: "pointer",
-      fontSize: 20,
+      fontSize: 17,
       fontWeight: 900,
       lineHeight: 1,
     }}
@@ -2242,10 +2230,10 @@ return (
     display: "flex",
     flexWrap: "nowrap",
     alignItems: "center",
-    gap: 8,
+    gap: 6,
     overflowX: "auto",
     overflowY: "hidden",
-    padding: "8px 42px",
+    padding: "7px 36px",
     WebkitOverflowScrolling: "touch",
     overscrollBehaviorX: "contain",
     touchAction: "pan-x",
@@ -2272,14 +2260,16 @@ return (
 <button
   key={genre}
   type="button"
-  onClick={() => setSelectedGenre(genre)}
+  onClick={() => {
+    setSelectedGenre(genre);
+  }}
   style={{
     whiteSpace: "nowrap",
     flexShrink: 0,
   }}
   className={`
     flex-none whitespace-nowrap rounded-full
-    px-4 py-1.5 text-sm transition
+    px-4 py-2 text-sm transition
               ${
             active
               ? "bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-semibold"
@@ -2309,14 +2299,14 @@ return (
       top: "50%",
       transform: "translateY(-50%)",
       zIndex: 20,
-      width: 30,
-      height: 30,
+      width: 26,
+      height: 26,
       borderRadius: "50%",
       border: "1px solid rgba(34,211,238,0.55)",
       background: "rgba(0,0,0,0.92)",
       color: "#22d3ee",
       cursor: "pointer",
-      fontSize: 20,
+      fontSize: 17,
       fontWeight: 900,
       lineHeight: 1,
     }}

@@ -1,121 +1,96 @@
+import argparse
 import json
 import re
-import requests
+import time
 from pathlib import Path
 
+import requests
+
 BASE_DIR = Path(__file__).resolve().parent
-
 SOURCE_URL = "https://iptv-org.github.io/iptv/index.m3u"
-
 M3U_OUTPUT = BASE_DIR / "personal_channels_current.m3u"
 JSON_OUTPUT = BASE_DIR / "personal_channels.json"
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0"
-}
+HEADERS = {"User-Agent": "Mozilla/5.0 (BugEyezView channel refresh)"}
 
 
 def get_attribute(meta, name):
-    match = re.search(
-        rf'{re.escape(name)}="([^"]*)"',
-        meta,
-    )
+    match = re.search(rf'{re.escape(name)}="([^"]*)"', meta)
     return match.group(1).strip() if match else ""
 
 
-print("Downloading current IPTV playlist...")
+def atomic_write_text(path: Path, text: str):
+    temp = path.with_suffix(path.suffix + ".tmp")
+    temp.write_text(text, encoding="utf-8")
+    temp.replace(path)
 
-response = requests.get(
-    SOURCE_URL,
-    headers=HEADERS,
-    timeout=30,
-)
-response.raise_for_status()
 
-m3u = response.text
+def atomic_write_json(path: Path, data):
+    temp = path.with_suffix(path.suffix + ".tmp")
+    with temp.open("w", encoding="utf-8") as handle:
+        json.dump(data, handle, indent=2, ensure_ascii=False)
+    temp.replace(path)
 
-if not m3u.strip().startswith("#EXTM3U"):
-    raise RuntimeError("Downloaded file is not a valid M3U playlist.")
 
-M3U_OUTPUT.write_text(
-    m3u,
-    encoding="utf-8",
-)
+def parse_playlist(m3u: str):
+    channels = []
+    pending_meta = None
+    seen_urls = set()
 
-lines = m3u.splitlines()
-channels = []
+    for raw_line in m3u.splitlines():
+        line = raw_line.strip()
+        if line.startswith("#EXTINF:"):
+            pending_meta = line
+            continue
+        if not pending_meta or not line.startswith(("http://", "https://")):
+            continue
+        if line in seen_urls:
+            pending_meta = None
+            continue
 
-pending_meta = None
-
-for line in lines:
-    line = line.strip()
-
-    if line.startswith("#EXTINF:"):
-        pending_meta = line
-        continue
-
-    if (
-        pending_meta
-        and line.startswith(("http://", "https://"))
-    ):
-        if "," in pending_meta:
-            name = pending_meta.split(",", 1)[1].strip()
-        else:
-            name = ""
-
-        channels.append(
-            {
-                "name": name,
-                "url": line,
-                "group-title": get_attribute(
-                    pending_meta,
-                    "group-title",
-                ),
-                "tvg-id": get_attribute(
-                    pending_meta,
-                    "tvg-id",
-                ),
-                "tvg-logo": get_attribute(
-                    pending_meta,
-                    "tvg-logo",
-                ),
-            }
-        )
-
+        name = pending_meta.split(",", 1)[1].strip() if "," in pending_meta else ""
+        channels.append({
+            "name": name,
+            "url": line,
+            "group-title": get_attribute(pending_meta, "group-title"),
+            "tvg-id": get_attribute(pending_meta, "tvg-id"),
+            "tvg-logo": get_attribute(pending_meta, "tvg-logo"),
+        })
+        seen_urls.add(line)
         pending_meta = None
+    return channels
 
 
-with JSON_OUTPUT.open(
-    "w",
-    encoding="utf-8",
-) as file:
-    json.dump(
-        channels,
-        file,
-        indent=2,
-        ensure_ascii=False,
-    )
+def refresh(source_url: str = SOURCE_URL):
+    print("Downloading current IPTV playlist...")
+    response = requests.get(source_url, headers=HEADERS, timeout=(10, 45))
+    response.raise_for_status()
+    m3u = response.text
+    if not m3u.lstrip().startswith("#EXTM3U"):
+        raise RuntimeError("Downloaded file is not a valid M3U playlist.")
+
+    channels = parse_playlist(m3u)
+    if not channels:
+        raise RuntimeError("Playlist parsed successfully but contained no HTTP(S) channels; existing catalog was preserved.")
+
+    # Only replace the local source files after download + parsing both succeed.
+    atomic_write_text(M3U_OUTPUT, m3u)
+    atomic_write_json(JSON_OUTPUT, channels)
+
+    epg_ids = [c["tvg-id"] for c in channels if c["tvg-id"]]
+    with_logos = sum(bool(c["tvg-logo"]) for c in channels)
+    print("\nPersonal channel refresh complete")
+    print("---------------------------------")
+    print(f"Parsed:          {len(channels)}")
+    print(f"With tvg-id:     {len(epg_ids)}")
+    print(f"Without tvg-id:  {len(channels) - len(epg_ids)}")
+    print(f"Unique tvg-id:   {len(set(epg_ids))}")
+    print(f"With logo:       {with_logos}")
+    print(f"Refreshed at:    {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Output:          {JSON_OUTPUT}")
 
 
-epg_ids = [
-    channel["tvg-id"]
-    for channel in channels
-    if channel["tvg-id"]
-]
-
-with_logos = sum(
-    bool(channel["tvg-logo"])
-    for channel in channels
-)
-
-
-print()
-print("Personal channel refresh complete")
-print("---------------------------------")
-print(f"Parsed:          {len(channels)}")
-print(f"With tvg-id:     {len(epg_ids)}")
-print(f"Without tvg-id:  {len(channels) - len(epg_ids)}")
-print(f"Unique tvg-id:   {len(set(epg_ids))}")
-print(f"With logo:       {with_logos}")
-print()
-print(f"Output: {JSON_OUTPUT}")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Refresh the Bug Eyez View personal IPTV source catalog.")
+    parser.add_argument("--source", default=SOURCE_URL, help="M3U source URL")
+    args = parser.parse_args()
+    refresh(args.source)

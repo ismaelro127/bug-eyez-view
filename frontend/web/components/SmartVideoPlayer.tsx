@@ -1,7 +1,7 @@
 // components/SmartVideoPlayer.tsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Hls from "hls.js";
-import { Channel } from "../../types";
+import { Channel, EPGEntry } from "../../types";
 import { emitEvent } from "../events/emitEvent";
 import { logger } from "../utils/logger";
 
@@ -133,6 +133,7 @@ const sendYouTubeCommand = (
   const [rotationItems, setRotationItems] = useState<RotationItem[]>([]);
   const [rotationError, setRotationError] = useState<string | null>(null);
   const [rotationIndex, setRotationIndex] = useState(0);
+  const [contextProgram, setContextProgram] = useState<EPGEntry | null>(null);
 
   const hasStartedRef = useRef(false);
   const sessionIdRef = useRef<string | null>(null);
@@ -174,6 +175,7 @@ const sendYouTubeCommand = (
     hasStartedRef.current = false;
     failCountRef.current = 0;
     lastFailAtRef.current = 0;
+    setShowUI(true);
   }, [channel?.id]);
 
   useEffect(() => {
@@ -356,10 +358,10 @@ const sendYouTubeCommand = (
   }, [channel?.id, channelUrl, channelKind]);
 
   useEffect(() => {
-    if (!showUI) return;
+    if (!showUI || playerExpanded) return;
     const t = setTimeout(() => setShowUI(false), 6000);
     return () => clearTimeout(t);
-  }, [showUI]);
+  }, [showUI, playerExpanded]);
 
   useEffect(() => {
     setIsMuted(muted);
@@ -409,6 +411,17 @@ useEffect(() => {
   sendCommand(rotationYoutubeIframeRef.current);
 }, [adPlaying]);
 
+  useEffect(() => {
+    const handleContext = (event: Event) => {
+      const detail = (event as CustomEvent<{ channel?: Channel; program?: EPGEntry | null }>).detail;
+      if (!detail?.channel || detail.channel.id !== channel?.id) return;
+      setContextProgram(detail.program || null);
+      setShowUI(true);
+    };
+    window.addEventListener("bugz-player-context", handleContext);
+    return () => window.removeEventListener("bugz-player-context", handleContext);
+  }, [channel?.id]);
+
   const playerShellStyle = useMemo<React.CSSProperties | undefined>(() => {
     if (!playerExpanded) return undefined;
     return {
@@ -423,27 +436,32 @@ useEffect(() => {
 
   const togglePlay = () => {
     const video = videoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      video.play();
-      setIsPlaying(true);
+    if (video) {
+      if (video.paused) {
+        void video.play();
+        setIsPlaying(true);
+      } else {
+        video.pause();
+        setIsPlaying(false);
+      }
     } else {
-      video.pause();
-      setIsPlaying(false);
+      const nextPlaying = !isPlaying;
+      sendYouTubeCommand(youtubeIframeRef.current, nextPlaying ? "playVideo" : "pauseVideo");
+      sendYouTubeCommand(rotationYoutubeIframeRef.current, nextPlaying ? "playVideo" : "pauseVideo");
+      setIsPlaying(nextPlaying);
     }
-
     setShowUI(true);
   };
 
   const toggleMute = () => {
     const video = videoRef.current;
-    if (!video) return;
+    const nextMuted = video ? !video.muted : !isMuted;
+    if (video) video.muted = nextMuted;
+    sendYouTubeCommand(youtubeIframeRef.current, nextMuted ? "mute" : "unMute");
+    sendYouTubeCommand(rotationYoutubeIframeRef.current, nextMuted ? "mute" : "unMute");
+    setIsMuted(nextMuted);
 
-    video.muted = !video.muted;
-    setIsMuted(video.muted);
-
-    const message = video.muted ? "Muted" : "Sound on";
+    const message = nextMuted ? "Muted" : "Sound on";
     setVolumeFeedback(message);
     showPlayerToast(message);
     setTimeout(() => setVolumeFeedback(null), 800);
@@ -585,26 +603,105 @@ useEffect(() => {
     };
   }, [isTouch, brightnessLevel]);
 
-  const renderExpandedButton = () => {
-    if (!showUI) return null;
+  const formatProgramTime = (value?: string) => {
+    if (!value) return "";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "";
+    return date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  };
+
+  const playerAction = (name: "bugz-player-prev" | "bugz-player-next" | "bugz-player-guide") => {
+    window.dispatchEvent(new Event(name));
+    setShowUI(true);
+  };
+
+  const renderPlayerOverlay = () => {
+    if (!channel) return null;
+    const start = formatProgramTime(contextProgram?.start_utc);
+    const stop = formatProgramTime(contextProgram?.stop_utc);
+    const time = start && stop ? `${start} – ${stop}` : "";
 
     return (
-      <button
-  type="button"
-  onClick={togglePlayerExpanded}
-  className="absolute z-[1000000] w-11 h-11 rounded-xl bg-black/80 border border-cyan-400/50 text-cyan-300 text-xl flex items-center justify-center shadow-[0_0_12px_rgba(0,255,255,0.45)]"
-  style={{
-    right: "12px",
-    bottom: playerExpanded
-      ? "max(56px, calc(env(safe-area-inset-bottom, 0px) + 12px))"
-      : "12px",
-  }}
-  title={playerExpanded ? "Exit fullscreen" : "Fullscreen"}
->
-  {playerExpanded ? "🗕" : "⛶"}
-</button>
+      <>
+        <div className="pointer-events-none absolute left-3 top-3 z-[1000000] max-w-[78%] rounded-xl border border-cyan-400/45 bg-black/95 px-3 py-2 text-white shadow-xl">
+          <div className="flex items-center gap-2">
+            {channel.logo ? <img src={channel.logo} alt="" className="h-8 w-8 rounded object-contain" /> : null}
+            <div className="min-w-0">
+              <div className="truncate text-sm font-black text-cyan-200">{channel.name}</div>
+              <div className="truncate font-mono text-[10px] text-cyan-100/65">ID: {channel.id}</div>
+            </div>
+          </div>
+          {showUI && (
+            <div className="mt-2 border-t border-white/10 pt-2">
+              {contextProgram ? (
+                <>
+                  <div className="text-xs font-bold text-white">{contextProgram.title || "Current program"}</div>
+                  {time ? <div className="mt-0.5 text-[10px] text-white/55">{time}</div> : null}
+                  <div className="mt-1 line-clamp-2 text-[10px] leading-relaxed text-white/65">
+                    {contextProgram.description || "Program description unavailable."}
+                  </div>
+                </>
+              ) : (
+                <div className="text-[11px] text-white/60">EPG information unavailable</div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {showUI && (
+          <>
+            <div
+              className="absolute z-[1000001] flex max-w-[calc(100%-88px)] flex-nowrap items-center justify-start gap-3 rounded-2xl border border-white/20 bg-black p-2 shadow-2xl"
+              style={{
+  left: "100px",
+  bottom: playerExpanded
+    ? "max(84px, calc(72px + env(safe-area-inset-bottom, 0px)))"
+    : "16px",
+}}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex flex-col overflow-hidden rounded-2xl border border-white/15 bg-black/95">
+                <button
+                  type="button"
+                  className="h-8 min-w-[82px] border-b border-white/15 px-3 text-base font-black text-cyan-200"
+                  title="Channel up"
+                  onClick={() => playerAction("bugz-player-next")}
+                >
+                  CH ▲
+                </button>
+                <button
+                  type="button"
+                  className="h-8 min-w-[82px] px-3 text-base font-black text-cyan-200"
+                  title="Channel down"
+                  onClick={() => playerAction("bugz-player-prev")}
+                >
+                  CH ▼
+                </button>
+              </div>
+
+              <button type="button" className="h-16 w-16 rounded-2xl border border-white/15 bg-black/95 text-2xl text-cyan-200" title={isPlaying ? "Pause" : "Play"} onClick={togglePlay}>{isPlaying ? "⏸" : "▶"}</button>
+              <button type="button" className="h-16 w-16 rounded-2xl border border-white/15 bg-black/95 text-2xl text-cyan-200" title={isMuted ? "Unmute" : "Mute"} onClick={toggleMute}>{isMuted ? "🔇" : "🔊"}</button>
+              <button type="button" className="h-16 w-16 rounded-2xl border border-white/15 bg-black/95 text-3xl text-cyan-200" title="Guide" onClick={() => playerAction("bugz-player-guide")}>▦</button>
+            </div>
+
+            <button
+              type="button"
+              className="absolute bottom-3 right-3 z-[1000003] h-16 w-16 rounded-2xl border border-cyan-400/55 bg-black/95 text-2xl text-cyan-200 shadow-2xl"
+              title={playerExpanded ? "Exit fullscreen" : "Fullscreen"}
+              onClick={(e) => {
+                e.stopPropagation();
+                togglePlayerExpanded();
+              }}
+            >
+              {playerExpanded ? "⌄" : "⛶"}
+            </button>
+          </>
+        )}
+      </>
     );
   };
+
+  const renderExpandedButton = () => renderPlayerOverlay();
 
   const renderInfoCard = ({
     title,
@@ -840,12 +937,6 @@ useEffect(() => {
             muted={isMuted}
           />
 
-          <div
-            className="absolute left-2 top-2 z-40 rounded bg-black/75 px-2 py-1 text-[10px] font-mono text-cyan-200 pointer-events-none"
-            title={channel.id}
-          >
-            ID: {channel.id}
-          </div>
         </>
       ) : (
         <div className="flex items-center justify-center w-full h-full bg-black text-gray-400">
@@ -853,114 +944,20 @@ useEffect(() => {
         </div>
       )}
 
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          right: 0,
-bottom: playerExpanded
-  ? "max(56px, calc(env(safe-area-inset-bottom, 0px) + 12px))"
-  : 0,
-          zIndex: 1000000,
-          padding: "12px",
-          background: "linear-gradient(to top, rgba(0,0,0,0.90), rgba(0,0,0,0.45), transparent)",
-          opacity: showUI ? 1 : 0,
-          pointerEvents: showUI ? "auto" : "none",
-          transition: "opacity 180ms ease",
-        }}
-      >
-        {(() => {
-          const duration = videoRef.current?.duration;
-          const canSeek =
-            !isLiveStream &&
-            typeof duration === "number" &&
-            Number.isFinite(duration) &&
-            duration > 0;
+      {renderPlayerOverlay()}
 
-          if (!canSeek) return null;
-
-          return (
-            <input
-              type="range"
-              min="0"
-              max={duration}
-              value={progress}
-              onChange={handleSeek}
-              style={{ width: "100%", marginBottom: 12, accentColor: "rgb(0,255,255)" }}
-            />
-          );
-        })()}
-
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <button
-              type="button"
-              onClick={togglePlay}
-              style={{
-                width: 46,
-                height: 46,
-                borderRadius: 12,
-                background: "rgba(0,0,0,0.88)",
-                color: "rgb(103,232,249)",
-                border: "1px solid rgba(0,255,255,0.6)",
-                fontSize: 20,
-                fontWeight: 900,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 0 12px rgba(0,255,255,0.35)",
-              }}
-              title={isPlaying ? "Pause" : "Play"}
-            >
-              {isPlaying ? "⏸" : "▶"}
-            </button>
-
-            <button
-              type="button"
-              onClick={toggleMute}
-              style={{
-                width: 46,
-                height: 46,
-                borderRadius: 12,
-                background: "rgba(0,0,0,0.88)",
-                color: "rgb(103,232,249)",
-                border: "1px solid rgba(0,255,255,0.6)",
-                fontSize: 20,
-                fontWeight: 900,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 0 12px rgba(0,255,255,0.35)",
-              }}
-              title={isMuted ? "Unmute" : "Mute"}
-            >
-              {isMuted ? "🔇" : "🔊"}
-            </button>
-          </div>
-
-          <button
-            type="button"
-            onClick={togglePlayerExpanded}
-            style={{
-              width: 46,
-              height: 46,
-              borderRadius: 12,
-              background: "rgba(0,0,0,0.88)",
-              color: "rgb(103,232,249)",
-              border: "1px solid rgba(0,255,255,0.6)",
-              fontSize: 22,
-              fontWeight: 900,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 0 12px rgba(0,255,255,0.35)",
-            }}
-            title={playerExpanded ? "Exit fullscreen" : "Fullscreen"}
-          >
-            {playerExpanded ? "🗕" : "⛶"}
-          </button>
+      {showUI && !isLiveStream && Number.isFinite(videoRef.current?.duration || NaN) && (videoRef.current?.duration || 0) > 0 ? (
+        <div className="absolute left-3 right-3 z-[1000000]" style={{ bottom: playerExpanded ? 96 : 88 }}>
+          <input
+            type="range"
+            min="0"
+            max={videoRef.current?.duration || 0}
+            value={progress}
+            onChange={handleSeek}
+            style={{ width: "100%", accentColor: "rgb(0,255,255)" }}
+          />
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }

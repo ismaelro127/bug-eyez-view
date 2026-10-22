@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Channel, EPGEntry } from "../../../../types";
 import TVGuidePanel from "../../../../web/components/ThreePanelLayout/Panels/TVGuidePanel";
 import { renderWithHashtags } from "../../../../shared/utils";
@@ -68,6 +68,11 @@ const MobileThreePanelLayout: React.FC<MobileProps> = ({
   favoriteIDs,
 }) => {
   const [activeTab, setActiveTab] = useState<"channels" | "ai">("channels");
+  useEffect(() => {
+    const openGuide = () => setActiveTab("channels");
+    window.addEventListener("bugz-player-guide", openGuide);
+    return () => window.removeEventListener("bugz-player-guide", openGuide);
+  }, []);
 const [channelSource, setChannelSource] =
   useState<"public" | "personal">("public");
   
@@ -118,30 +123,51 @@ const visibleChannels = useMemo(() => {
       </section>
 
       {/* MOBILE TAB BAR */}
-      <nav className="shrink-0 border-b border-white/10 bg-[#05070a] px-3 py-2">
-        <div className="mx-auto grid max-w-[820px] grid-cols-2 gap-2">
+      <nav className="shrink-0 border-b border-white/10 bg-[#05070a] px-2 py-1.5">
+        <div className="mx-auto flex max-w-[820px] justify-center gap-3">
           <button
             type="button"
             onClick={() => setActiveTab("channels")}
-            className={`rounded-xl px-3 py-2 text-sm font-black transition active:scale-95 ${
+            aria-label="Guide"
+            title="Guide"
+            className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black transition active:scale-95 ${
               activeTab === "channels"
                 ? "bg-cyan-400 text-black shadow-[0_0_14px_rgba(34,211,238,0.45)]"
                 : "border border-white/10 bg-white/5 text-gray-300"
             }`}
           >
-            📺 Guide
+            <span aria-hidden="true">▦</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab("ai")}
-            className={`rounded-xl px-3 py-2 text-sm font-black transition active:scale-95 ${
+            aria-label="AI Summary"
+            title="AI Summary"
+            className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black transition active:scale-95 ${
               activeTab === "ai"
                 ? "bg-emerald-400 text-black shadow-[0_0_14px_rgba(52,211,153,0.45)]"
                 : "border border-white/10 bg-white/5 text-gray-300"
             }`}
           >
-            📝 AI Summary
+            <span aria-hidden="true">✦</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setChannelSource((current) => current === "personal" ? "public" : "personal");
+              setActiveTab("channels");
+            }}
+            aria-label={channelSource === "personal" ? "Show public channels" : "Show personal channels"}
+            title={channelSource === "personal" ? "Public channels" : "Personal channels"}
+            className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black transition active:scale-95 ${
+              channelSource === "personal"
+                ? "bg-cyan-400 text-black shadow-[0_0_14px_rgba(34,211,238,0.45)]"
+                : "border border-white/10 bg-white/5 text-gray-300"
+            }`}
+          >
+            <span aria-hidden="true">{channelSource === "personal" ? "⌂" : "◉"}</span>
           </button>
         </div>
       </nav>
@@ -150,34 +176,6 @@ const visibleChannels = useMemo(() => {
 <main className="min-h-0 flex-1 overflow-hidden">
   {activeTab === "channels" && (
     <div className="flex h-full min-h-0 flex-col overflow-hidden">
-      {/* PERSONAL CHANNEL TOGGLE */}
-<div className="shrink-0 flex justify-end px-2 py-1">
-  <button
-    type="button"
-    onClick={() =>
-      setChannelSource((current) =>
-        current === "personal" ? "public" : "personal"
-      )
-    }
-    title={
-      channelSource === "personal"
-        ? "Show public channels"
-        : "Show personal channels"
-    }
-    aria-label={
-      channelSource === "personal"
-        ? "Show public channels"
-        : "Show personal channels"
-    }
-    className={`flex h-8 w-8 items-center justify-center rounded-md border text-sm transition ${
-      channelSource === "personal"
-        ? "border-cyan-300 bg-cyan-400 text-black"
-        : "border-white/15 bg-white/5 text-gray-300"
-    }`}
-  >
-    {channelSource === "personal" ? "⌂" : "♙"}
-  </button>
-</div>
       {/* GUIDE */}
       <div className="min-h-0 flex-1 overflow-hidden">
         <TVGuidePanel
