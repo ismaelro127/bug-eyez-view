@@ -145,7 +145,7 @@ const STYLE = `
 .bugzg-list{display:flex;flex-direction:column;gap:8px;padding:2px 10px 16px}
 .bugzg-list[data-cols="2"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:10px;padding:2px 14px 16px;max-width:1040px;margin:0 auto;width:100%;box-sizing:border-box}
 .bugzg-list[data-cols="2"] > .bugzg-section,.bugzg-list[data-cols="2"] > .bugzg-empty{grid-column:1 / -1}
-.bugzg-card{position:relative;display:flex;align-items:stretch;gap:12px;padding:10px 10px 10px 12px;border-radius:14px;background:linear-gradient(180deg,rgba(15,23,42,.72),rgba(2,6,23,.72));border:1px solid rgba(148,163,184,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer;content-visibility:auto;contain-intrinsic-size:auto 96px;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+.bugzg-card{position:relative;display:flex;align-items:stretch;gap:12px;min-height:96px;padding:10px 10px 10px 12px;border-radius:14px;background:linear-gradient(180deg,rgba(15,23,42,.72),rgba(2,6,23,.72));border:1px solid rgba(148,163,184,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer;content-visibility:auto;contain-intrinsic-size:auto 96px;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
 .bugzg-card:active{transform:scale(.995)}
 .bugzg-card[data-selected="true"]{border-color:var(--bug-accent,#22d3ee);background:linear-gradient(180deg,rgba(8,47,73,.72),rgba(2,6,23,.78));box-shadow:0 0 18px var(--bug-accent-border,rgba(34,211,238,.45)),inset 0 0 16px rgba(34,211,238,.12)}
 .bugzg-card[data-disabled="true"]{opacity:.45;cursor:not-allowed}
@@ -255,6 +255,7 @@ const TVGuidePanel: React.FC<Props> = ({
   const [viewportH, setViewportH] = useState(900);
   const [scrollTop, setScrollTop] = useState(0);
   const [pill, setPill] = useState<string>("All");
+  const [filterMode, setFilterMode] = useState<"genre" | "language">("genre");
   const [channelMenu, setChannelMenu] = useState<Channel | null>(null);
   const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressTriggeredRef = useRef(false);
@@ -375,6 +376,18 @@ const TVGuidePanel: React.FC<Props> = ({
 
   /* ---------------- pills (list mode) ---------------- */
 const pillOptions = useMemo(() => {
+  if (filterMode === "language") {
+    const languages = Array.from(
+      new Set(
+        sortedChannels
+          .map((ch) => String(ch.language || "").trim())
+          .filter(Boolean)
+      )
+    ).sort((a, b) => a.localeCompare(b));
+
+    return ["Genres", "All", ...languages];
+  }
+
   const preferredGenres = [
     "News",
     "Government",
@@ -394,18 +407,30 @@ const pillOptions = useMemo(() => {
     opts.push("Favorites");
   }
 
-  return [...opts, ...preferredGenres];
-}, [favoriteIDs.length]);
+  return [...opts, ...preferredGenres, "Languages"];
+}, [favoriteIDs.length, filterMode, sortedChannels]);
 
   useEffect(() => {
     if (!pillOptions.includes(pill)) setPill("All");
   }, [pillOptions, pill]);
 
   const listChannels = useMemo(() => {
-    if (pill === "All") return sortedChannels;
-    if (pill === "Favorites") return sortedChannels.filter((ch) => favSet.has(ch.id));
-    return sortedChannels.filter((ch) => categoryOf(ch) === pill);
-  }, [sortedChannels, pill, favSet]);
+  if (pill === "All") return sortedChannels;
+
+  if (filterMode === "language") {
+    return sortedChannels.filter(
+      (ch) =>
+        String(ch.language || "").trim().toLowerCase() ===
+        pill.trim().toLowerCase()
+    );
+  }
+
+  if (pill === "Favorites") {
+    return sortedChannels.filter((ch) => favSet.has(ch.id));
+  }
+
+  return sortedChannels.filter((ch) => categoryOf(ch) === pill);
+}, [sortedChannels, pill, favSet, filterMode]);
 
   /* ---------------- shared helpers ---------------- */
   const lockInfo = useCallback(
@@ -528,9 +553,18 @@ const pillOptions = useMemo(() => {
                 data-active={pill === p}
                 className="bugzg-pill"
                 onClick={() => {
-                  setPill(p);
-                  scrollRef.current?.scrollTo({ top: 0 });
-                }}
+  if (p === "Languages") {
+    setFilterMode("language");
+    setPill("All");
+  } else if (p === "Genres") {
+    setFilterMode("genre");
+    setPill("All");
+  } else {
+    setPill(p);
+  }
+
+  scrollRef.current?.scrollTo({ top: 0 });
+}}
               >
                 {p === "Favorites" ? "★ Favorites" : p}
               </button>

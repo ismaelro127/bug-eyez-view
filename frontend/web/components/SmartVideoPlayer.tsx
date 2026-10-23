@@ -182,12 +182,12 @@ const BUGZ_STYLES = `
 .bugz-frame .bugz-controls,.bugz-frame .bugz-progress-wrap,.bugz-frame .bugz-menu{pointer-events:auto;}
 .bugz-frame .bugz-scanlines,.bugz-frame .bugz-catcher{position:absolute;inset:0;}
 .bugz-dock{flex-direction:column;align-items:stretch;justify-content:flex-end;gap:8px;}
-.bugz-controls{flex-wrap:nowrap;align-items:flex-end;justify-content:center;}
+.bugz-controls{flex-wrap:nowrap;align-items:flex-start;justify-content:center;}
 /* lg: big player (>= 1000x460 video box) - lower-third left, controls right, labels on */
 .bugz-frame[data-size="lg"] .bugz-badge{right:16px;top:16px;padding:8px 16px;}
 .bugz-frame[data-size="lg"] .bugz-badge-icon{width:36px;height:36px;}
 .bugz-frame[data-size="lg"] .bugz-badge-name,.bugz-frame[data-size="lg"] .bugz-live-text{font-size:14px;}
-.bugz-frame[data-size="lg"] .bugz-dock{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:16px;padding-left:16px;padding-right:16px;}
+.bugz-frame[data-size="lg"] .bugz-dock{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:16px;padding-left:16px;padding-right:16px;}
 .bugz-frame[data-size="lg"] .bugz-lower{width:min(400px,40%);flex-shrink:1;min-width:0;padding:14px 18px;}
 .bugz-frame[data-size="lg"] .bugz-tag,.bugz-frame[data-size="lg"] .bugz-label{font-size:12px;}
 .bugz-frame[data-size="lg"] .bugz-title{font-size:22px;}
@@ -656,14 +656,22 @@ export default function SmartVideoPlayer({
       failCountRef.current += 1;
 
       const shouldSwap =
-        reason === "fatal_hls_error" ||
-        reason === "autoplay_blocked" ||
-        failCountRef.current >= 2;
+  reason === "fatal_hls_error" ||
+  reason === "startup_timeout" ||
+  reason === "video_error" ||
+  failCountRef.current >= 2;
 
       if (shouldSwap) {
-        onRequestNextChannel?.(reason);
-        failCountRef.current = 0;
-      }
+  // Personal channels stay selected when unavailable.
+  // The player will render its error/offline state instead of changing channels.
+  if (channel.id.startsWith("personal:")) {
+    failCountRef.current = 0;
+    return;
+  }
+
+  onRequestNextChannel?.(reason);
+  failCountRef.current = 0;
+}
     };
 
     const handleVideoError = () => handleError("video_error");
@@ -709,8 +717,9 @@ export default function SmartVideoPlayer({
       }
     }, 12_000);
 
-    video.play().catch(() => handleError("autoplay_blocked"));
-
+video.play().catch((err) => {
+  logger.warn("Video autoplay blocked:", err);
+});
     const updateProgress = () => setProgress(video.currentTime);
     video.addEventListener("timeupdate", updateProgress);
 
@@ -748,10 +757,12 @@ export default function SmartVideoPlayer({
   }, [channel?.id, channelUrl, channelKind]);
 
   useEffect(() => {
-    if (!showUI || playerExpanded) return;
-    const t = setTimeout(() => setShowUI(false), 6000);
-    return () => clearTimeout(t);
-  }, [showUI, playerExpanded]);
+  if (!showUI || moreOpen) return;
+
+  const t = setTimeout(() => setShowUI(false), 6000);
+
+  return () => clearTimeout(t);
+}, [showUI, moreOpen]);
 
   useEffect(() => {
     setIsMuted(muted);

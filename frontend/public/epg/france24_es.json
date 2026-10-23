@@ -255,7 +255,7 @@
       "News"
     ],
     "duration_min": 10.166666666666666,
-    "link": "https://www.france24.com/es/en-vivo",
+    "link": "https://www.france24.com/es/",
     "start_utc_xml": "20261023000000 +0000",
     "stop_utc_xml": "20261023001010 +0000",
     "start_utc": "2026-10-23T00:00:00Z",
@@ -1817,7 +1817,7 @@
       "News"
     ],
     "duration_min": 15.383333333333333,
-    "link": "https://www.france24.com/es/",
+    "link": "https://www.france24.com/es/en-vivo",
     "start_utc_xml": "20261023120000 +0000",
     "stop_utc_xml": "20261023121523 +0000",
     "start_utc": "2026-10-23T12:00:00Z",

@@ -441,11 +441,30 @@ if (isPersonal) {
     const current = selectedRef.current;
     if (!current) return;
 
-    // Personal channels are manually selected.
-    // A playback failure must not trigger automatic channel switching.
-    if (current.id.startsWith("personal:")) {
-      return;
-    }
+    // Personal channel failure -> move forward once.
+// Do NOT wrap back to the beginning, which can create an infinite
+// failure/switch cycle when multiple Personal streams are dead.
+if (current.id.startsWith("personal:")) {
+  const personalChannels = channels.filter(
+    (ch) =>
+      ch.id.startsWith("personal:") &&
+      ch.locked !== true
+  );
+
+  const currentIndex = personalChannels.findIndex(
+    (ch) => ch.id === current.id
+  );
+
+  if (currentIndex < 0) return;
+
+  const next = personalChannels[currentIndex + 1];
+
+  // End of Personal list: stop instead of wrapping around.
+  if (!next) return;
+
+  selectChannel(next);
+  return;
+}
 
     const next = pickBestChannel(
       channels.filter((ch) => ch.locked !== true),
