@@ -68,13 +68,37 @@ const MobileThreePanelLayout: React.FC<MobileProps> = ({
   favoriteIDs,
 }) => {
   const [activeTab, setActiveTab] = useState<"channels" | "ai">("channels");
-  useEffect(() => {
-    const openGuide = () => setActiveTab("channels");
-    window.addEventListener("bugz-player-guide", openGuide);
-    return () => window.removeEventListener("bugz-player-guide", openGuide);
-  }, []);
-const [channelSource, setChannelSource] =
+  
+  const [channelSource, setChannelSource] =
   useState<"public" | "personal">("public");
+  
+  useEffect(() => {
+  const openGuide = () => {
+    setActiveTab("channels");
+  };
+
+  const openAI = () => {
+    setActiveTab("ai");
+  };
+
+  const togglePersonal = () => {
+    setChannelSource((current) =>
+      current === "personal" ? "public" : "personal"
+    );
+    setActiveTab("channels");
+  };
+
+  window.addEventListener("bugz-player-guide", openGuide);
+  window.addEventListener("bugz-player-ai", openAI);
+  window.addEventListener("bugz-player-personal", togglePersonal);
+
+  return () => {
+    window.removeEventListener("bugz-player-guide", openGuide);
+    window.removeEventListener("bugz-player-ai", openAI);
+    window.removeEventListener("bugz-player-personal", togglePersonal);
+  };
+}, []);
+
   
 const visibleChannels = useMemo(() => {
   return channels.filter((ch) => {
@@ -101,11 +125,14 @@ const visibleChannels = useMemo(() => {
   const highlights = Array.isArray(aiSummary?.highlights) ? aiSummary.highlights : [];
 
   return (
-    <div className="flex h-full w-full min-h-0 flex-col overflow-hidden bg-black text-white">
+    <div
+      className="flex h-full w-full min-h-0 flex-col overflow-hidden bg-black text-white"
+      style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", minHeight: 0, overflow: "hidden" }}
+    >
       {/* PLAYER AREA */}
       <section
         className="relative mx-auto w-full shrink-0 overflow-hidden border-b border-white/10 bg-black"
-        style={{ height: "clamp(220px, 38dvh, 390px)", maxWidth: "820px" }}
+        style={{ position: "relative", flexShrink: 0, overflow: "hidden", width: "100%", marginLeft: "auto", marginRight: "auto", height: "clamp(220px, 38dvh, 390px)", maxWidth: "820px" }}
       >
         {selected ? (
 <SharedPlayer
@@ -122,62 +149,23 @@ const visibleChannels = useMemo(() => {
         )}
       </section>
 
-      {/* MOBILE TAB BAR */}
-      <nav className="shrink-0 border-b border-white/10 bg-[#05070a] px-2 py-1.5">
-        <div className="mx-auto flex max-w-[820px] justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => setActiveTab("channels")}
-            aria-label="Guide"
-            title="Guide"
-            className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black transition active:scale-95 ${
-              activeTab === "channels"
-                ? "bg-cyan-400 text-black shadow-[0_0_14px_rgba(34,211,238,0.45)]"
-                : "border border-white/10 bg-white/5 text-gray-300"
-            }`}
-          >
-            <span aria-hidden="true">▦</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab("ai")}
-            aria-label="AI Summary"
-            title="AI Summary"
-            className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black transition active:scale-95 ${
-              activeTab === "ai"
-                ? "bg-emerald-400 text-black shadow-[0_0_14px_rgba(52,211,153,0.45)]"
-                : "border border-white/10 bg-white/5 text-gray-300"
-            }`}
-          >
-            <span aria-hidden="true">✦</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => {
-              setChannelSource((current) => current === "personal" ? "public" : "personal");
-              setActiveTab("channels");
-            }}
-            aria-label={channelSource === "personal" ? "Show public channels" : "Show personal channels"}
-            title={channelSource === "personal" ? "Public channels" : "Personal channels"}
-            className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-black transition active:scale-95 ${
-              channelSource === "personal"
-                ? "bg-cyan-400 text-black shadow-[0_0_14px_rgba(34,211,238,0.45)]"
-                : "border border-white/10 bg-white/5 text-gray-300"
-            }`}
-          >
-            <span aria-hidden="true">{channelSource === "personal" ? "⌂" : "◉"}</span>
-          </button>
-        </div>
-      </nav>
+     
 
       {/* CONTENT AREA */}
-<main className="min-h-0 flex-1 overflow-hidden">
+<main
+  className="min-h-0 flex-1 overflow-hidden"
+  style={{ flex: "1 1 0%", minHeight: 0, overflow: "hidden", position: "relative" }}
+>
   {activeTab === "channels" && (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden">
+    <div
+      className="flex h-full min-h-0 flex-col overflow-hidden"
+      style={{ display: "flex", flexDirection: "column", height: "100%", minHeight: 0, overflow: "hidden" }}
+    >
       {/* GUIDE */}
-      <div className="min-h-0 flex-1 overflow-hidden">
+      <div
+        className="min-h-0 flex-1 overflow-hidden"
+        style={{ flex: "1 1 0%", minHeight: 0, overflow: "hidden" }}
+      >
         <TVGuidePanel
           channels={visibleChannels}
           allEPG={epgData}
@@ -186,6 +174,7 @@ const visibleChannels = useMemo(() => {
           nowTs={nowTs}
           appSettings={appSettings}
           selectedChannel={selected}
+          channelHealth={channelHealth}
           timelineRef={timelineRef}
           onSelectChannel={(ch: Channel) => {
             setSelected(ch);

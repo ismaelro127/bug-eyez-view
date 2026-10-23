@@ -11,9 +11,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -71,9 +71,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -102,9 +102,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -125,7 +125,7 @@
     "channel_id": "al_jazeera_english",
     "channel_name": "Al Jazeera English (1080p)",
     "date": "2026-10-22",
-    "title": "Now PlayingNEWS 30min",
+    "title": "NEWS 30min",
     "episode_title": "",
     "season": null,
     "episode": null,
@@ -133,13 +133,13 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
-    "link": "https://www.aljazeera.com/program/now-playingnews-30min",
+    "link": "https://www.aljazeera.com/program/news-30min",
     "time_local": "2:00 AM",
     "start_utc": "2026-10-22T06:00:00Z",
     "stop_utc": "2026-10-22T06:30:00Z",
@@ -164,9 +164,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
+      "gaza",
       "war",
-      "conflict",
-      "gaza"
+      "conflict"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -195,9 +195,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -226,9 +226,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -286,9 +286,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -346,9 +346,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -377,9 +377,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -408,9 +408,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -468,9 +468,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -499,9 +499,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -530,9 +530,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -561,9 +561,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -592,9 +592,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -623,9 +623,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -654,9 +654,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -685,9 +685,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -716,9 +716,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -747,9 +747,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -778,9 +778,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -809,9 +809,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -840,9 +840,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -871,9 +871,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -902,9 +902,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -925,7 +925,7 @@
     "channel_id": "al_jazeera_english",
     "channel_name": "Al Jazeera English (1080p)",
     "date": "2026-10-22",
-    "title": "NEWSHOUR",
+    "title": "Now PlayingNEWSHOUR",
     "episode_title": "",
     "season": null,
     "episode": null,
@@ -933,13 +933,13 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
-    "link": "https://www.aljazeera.com/program/newshour",
+    "link": "https://www.aljazeera.com/program/now-playingnewshour",
     "time_local": "8:00 PM",
     "start_utc": "2026-10-23T00:00:00Z",
     "stop_utc": "2026-10-23T01:00:00Z",
@@ -993,9 +993,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",
@@ -1024,9 +1024,9 @@
     "category": "News",
     "genre": "News",
     "tags": [
-      "news",
+      "world",
       "headlines",
-      "world"
+      "news"
     ],
     "ai_summary_ready": true,
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/3c/Al_Jazeera_English_Logo.svg",

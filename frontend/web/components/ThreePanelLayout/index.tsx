@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
@@ -71,7 +71,8 @@ const [creditBalance, setCreditBalance] = useState<number>(0);
 const [unlockedChannelIds, setUnlockedChannelIds] = useState<string[]>([]);
 
 const filteredChannels = useMemo(() => {
-  if (selectedGenre === "All") {
+  // Mobile hides the top genre row, so ignore any genre picked on desktop.
+  if (isMobile || selectedGenre === "All") {
     return channels;
   }
 
@@ -88,7 +89,7 @@ const filteredChannels = useMemo(() => {
 
     return genre === target || category === target;
   });
-}, [channels, selectedGenre]);
+}, [channels, selectedGenre, isMobile]);
 
 // keep ref synced
   useEffect(() => {
@@ -1888,6 +1889,7 @@ return (
           autoPlay
           playsInline
           controls={false}
+          disablePictureInPicture
           style={{
             width: "100%",
             height: "100%",
@@ -2164,7 +2166,8 @@ return (
         {/* LIVE TV VIEW */}
     {activeView === "live" && (
       <>
-      {/* GENRE TABS */}
+      {/* GENRE TABS (desktop only; on mobile the guide shows its own filter pills) */}
+{!isMobile && (
 <div
   className="flex-shrink-0 relative z-10 border-b border-white/10 bg-[#0b0f14]"
   style={{
@@ -2314,6 +2317,7 @@ return (
     &rsaquo;
   </button>
 </div>
+)}
 
         {/* MAIN LAYOUT */}
         {/* LIVE TV BODY */}
